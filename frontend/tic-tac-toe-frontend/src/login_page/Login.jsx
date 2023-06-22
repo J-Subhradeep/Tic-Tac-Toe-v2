@@ -1,12 +1,14 @@
 import React from "react";
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import IconButton from '@mui/material/IconButton';
+// import DeleteIcon from '@mui/icons-material/Delete';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import './styles/Login.css';
+import { GlobalStyle } from "./styles/login.styled";
+// import './styles/Login.css';
 
 const Login=()=>{
     return(
         <>
+        <GlobalStyle/>
         <div className="whole">
         <div className="subWhole">
             <input type="string" placeholder="Enter username" className="userName"></input>
@@ -23,6 +25,7 @@ const Login=()=>{
             {/*  */}
         </div>
         </div>
+        
         </>
     )
 }
