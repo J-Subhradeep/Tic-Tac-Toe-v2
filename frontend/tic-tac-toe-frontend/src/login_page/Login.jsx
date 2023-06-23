@@ -40,7 +40,7 @@ const Login=()=>{
             {/* <input type="string" placeholder="Enter username" className="userName"></input> */}
             <div className="playFriends">
             <h1><TextAnimation>Play With Friends</TextAnimation></h1>
-            <TextField id="outlined-basic" label="Name" variant="outlined" size="medium" />
+            <TextField id="outlined-basic" label="Name" variant="outlined" size="medium" style={{width: "200px"}}/>
             <div className="roomCodeField">
             {/* <TextField id="outlined-basic" label="Room Code" variant="standard" /> */}
             {/* <IconButton aria-label="delete" color="primary">
