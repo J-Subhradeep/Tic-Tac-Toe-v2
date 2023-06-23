@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     gap: 16px;
 }
 .playFriends{
-    width: 300px;
-    min-height: 150px;
+    ${'' /* width: 300px; */}
+    ${'' /* min-height: 150px; */}
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,11 +29,11 @@ export const GlobalStyle = createGlobalStyle`
     gap: 8px;
     border: 1px solid white;
     background-color: white;
-    border-radius: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 12px 0 rgba(0, 0, 0, 0.2),
