@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 16px;
 }
 .playFriends{
     width: 300px;
@@ -26,23 +26,19 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    border-top: 3px solid #ff00ff;
-    border-left: 3px solid #ff00ff;
-    border-bottom: 3px solid #ff4081;
-    border-right: 3px solid #ff4081;
+    gap: 8px;
+    border: 1px solid white;
+    background-color: white;
     border-radius: 3px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-.playFriends h1{
-    font-size: 18px;
-    color: aliceblue;
-    border-top: 2px solid aliceblue;
-    border-bottom: 2px solid aliceblue;
-    padding: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 12px 0 rgba(0, 0, 0, 0.2),
+    0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    
 }
 .userName{
     width: 250px;
@@ -54,97 +50,81 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     border-radius: 2px;
 }
-.roomCode{
-    width: 200px;
-    text-align: center;
-    border: none;
-    outline: none;
-    padding: 2px;
-    border-radius: 1px;
-}
-
-
-
 .roomGeneration {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 6px 20px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 4px;
+    border-radius: 30px;
     border: none;
     cursor: pointer;
-    background-color: #ff00ff;
+    /* background-color: #ff00ff; */
+    background-color: #08812c;
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
   }
   
   .roomGeneration:hover {
-    background-color:#9c049c;
+    /* background-color:#9c049c; */
+    background-color: #096b26;
   }
   
   .roomGeneration:active {
-    background-color: #6a026a;
+    /* background-color: #6a026a; */
+    background-color: #036521;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   .joinRoom {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 20px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 3px;
+    border-radius: 30px;
     border: none;
     cursor: pointer;
-    background-color: #ff4081;
+    /* background-color: #ff4081; */
+    background-color: #2196f3;
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
   }
   
   .joinRoom:hover {
-    background-color: #f50057;
+    /* background-color: #f50057; */
+    background-color: #1e88e5;
   }
   
   .joinRoom:active {
-    background-color: #c51162;
+    /* background-color: #c51162; */
+    background-color: #1976d2;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
-  .copyRoomCode {
-    display: inline-block;
-    padding: 3px 6px;
-    font-size: 5px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 2px;
-    border: none;
-    cursor: pointer;
-    background-color: #ff4081;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  }
+  
   
   .roomCodeField{
     display: flex;
     flex-direction: row;
     gap: 0;
+    justify-content: center;
+    align-items: center;
   }
-  .copyRoomCode:hover {
-    background-color: #f50057;
+  .buttonSection{
+    margin-top: 0px;
+    display: flex;
+    flex-direction:row ;
+    gap: 64px;
   }
   
-  .copyRoomCode:active {
-    background-color: #c51162;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+  
+  
+  
   
   
   `;
