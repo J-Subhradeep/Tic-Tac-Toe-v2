@@ -14,8 +14,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Intro/>} />
         <Route path="/Login" element={<Login/>} />
-        <Route path="/Login/game" element={<h1>Game Page</h1>} />
-        <Route path="/Login/game/result" element={<h1>Result Page</h1>} />
+        <Route path="/game" element={<h1>Game Page</h1>} />
+        <Route path="/result" element={<h1>Result Page</h1>} />
         <Route path='*' element={<div>Error</div>} />
       </Routes>
     </BrowserRouter>
