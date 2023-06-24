@@ -11,17 +11,6 @@ export const SmallBoxWrapper = styled.div`
     border-radius: .3125rem
 }
 
-/* .cross{
-    font-size: 80px;
-    color: white;
-    display: none
-}
-
-.circle{
-    font-size: 80px;
-    color: white;
-    display: none
-} */
 
 .circle{
     width: 90%;
@@ -32,4 +21,12 @@ export const SmallBoxWrapper = styled.div`
     width: 90%;
     display: none;
 }
+
+@media only screen and (max-width: 850px) {
+    .main{
+        width: 68px;
+        height: 68px;
+    }
+    
+  }
 `

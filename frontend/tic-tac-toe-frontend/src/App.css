@@ -34,7 +34,7 @@ body{
 }
 
 .player2{
-    height: 180px;
+    height: 150px;
     /* width: 20%; */
     /* background-color: aqua; */
     display: inline-block;
@@ -42,26 +42,30 @@ body{
 }
 
 .bottom{
-    height: 230px;
+    height: calc(100vh - 350px);
     width: 100%;
     grid-gap: 20px;
-    grid-template-columns: 180px 180px;
+    grid-template-columns: 150px 150px;
     justify-content: center;
-    align-items: end;
-    margin-bottom: 50px;
+    align-items: center;
+    /* margin-bottom: 50px; */
     display: none;
 }
 
 
 @media only screen and (max-width: 850px) {
     .upper{
-        grid-template-columns: 0% 100% 0%;
+        grid-template-columns: 100%;
         align-items: start;
-        height: 50vh;
+        height: 350px;
+    }
+
+    .player{
+        display: none;
     }
 
     .board{
-        height: 50vh;
+        height: 350px;
     }
 
     .bottom{

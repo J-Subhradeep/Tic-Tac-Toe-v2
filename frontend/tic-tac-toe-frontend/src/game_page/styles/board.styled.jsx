@@ -12,4 +12,12 @@ export const BoxWrapper = styled.div`
     grid-column-gap: 6px;
     grid-template-columns: auto auto auto;
 }
+
+@media only screen and (max-width: 850px) {
+    .game-box{
+        height: 220px;
+        width: 220px;
+    }
+    
+  }
 `
