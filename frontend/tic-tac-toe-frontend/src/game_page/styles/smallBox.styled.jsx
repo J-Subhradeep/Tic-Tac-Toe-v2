@@ -4,14 +4,14 @@ export const SmallBoxWrapper = styled.div`
 .main{
     width: 110px;
     height: 110px;
-    background-color: red;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: .3125rem
 }
 
-.cross{
+/* .cross{
     font-size: 80px;
     color: white;
     display: none
@@ -21,5 +21,15 @@ export const SmallBoxWrapper = styled.div`
     font-size: 80px;
     color: white;
     display: none
+} */
+
+.circle{
+    width: 90%;
+    display: none;
+}
+
+.cross{
+    width: 90%;
+    display: none;
 }
 `

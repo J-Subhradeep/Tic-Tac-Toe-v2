@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoxWrapper } from './Board.styled'
+import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 
 const n = 9;

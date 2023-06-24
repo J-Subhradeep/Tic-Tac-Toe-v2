@@ -1,6 +1,8 @@
 body{
   margin: 0;
-  padding: 0;  ;
+  padding: 0;
+  background: rgb(5,13,49);
+  background: linear-gradient(90deg, rgba(5,13,49,1) 0%, rgba(9,9,121,1) 35%, rgba(140,0,178,1) 100%);
 }
 
 .upper{
@@ -16,23 +18,27 @@ body{
 .player{
     height: 250px;
     /* width: 20%; */
-    background-color: aqua;
+    /* background-color: aqua; */
     display: inline-block;
+    border: 2px solid black;
 }
 
 
 .board{
     height: 90vh;
-    /* width: 40%; */
-    background-color: rgb(6, 167, 121);
-    display: inline-block;
+    /* background-color: rgb(6, 167, 121); */
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .player2{
     height: 180px;
     /* width: 20%; */
-    background-color: aqua;
+    /* background-color: aqua; */
     display: inline-block;
+    border: 2px solid black;
 }
 
 .bottom{
@@ -47,15 +53,15 @@ body{
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
     .upper{
         grid-template-columns: 0% 100% 0%;
         align-items: start;
-        height: 65vh;
+        height: 50vh;
     }
 
     .board{
-        height: 65vh;
+        height: 50vh;
     }
 
     .bottom{
