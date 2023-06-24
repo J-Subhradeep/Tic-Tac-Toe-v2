@@ -39,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     0 6px 12px 0 rgba(0, 0, 0, 0.2),
     0 8px 16px 0 rgba(0, 0, 0, 0.2);
     
+    
 }
 .userName{
     width: 250px;
