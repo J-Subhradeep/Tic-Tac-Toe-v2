@@ -6,8 +6,22 @@ function App() {
 
   return (
     <>
-      <div className="main">
-        <Board/>
+      <div className="upper">
+        <div className='player'>
+
+        </div>
+        <div className='board'>
+          <Board/>
+        </div>
+        <div className='player'>
+
+        </div>
+      </div>
+      <div className='bottom'>
+        <div className='player2'>
+        </div>
+        <div className='player2'>
+        </div>
       </div>
     </>
   )

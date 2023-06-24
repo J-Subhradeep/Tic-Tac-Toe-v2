@@ -8,12 +8,13 @@ export const SmallBoxWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: .3125rem
 }
 
 .cross{
     font-size: 80px;
     color: white;
-    ${'' /* display: none */}
+    display: none
 }
 
 .circle{
