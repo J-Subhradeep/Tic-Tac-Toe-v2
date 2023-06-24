@@ -13,7 +13,7 @@ export const BoxWrapper = styled.div`
     grid-template-columns: auto auto auto;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 500px) {
     .game-box{
         height: 220px;
         width: 220px;

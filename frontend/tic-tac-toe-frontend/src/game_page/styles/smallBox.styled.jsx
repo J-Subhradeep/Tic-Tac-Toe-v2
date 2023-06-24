@@ -22,7 +22,7 @@ export const SmallBoxWrapper = styled.div`
     display: none;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 500px) {
     .main{
         width: 68px;
         height: 68px;
