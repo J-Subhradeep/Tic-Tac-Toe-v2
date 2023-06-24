@@ -13,14 +13,14 @@ body{
     height: 100vh;
     width: 100%;
     grid-gap: 10px;
-    grid-template-columns: 20% 40% 20%;
+    grid-template-columns: auto auto auto;
     justify-content: center;
     align-items: center;
 }
 
 .player{
     height: 250px;
-    /* width: 20%; */
+    width: 250px;
     /* background-color: aqua; */
     display: inline-block;
     border: 2px solid black;
@@ -38,7 +38,7 @@ body{
 
 .player2{
     height: 150px;
-    /* width: 20%; */
+    width: 150px;
     /* background-color: aqua; */
     display: inline-block;
     border: 2px solid black;
@@ -56,7 +56,7 @@ body{
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 850px) {
     .upper{
         grid-template-columns: 100%;
         align-items: start;
@@ -74,6 +74,39 @@ body{
 
     .bottom{
         display: grid;
+    }
+    
+  }
+
+
+@media only screen and (max-height: 550px) {
+    .upper{
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        grid-gap: 20px;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        align-items: center;
+}
+
+.player{
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+    .board{
+        height: 90vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .bottom{
+        display: none;
     }
     
   }
