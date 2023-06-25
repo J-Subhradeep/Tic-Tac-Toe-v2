@@ -46,11 +46,7 @@ INSTALLED_APPS = [
     "corsheaders",
 
 ]
-CORS_ALLOWED_ORIGINS = [
-
-    "http://localhost:3000",
-
-]
+CORS_ALLOW_ALL_ORIGINS = True
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     # 'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -151,7 +147,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [os.environ.get("REDIS_URL", 'redis://redis:6379')],
+            "hosts": [("154.41.251.76","6379")]
         },
     },
 }
