@@ -1,8 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-
-export const GlobalStyle = createGlobalStyle`
 .whole{
-    height: 58vh;
+    height: 100vh;
     background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
     /* background-image: linear-gradient(red,yellow); */
     margin: 0;
@@ -20,8 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     gap: 16px;
 }
 .playFriends{
-    ${'' /* width: 300px; */}
-    ${'' /* min-height: 150px; */}
+    width: 300px;
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,16 +26,15 @@ export const GlobalStyle = createGlobalStyle`
     gap: 8px;
     border: 1px solid white;
     background-color: white;
-    border-radius: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 0px;
-    padding-bottom: 20px;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 12px 0 rgba(0, 0, 0, 0.2),
     0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    
     
 }
 .userName{
@@ -91,7 +87,7 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
     /* background-color: #ff4081; */
-    background-color: #2196f3;
+    background-color: #032bcb;
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
@@ -122,37 +118,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction:row ;
     gap: 64px;
   }
-  .devSection{
-    width: 100vw;
-    height: 42vh;
-    background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  .developers{
-    list-style: none;
-    margin: 0;
-    margin-right: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    float: right;
-    padding: 3px;
-    ${'' /* justify-content: space-evenly; */}
-  }
-  img{
-    border-radius: 50%;
-  }
-  .eachElement{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 40px;
-    gap: 8px;
-  }
-  .eachElement p{
-    width: 150px;
-    color: #fff;
-  }
   
-  `;
-  // BsLinkedin
+  
+  
+  
