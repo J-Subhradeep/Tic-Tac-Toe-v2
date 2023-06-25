@@ -150,8 +150,8 @@ const Login = () => {
                       </li>
                       <li>
                       <div className="eachElement">
-                        <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">Safiul Haque</p>
+                        <img src="../src/assets/images/login_page/safiul.jpg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">MD Safiul Haque</p>
                         <A href="#"><RiLinkedinFill /></A>
                       </div> 
                       </li>             

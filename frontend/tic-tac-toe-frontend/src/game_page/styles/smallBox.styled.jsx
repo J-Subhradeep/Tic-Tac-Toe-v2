@@ -30,7 +30,7 @@ export const SmallBoxWrapper = styled.div`
     
   }
 
-@media only screen and (max-height: 450px) {
+@media only screen and (max-height: 550px) {
     .main{
         width: 45px;
         height: 45px;
