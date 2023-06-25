@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 .whole{
-    height: 100vh;
+    height: 58vh;
     background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
     /* background-image: linear-gradient(red,yellow); */
     margin: 0;
@@ -122,10 +122,37 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction:row ;
     gap: 64px;
   }
-  
-  
-  
-  
-  
+  .devSection{
+    width: 100vw;
+    height: 42vh;
+    background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .developers{
+    list-style: none;
+    margin: 0;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    float: right;
+    padding: 3px;
+    ${'' /* justify-content: space-evenly; */}
+  }
+  img{
+    border-radius: 50%;
+  }
+  .eachElement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+    gap: 8px;
+  }
+  .eachElement p{
+    width: 150px;
+    color: #fff;
+  }
   
   `;
+  // BsLinkedin

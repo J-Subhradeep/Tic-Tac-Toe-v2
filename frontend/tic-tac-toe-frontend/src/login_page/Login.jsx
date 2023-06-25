@@ -1,7 +1,11 @@
 import { useState } from "react";
 // import IconButton from '@mui/material/IconButton';
 // import DeleteIcon from '@mui/icons-material/Delete';
+// import subhradeep from '../assets/images/login_page/'
+import { RiLinkedinFill } from 'react-icons/ri'
 import OutlinedInput from '@mui/material/OutlinedInput';
+import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
+import CallRoundedIcon from '@mui/icons-material/CallRounded';
 import InputLabel from '@mui/material/InputLabel';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 // import FilledInput from '@mui/material/FilledInput';
@@ -22,7 +26,8 @@ import { Button } from "@mui/material";
 const colorAnimation = keyframes`
   0% { color: #08812c; }
   50% { color: #ff4081; }
-  100% { color: #6a026a; }
+  75% { color: #6a026a; }
+  100% { color: #08812c;}
 `;
 
 const TextAnimation = styled.h1`
@@ -33,6 +38,23 @@ const TextAnimation = styled.h1`
   animation-name: ${colorAnimation};
   animation-duration: 3s;
   animation-iteration-count: infinite;
+`;
+const A = styled.a`
+  font-size: 25px;
+  border-radius: 3px;
+  padding: 1px;
+  color: #0A66C2;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 12px 0 rgba(0, 0, 0, 0.2),
+    0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  &:hover{
+    background-color: #0A66C2;
+    color: #fff;
+  }
 `;
 
 const Login = () => {
@@ -93,7 +115,48 @@ const Login = () => {
 
         </div>
       </div>
-
+      <div className="devSection">
+      {/* <h2>Developed By:</h2> */}
+      <ul className="developers">
+                  {/* <h2>Developed By:</h2> */}
+                  <li><p style={{ color: "#fff",fontSize: "18px" }}>Developed By:</p></li>
+                      <li>
+                      <div className="eachElement">
+                        <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">Subhradeep Pal</p>
+                        <A href="#"><RiLinkedinFill /></A>
+                      </div>
+                      </li>
+                      <li>
+                      <div className="eachElement">
+                        <img src="../src/assets/images/login_page/deblina.jpeg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">Deblina Mandal</p>
+                        <A href="#"><RiLinkedinFill /></A>
+                      </div>
+                      </li>
+                      <li>
+                      <div className="eachElement">
+                        <img src="../src/assets/images/login_page/kashmira.jpeg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">Kashmira Jha</p>
+                        <A href="#"><RiLinkedinFill /></A>
+                      </div>
+                      </li>
+                      <li>
+                      <div className="eachElement">
+                        <img src="../src/assets/images/login_page/pratyush.jpg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">Pratyush Banerjee</p>
+                        <A href="#"><RiLinkedinFill /></A>
+                      </div>
+                      </li>
+                      <li>
+                      <div className="eachElement">
+                        <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
+                        <p className="nameDev">Safiul Haque</p>
+                        <A href="#"><RiLinkedinFill /></A>
+                      </div> 
+                      </li>             
+      </ul>
+      </div>           
     </>
   )
 }
