@@ -35,8 +35,8 @@ const SmallBox = (props) => {
         <div id={props.id} className="main" onClick={handleClick}>
           {/* <CloseIcon className='cross'/>
           <RadioButtonUncheckedIcon className='circle'/> */}
-          <motion.img animate={{ scale: clicked ? 3 : 0 }}
-            initial={{ scale: 0 }} alt='img' className='circle' src={img1}></motion.img>
+          <motion.img animate={{ scale: clicked ? 3 : 0 }} 
+            initial={{ scale: 0 }} alt='img'  className='circle' src={img1}></motion.img>
           <motion.img
             animate={{ scale: clicked ? 3 : 0 }}
             initial={{ scale: 0 }}

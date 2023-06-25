@@ -1,7 +1,7 @@
 
 
 // import Board from './game_page/board/Board'
-import Game from './game_page/Game'
+
 
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
