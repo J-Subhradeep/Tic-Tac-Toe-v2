@@ -1,3 +1,4 @@
+
 import Board from './board/Board'
 
 import React from 'react'
@@ -28,6 +29,7 @@ const Game = () => {
             </GameWrapper>
         </>
     )
+
 }
 
 export default Game
