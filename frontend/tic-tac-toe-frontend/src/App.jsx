@@ -1,4 +1,9 @@
 
+
+// import Board from './game_page/board/Board'
+import Game from './game_page/Game'
+
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Intro from './intro/intro';
 import Login from "./login_page/Login"
@@ -7,11 +12,13 @@ import "./App.css"
 import Game from './game_page/Game';
 import Results from './results_page/Results';
 
+
 function App() {
 
 
   return (
     <>
+
      <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Intro/>} />
@@ -22,6 +29,7 @@ function App() {
       </Routes>
     </BrowserRouter>
       {/* <Login/> */}
+
     </>
   )
 }
