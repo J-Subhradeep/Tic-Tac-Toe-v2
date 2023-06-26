@@ -66,7 +66,7 @@ function Winner() {
     function Run() {
     
       var dt = 1;
-      if (lastRun != 0) { dt = Math.min(50, (performance.now() - lastRun)); }
+      if (lastRun !== 0) { dt = Math.min(50, (performance.now() - lastRun)); }
       lastRun = performance.now();
     
       //ctx.clearRect(0, 0, cwidth, cheight);
