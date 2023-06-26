@@ -13,12 +13,12 @@ export const SmallBoxWrapper = styled.div`
 
 
 .circle{
-    width: 30%;
+    width: 15%;
     display: none;
 }
 
 .cross{
-    width: 20%;
+    width: 10%;
     display: none;
 }
 

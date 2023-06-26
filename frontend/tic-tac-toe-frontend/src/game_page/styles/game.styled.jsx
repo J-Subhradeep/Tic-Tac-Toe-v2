@@ -74,6 +74,7 @@ body{
 
     .bottom{
         display: grid;
+        grid-template-columns: auto auto;
     }
     
   }
