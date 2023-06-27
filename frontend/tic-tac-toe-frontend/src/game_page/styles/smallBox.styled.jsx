@@ -13,12 +13,12 @@ export const SmallBoxWrapper = styled.div`
 
 
 .circle{
-    width: 30%;
+    width: 15%;
     display: none;
 }
 
 .cross{
-    width: 20%;
+    width: 10%;
     display: none;
 }
 
@@ -30,7 +30,7 @@ export const SmallBoxWrapper = styled.div`
     
   }
 
-@media only screen and (max-height: 450px) {
+@media only screen and (max-height: 550px) {
     .main{
         width: 45px;
         height: 45px;
