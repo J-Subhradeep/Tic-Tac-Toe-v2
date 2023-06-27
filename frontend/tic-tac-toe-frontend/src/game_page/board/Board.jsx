@@ -7,6 +7,7 @@ const Board = () => {
   return (
     <>
     <BoxWrapper>
+    <div className='box'>
           <div className='game-box'>
             <SmallBox id='0'/>
             <SmallBox id='1'/>
@@ -17,6 +18,7 @@ const Board = () => {
             <SmallBox id='6'/>
             <SmallBox id='7'/>
             <SmallBox id='8'/>
+          </div>
           </div>
     </BoxWrapper>
     </>
