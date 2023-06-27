@@ -18,7 +18,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import styled, { keyframes } from 'styled-components';
-import copy from "copy-to-clipboard";
+// import copy from "copy-to-clipboard";
 import { GlobalStyle } from "./styles/login.styled";
 import { Button } from "@mui/material";
 // import './styles/Login.css';
@@ -92,7 +92,7 @@ const Login = () => {
                         onClick={copyToClipboard}
                         color="primary"
                         edge="end"
-                      ><ContentCopyIcon />
+                      ><ContentCopyIcon/>
                       </IconButton>
                     </InputAdornment>
                   }
@@ -104,7 +104,7 @@ const Login = () => {
             <div className="buttonSection">
               <Tooltip title="Generate Room Code">
 
-              <Button variant="contained" style={{ borderRadius: "20px" }}><AutoModeIcon /></Button>
+              <Button variant="contained" style={{ borderRadius: "20px" }}><AutoModeIcon/></Button>
               </Tooltip>
               <Tooltip title="Join to Play">
               <Button variant="contained" style={{ borderRadius: "20px" }}><SportsEsportsIcon /></Button>
