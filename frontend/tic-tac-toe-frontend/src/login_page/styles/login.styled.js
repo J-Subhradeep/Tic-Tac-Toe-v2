@@ -152,6 +152,7 @@ export const GlobalStyle = createGlobalStyle`
     ${'' /* padding-right: 10px; */}
   }
   .developers{
+    ${'' /* position: fixed; */}
     list-style: none;
     margin: 0;
     margin-right: 20px;
@@ -178,8 +179,6 @@ export const GlobalStyle = createGlobalStyle`
   .developers li p{
     width: 125px;
     color: #fff;
-    text-align: center;
-    ${'' /* text-align: center; */}
   }
   ${props =>
     props.responsive &&

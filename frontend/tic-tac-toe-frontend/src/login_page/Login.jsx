@@ -17,7 +17,7 @@ import Tooltip from '@mui/material/Tooltip';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 // import copy from "copy-to-clipboard";
 import { GlobalStyle } from "./styles/login.styled";
 import { Button } from "@mui/material";
@@ -55,6 +55,14 @@ const A = styled.a`
     background-color: #0A66C2;
     color: #fff;
   }
+  ${props =>
+    props.responsive &&
+    css`
+      @media (max-width: 800px) {
+        background-color: #0A66C2;
+        color: #fff;
+      }
+      `}
 `;
 
 const Login = () => {
@@ -122,35 +130,35 @@ const Login = () => {
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
                         <p className="nameDev">Subhradeep Pal</p>
-                        <A href="#"><RiLinkedinFill /></A>
+                        <A responsive href="#"><RiLinkedinFill /></A>
                       </div>
                       </li>
                       <li>
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/deblina.jpeg" style={{ width: "40px" }}></img>
                         <p className="nameDev">Deblina Mandal</p>
-                        <A href="#"><RiLinkedinFill /></A>
+                        <A responsive href="#"><RiLinkedinFill /></A>
                       </div>
                       </li>
                       <li>
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/kashmira.jpeg" style={{ width: "40px" }}></img>
                         <p className="nameDev">Kashmira Jha</p>
-                        <A href="#"><RiLinkedinFill /></A>
+                        <A  responsive href="#"><RiLinkedinFill /></A>
                       </div>
                       </li>
                       <li>
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/pratyush.jpg" style={{ width: "40px" }}></img>
                         <p className="nameDev">Pratyush Banerjee</p>
-                        <A href="#"><RiLinkedinFill /></A>
+                        <A responsive href="#"><RiLinkedinFill /></A>
                       </div>
                       </li>
                       <li>
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/safiul.jpg" style={{ width: "40px" }}></img>
                         <p className="nameDev">MD Safiul Haque</p>
-                        <A href="#"><RiLinkedinFill /></A>
+                        <A responsive href="#"><RiLinkedinFill /></A>
                       </div> 
                       </li>             
       </ul>
