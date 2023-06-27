@@ -3,13 +3,28 @@ import Board from './board/Board'
 
 import React from 'react'
 import { GameWrapper } from './styles/game.styled'
-
+import ChatSystem from './chat_system/ChatSystem'
 
 const Game = () => {
     return (
         <>
             <GameWrapper>
-                <div className="upper">
+
+                <div class="wrapper">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="banner">
+                    <div className="upper">
                     <div className='player'>
 
                     </div>
@@ -21,12 +36,15 @@ const Game = () => {
                     </div>
                 </div>
                 <div className='bottom'>
+                
                     <div className='player2'>
                     </div>
                     <div className='player2'>
                     </div>
                 </div>
+                </div>
             </GameWrapper>
+            <ChatSystem/>
         </>
     )
 
