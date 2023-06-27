@@ -2,15 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 .whole{
-    height: 58vh;
+    height: 100vh;
+    width: 100vw;
     background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
     /* background-image: linear-gradient(red,yellow); */
     margin: 0;
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap:20px;
 }
 .subWhole{
     display: flex;
@@ -124,9 +127,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   .devSection{
     width: 100vw;
-    height: 42vh;
-    background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
+    ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    ${'' /* align-items: center; */}
+    justify-content: right;
+    ${'' /* padding-right: 10px; */}
   }
   .developers{
     list-style: none;
@@ -135,7 +142,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     gap: 4px;
-    float: right;
     padding: 3px;
     ${'' /* justify-content: space-evenly; */}
   }
@@ -148,10 +154,16 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     height: 40px;
     gap: 8px;
+    ${'' /* text-align: center; */}
   }
-  .eachElement p{
-    width: 150px;
+  .developers li .eachElement p{
+    text-align: left;
+  } 
+  .developers li p{
+    width: 125px;
     color: #fff;
+    text-align: center;
+    ${'' /* text-align: center; */}
   }
   
   `;

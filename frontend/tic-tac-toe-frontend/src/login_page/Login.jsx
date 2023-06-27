@@ -114,8 +114,7 @@ const Login = () => {
           </div>
 
         </div>
-      </div>
-      <div className="devSection">
+        <div className="devSection">
       {/* <h2>Developed By:</h2> */}
       <ul className="developers">
                   {/* <h2>Developed By:</h2> */}
@@ -156,7 +155,9 @@ const Login = () => {
                       </div> 
                       </li>             
       </ul>
-      </div>           
+      </div>
+      </div>
+                 
     </>
   )
 }
