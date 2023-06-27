@@ -70,7 +70,7 @@ const Login = () => {
   }
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle responsive />
       <div className="whole">
         <div className="subWhole">
           <div className="playFriends">
@@ -112,13 +112,12 @@ const Login = () => {
 
             </div>
           </div>
-
-        </div>
-        <div className="devSection">
+          </div>
+       <div className="devSection">
       {/* <h2>Developed By:</h2> */}
       <ul className="developers">
                   {/* <h2>Developed By:</h2> */}
-                  <li><p style={{ color: "#fff",fontSize: "18px" }}>Developed By:</p></li>
+                  <li style={{display:"flex",justifyContent:"center",alignItems:"center"}}><p style={{ color: "#fff",fontSize: "18px" }}>Developed By</p></li>
                       <li>
                       <div className="eachElement">
                         <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
@@ -157,6 +156,8 @@ const Login = () => {
       </ul>
       </div>
       </div>
+       
+     
                  
     </>
   )

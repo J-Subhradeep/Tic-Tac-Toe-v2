@@ -1,30 +1,43 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle , css } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+
 .whole{
-    height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    ${'' /* width: 100vw; */}
     /* background-image: linear-gradient(red,yellow); */
-    margin: 0;
+    ${'' /* margin: 0; */}
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    ${'' /* align-content: center; */}
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:20px;
 }
 .subWhole{
+  position: relative;
+  top: 100px;
+    ${'' /* padding-top: 100px; */}
+    ${'' /* margin-top: 200px; */}
+    ${'' /* margin-left:40vw; */}
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+     justify-content: center; 
     gap: 16px;
+    ${'' /* margin-top: 25vh; */}
 }
 .playFriends{
-    ${'' /* width: 300px; */}
+    min-width: 15vw;
     ${'' /* min-height: 150px; */}
+    ${'' /* position: relative; */}
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,6 +139,9 @@ export const GlobalStyle = createGlobalStyle`
     gap: 64px;
   }
   .devSection{
+    position: relative;
+    top: 50px;
+    ${'' /* margin-top: 25vh; */}
     width: 100vw;
     ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -138,7 +154,7 @@ export const GlobalStyle = createGlobalStyle`
   .developers{
     list-style: none;
     margin: 0;
-    margin-right: 5px;
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -165,6 +181,31 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     ${'' /* text-align: center; */}
   }
+  ${props =>
+    props.responsive &&
+    css`
+      @media (max-width: 800px) {
+        .subWhole{
+          position: relative;
+          top:50px
+        }
+        .devSection{
+          justify-content: center;
+        }
+        @media  (max-width:500px){
+          .subWhole{
+          position: relative;
+          top:20px
+        }
+          .devSection{
+            top: 20px;
+            position: relative;
+          justify-content: center;
+        }
+        }
+          
+        }
+    `}
   
   `;
   // BsLinkedin
