@@ -4,21 +4,21 @@ import { useState } from "react";
 // import subhradeep from '../assets/images/login_page/'
 import { RiLinkedinFill } from 'react-icons/ri'
 import OutlinedInput from '@mui/material/OutlinedInput';
-import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
-import CallRoundedIcon from '@mui/icons-material/CallRounded';
+// import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
+// import CallRoundedIcon from '@mui/icons-material/CallRounded';
 import InputLabel from '@mui/material/InputLabel';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+// import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 // import FilledInput from '@mui/material/FilledInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
-import AutoModeIcon from '@mui/icons-material/AutoMode';
+// import AutoModeIcon from '@mui/icons-material/AutoMode';
 import Tooltip from '@mui/material/Tooltip';
 
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+// import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import styled, { keyframes } from 'styled-components';
-import copy from "copy-to-clipboard";
+// import copy from "copy-to-clipboard";
 import { GlobalStyle } from "./styles/login.styled";
 import { Button } from "@mui/material";
 // import './styles/Login.css';
@@ -92,7 +92,7 @@ const Login = () => {
                         onClick={copyToClipboard}
                         color="primary"
                         edge="end"
-                      ><ContentCopyIcon />
+                      >
                       </IconButton>
                     </InputAdornment>
                   }
@@ -104,10 +104,10 @@ const Login = () => {
             <div className="buttonSection">
               <Tooltip title="Generate Room Code">
 
-              <Button variant="contained" style={{ borderRadius: "20px" }}><AutoModeIcon /></Button>
+              <Button variant="contained" style={{ borderRadius: "20px" }}></Button>
               </Tooltip>
               <Tooltip title="Join to Play">
-              <Button variant="contained" style={{ borderRadius: "20px" }}><SportsEsportsIcon /></Button>
+              <Button variant="contained" style={{ borderRadius: "20px" }}></Button>
               </Tooltip>
 
             </div>
