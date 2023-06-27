@@ -168,7 +168,7 @@ canvas {
 
 @keyframes animate-emoji{
     0% {
-      transform: translateY(-700px);
+      transform: translateY(-800px);
         opacity: 1
     }
     70%{
