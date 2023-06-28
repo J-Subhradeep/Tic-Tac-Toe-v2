@@ -18,8 +18,8 @@ from django.urls import path
 from realtime import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.JoinView.as_view()),
-    path('unique/', views.GenerateRoom.as_view()),
-    path('secondclient/', views.SecondClientView.as_view()),
-    path('groupdelete/', views.GroupDeleteView.as_view()),
+    path('api/', views.JoinView.as_view()),
+    path('api/unique/', views.GenerateRoom.as_view()),
+    path('api/secondclient/', views.SecondClientView.as_view()),
+    path('api/groupdelete/', views.GroupDeleteView.as_view()),
 ]
