@@ -1,4 +1,4 @@
-import { createGlobalStyle , css } from 'styled-components';
+import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -9,34 +9,34 @@ export const GlobalStyle = createGlobalStyle`
   display: flex;
   justify-content: center;
   align-items: center;
-    ${'' /* width: 100vw; */}
+    ${"" /* width: 100vw; */}
     /* background-image: linear-gradient(red,yellow); */
-    ${'' /* margin: 0; */}
+    ${"" /* margin: 0; */}
     padding: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    ${'' /* align-content: center; */}
+    ${"" /* align-content: center; */}
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .subWhole{
-  position: relative;
-  top: 100px;
-    ${'' /* padding-top: 100px; */}
-    ${'' /* margin-top: 200px; */}
-    ${'' /* margin-left:40vw; */}
+  position: fixed;
+
+    ${"" /* padding-top: 100px; */}
+    ${"" /* margin-top: 200px; */}
+    ${"" /* margin-left:40vw; */}
     display: flex;
     flex-direction: column;
     align-items: center; 
      justify-content: center; 
     gap: 16px;
-    ${'' /* margin-top: 25vh; */}
+    ${"" /* margin-top: 25vh; */}
 }
 .playFriends{
-    min-width: 15vw;
-    ${'' /* min-height: 150px; */}
-    ${'' /* position: relative; */}
+    /* min-width: 15vw; */
+    ${"" /* min-height: 150px; */}
+    ${"" /* position: relative; */}
     position: relative;
     display: flex;
     flex-direction: column;
@@ -139,20 +139,22 @@ export const GlobalStyle = createGlobalStyle`
     gap: 64px;
   }
   .devSection{
-    position: relative;
-    top: 50px;
-    ${'' /* margin-top: 25vh; */}
+    position: fixed;
+   bottom: 0;
+    ${"" /* margin-top: 25vh; */}
     width: 100vw;
-    ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
+    ${
+      "" /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */
+    }
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     flex-direction: row;
-    ${'' /* align-items: center; */}
+    ${"" /* align-items: center; */}
     justify-content: right;
-    ${'' /* padding-right: 10px; */}
+    ${"" /* padding-right: 10px; */}
   }
   .developers{
-    ${'' /* position: fixed; */}
+    ${"" /* position: fixed; */}
     list-style: none;
     margin: 0;
     margin-right: 20px;
@@ -160,7 +162,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     gap: 4px;
     padding: 3px;
-    ${'' /* justify-content: space-evenly; */}
+    ${"" /* justify-content: space-evenly; */}
   }
   img{
     border-radius: 50%;
@@ -171,7 +173,7 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     height: 40px;
     gap: 8px;
-    ${'' /* text-align: center; */}
+    ${"" /* text-align: center; */}
   }
   .developers li .eachElement p{
     text-align: left;
@@ -180,31 +182,35 @@ export const GlobalStyle = createGlobalStyle`
     width: 125px;
     color: #fff;
   }
-  ${props =>
+  ${(props) =>
     props.responsive &&
     css`
       @media (max-width: 800px) {
-        .subWhole{
+        .subWhole {
           position: relative;
-          top:50px
+          /* bottom:100px; */
+          /* bottom:0 */
         }
-        .devSection{
-          justify-content: center;
+        .devSection {
+          left: 12px;
+
+          /* justify-content: center; */
+          position: fixed;
+          bottom: 0;
         }
-        @media  (max-width:500px){
-          .subWhole{
-          position: relative;
-          top:20px
-        }
-          .devSection{
-            top: 20px;
+        @media (max-width: 500px) {
+          .subWhole {
             position: relative;
-          justify-content: center;
+            /* top:20px */
+          }
+          .devSection {
+            /* top: 20px; */
+            /* position: fixed; */
+            justify-content: center;
+          }
         }
-        }
-          
-        }
+      }
     `}
   
   `;
-  // BsLinkedin
+// BsLinkedin
