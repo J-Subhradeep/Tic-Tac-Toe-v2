@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Winner from './Winner'
 const Results = () => {
   return (
-    <div>Results</div>
+    <Winner />
   )
 }
 
