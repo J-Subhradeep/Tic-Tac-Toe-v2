@@ -8,7 +8,7 @@ const Intro=()=>{
                 <div className="wrapper">
                     <div className="heading">
                         <h1>
-                            Real tic-tac-toe
+                            Real <br/> tic-tac-toe
                         </h1>
                     </div>
                     <div className="credits">

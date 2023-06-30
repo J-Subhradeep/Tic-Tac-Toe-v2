@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CarouselWrapper } from './styles/carousel.styled';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -9,29 +10,37 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Link from '@mui/material/Link';
+// import Link from '../../src/assets/images/landing-page/';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+    Name: 'Subhradeep Paul',
+    Linkedin: 'https://www.linkedin.com/in/subhradeep-pal/',
+    imgPath: '../../src/assets/images/landing-page/subhradeep.jpeg',
   },
   {
-    label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
+    Name: 'Kashmira Jha',
+    Linkedin: '',
+    imgPath: '../../src/assets/images/landing-page/kashmira.jpeg',
   },
   {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
+    Name: 'Deblina Mandal',
+    Linkedin: '',
+    imgPath: '../../src/assets/images/landing-page/deblina.jpeg',
   },
   {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
+    Name: 'Pryattush Banerjee',
+    Linkedin: '',
+    imgPath: '../../src/assets/images/landing-page/pratyush.jpg',
+  },
+  {
+    Name: 'MD Safiul Haque',
+    Linkedin: 'https://www.linkedin.com/in/md-safiul-haque-32a913242/',
+    imgPath: '../../src/assets/images/landing-page/safiul.jpg',
   },
 ];
 
@@ -53,75 +62,93 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 255,
-                  display: 'block',
-                  maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
-                }}
-                src={step.imgPath}
-                alt={step.label}
-              />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
+      <Box sx={{ maxWidth: 400, flexGrow: 1,}}>
+        <Paper
+          square
+          elevation={0}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: 50,
+            pl: 2,
+            pr: 2,
+            bgcolor: 'rgb(100, 149, 237, 0.3)',
+            borderRadius: '10px 10px 0px 0px'
+            // opacity: 0.6
+          }}
+        >
+          <Typography sx={{
+            fontWeight: 'bold',
+            color: 'white'
+          }}
           >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
+          {images[activeStep].Name}
+          </Typography>
+          <Link className='linkedin' href={images[activeStep].Linkedin} target="_blank" >
+            <LinkedInIcon fontSize='large' sx={{ color: 'white' }}/>
+          </Link>
+        </Paper>
+        <AutoPlaySwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          onChangeIndex={handleStepChange}
+          enableMouseEvents
+        >
+          {images.map((step, index) => (
+            <div key={step.Name}>
+              {Math.abs(activeStep - index) <= 2 ? (
+                <Box
+                  component="img"
+                  sx={{
+                    height: 255,
+                    display: 'block',
+                    maxWidth: 400,
+                    overflow: 'hidden',
+                    width: '100%',
+                  }}
+                  src={step.imgPath}
+                  alt={step.Name}
+                />
+              ) : null}
+            </div>
+          ))}
+        </AutoPlaySwipeableViews>
+        <MobileStepper
+          steps={maxSteps}
+          position="static"
+          activeStep={activeStep}
+          sx={{
+            bgcolor: 'rgb(100, 149, 237, 0.3)',
+            borderRadius: '0px 0px 10px 10px'
+          }}
+          nextButton={
+            <Button
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+              sx={{color: 'white'}}
+            >
+              Next
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color: 'white'}}>
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
+      </Box>
   );
 }
 
