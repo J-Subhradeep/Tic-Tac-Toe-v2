@@ -1,11 +1,13 @@
-
+import { IntroWrapper } from "./styles/intro.styled";
 
 const Intro=()=>{
     return(
         <>
-            <h1>
-                Intro Page
-            </h1>
+            <IntroWrapper>
+                <h1>
+                    Intro Page
+                </h1>
+            </IntroWrapper>
         </>
     );
 }
