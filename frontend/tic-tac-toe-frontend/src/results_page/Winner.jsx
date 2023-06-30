@@ -1,10 +1,18 @@
-
-import './styles/style.css';
-
-import { useEffect } from 'react';
+import { WinnerWrapper } from "./styles/winner.styled";
+import { IconButton } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import { Howl } from "howler";
+import { useEffect } from "react";
+import music from "../assets/audios/win.wav";
 
 function Winner() {
   useEffect(() => {
+    const sound = new Howl({
+      src: [music],
+      loop: true,
+    });
+    sound.play();
+
     var c = document.getElementById("Canvas");
     var ctx = c.getContext("2d");
     
@@ -123,18 +131,28 @@ function Winner() {
   }, [])
   
   return (
-    <div className="app">
-      <canvas id="Canvas"></canvas>  
-      <header className="app-header-win">
-        <img src="./trophy.png" className="logo" alt="trophy" />
-        <p className="result">
-          Congratulations!
-        </p>
-        <p className="win">
-          Winner
-        </p>
-      </header>
-    </div>
+    <WinnerWrapper>
+      <div className="app">
+        <canvas id="Canvas"></canvas>  
+        <header className="app-header-win">
+          <img src="./trophy.png" className="logo" alt="trophy" />
+          <p className="result">
+            Congratulations!
+          </p>
+          <p className="win">
+            Winner
+          </p>
+          <IconButton
+            aria-label="back-to-home"
+            color="primary"
+            size="large"
+            href=""
+          >
+            <HomeIcon fontSize="inherit" />
+          </IconButton>
+        </header>
+      </div>
+    </WinnerWrapper>
   );
 }
 
