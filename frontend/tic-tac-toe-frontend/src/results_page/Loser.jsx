@@ -19,8 +19,8 @@ function Loser() {
     <LoserWrapper>
       <div className="app">
         {/* <canvas className="canvas-12"></canvas> */}
-        <div class="canvas-12"></div>
-        <div class="wrapper">
+        <div className="canvas-12"></div>
+        <div className="wrapper">
           <span>&#128531;</span>
           <span>&#128532;</span>
           <span>&#128534;</span>
