@@ -1,11 +1,24 @@
-
+import { IntroWrapper } from "./styles/intro.styled";
+import SwipeableTextMobileStepper from "./carousel";
 
 const Intro=()=>{
     return(
         <>
-            <h1>
-                Intro Page
-            </h1>
+            <IntroWrapper>
+                <div className="wrapper">
+                    <div className="heading">
+                        <h1>
+                            Real tic-tac-toe
+                        </h1>
+                    </div>
+                    <div className="credits">
+                        <h2>Developed By</h2>
+                        <div className="carousel">
+                            <SwipeableTextMobileStepper/>
+                        </div>
+                    </div>
+                </div>
+            </IntroWrapper>
         </>
     );
 }
