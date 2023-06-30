@@ -11,10 +11,10 @@ export const IntroWrapper = styled.div`
 }
 
 .heading{
-    width: 40%;
+    width: 50%;
     height: 100vh;
     display: flex;
-    justify-content: end;
+    justify-content: center;
 }
 
 .heading h1{
@@ -24,13 +24,30 @@ export const IntroWrapper = styled.div`
     margin-top: 200px;
 }
 .credits{
-    width: 60%;
-    display: flex;
+    width: 50%;
+    display: grid;
     justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    grid-column-gap: 80px;
+}
+
+.carousel{
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
+.carousel h2{
+    color: white;
+}
+
+.img{
+    width: 220px;
+    height: 220px;
+    opacity: 0.4;
+}
 
 
 `

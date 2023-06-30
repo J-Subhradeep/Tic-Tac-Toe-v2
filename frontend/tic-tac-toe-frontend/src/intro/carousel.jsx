@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { CarouselWrapper } from './styles/carousel.styled';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -12,7 +11,6 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from '@mui/material/Link';
-// import Link from '../../src/assets/images/landing-page/';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -62,7 +60,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-      <Box sx={{ maxWidth: 400, flexGrow: 1,}}>
+      <Box sx={{ maxWidth: 350, flexGrow: 1, }}>
         <Paper
           square
           elevation={0}
