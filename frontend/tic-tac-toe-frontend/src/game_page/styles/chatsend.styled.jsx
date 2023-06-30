@@ -1,0 +1,73 @@
+import styled from "styled-components";
+export const ChatSendWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 3;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding-bottom: 0.3rem;
+
+  .send {
+    border-radius: 100%;
+    height: 3rem;
+  }
+
+ 
+  .lower-strip {
+    background-color: #53525234;
+    /* width:100%; */
+    border-radius: 2rem;
+    display: flex;
+    align-content: center;
+    gap: 0.2rem;
+    
+
+    .btn-container {
+      display: flex;
+      align-items: center;
+      color: #000;
+      padding-bottom: 0.2rem;
+
+      /* gap:1rem; */
+      .emoji {
+        position: relative;
+        padding-left: 0.5rem;
+        .smile {
+          font-size: 1.5rem;
+          color: black;
+          cursor: pointer;
+        }
+      }
+    }
+    .form-container{
+       
+        margin-top: 0.5rem;
+        .msg{    
+            width:10.5rem;
+            height:70%;
+            background-color:transparent;
+            color:black;
+            border:none;
+            &::selection{
+                background-color:#9186f3;
+                overflow:hidden;
+            }
+            &:focus{
+                outline:none;
+                overflow:hidden;
+            }
+        }
+
+        .button{
+          padding:0.3rem;
+          border-radius:2rem;
+          display:flex;
+          justify-content:center;
+          background-color:#9a86f3;
+          align-items: center;
+          border:none;
+        }
+    }
+  }
+
+  
+`;

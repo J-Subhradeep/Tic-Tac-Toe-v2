@@ -9,7 +9,7 @@ const Game = () => {
     return (
         <>
             <GameWrapper>
-
+            <ChatSystem/>
                 <div class="wrapper">
                     <span></span>
                     <span></span>
@@ -44,7 +44,7 @@ const Game = () => {
                 </div>
                 </div>
             </GameWrapper>
-            <ChatSystem/>
+           
         </>
     )
 
