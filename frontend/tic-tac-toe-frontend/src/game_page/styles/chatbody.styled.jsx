@@ -24,7 +24,7 @@ padding-top: 0.3rem;
         font-family:cursive;
         border-radius:1.5rem;
         color:black;
-        background-color: #e2dcdc;
+        background-color:  #e6b7f5
           
       }
       
