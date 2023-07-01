@@ -21,9 +21,11 @@ const ChatSend = () => {
               className="msg"
               required
             />
+
             <button type="submit" className="btn button">
               <SendOutlinedIcon />
             </button>
+            
           </form>
         </div>
       </ChatSendWrapper>

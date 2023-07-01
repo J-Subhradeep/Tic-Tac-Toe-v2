@@ -5,11 +5,13 @@ export const ChatSendWrapper = styled.div`
   align-items: center;
   background-color: #f1f1f1;
   padding-bottom: 0.3rem;
-
-  .send {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border-radius: 2rem;
+  /* .send {
     border-radius: 100%;
     height: 3rem;
-  }
+  } */
 
  
   .lower-strip {
@@ -31,6 +33,7 @@ export const ChatSendWrapper = styled.div`
       .emoji {
         position: relative;
         padding-left: 0.5rem;
+        padding-top:0.2rem;
         .smile {
           font-size: 1.5rem;
           color: black;
@@ -40,31 +43,39 @@ export const ChatSendWrapper = styled.div`
     }
     .form-container{
        
-        margin-top: 0.5rem;
+        margin-top: 0.4rem;
+        
         .msg{    
-            width:10.5rem;
-            height:70%;
-            background-color:transparent;
-            color:black;
-            border:none;
+            width: 10rem;
+            height: 70%;
+            background-color: transparent;
+            color: black;
+            border: none;
+            margin-top:0.3rem;
+          
             &::selection{
-                background-color:#9186f3;
-                overflow:hidden;
+                background-color: #9186f3;
+                overflow: hidden;
             }
+            
             &:focus{
-                outline:none;
-                overflow:hidden;
+                outline: none;
+                overflow: hidden;
             }
         }
 
         .button{
-          padding:0.3rem;
-          border-radius:2rem;
-          display:flex;
-          justify-content:center;
-          background-color:#9a86f3;
+          padding: 0.3rem;
+          padding-left:0.4rem;
+          border-radius: 2rem;
+          display: flex;
+          justify-content: center;
+          /* background-color: #9a86f3; */
+          background-color: #260483;
+          color:white;
           align-items: center;
-          border:none;
+          border: none;
+         
         }
     }
   }

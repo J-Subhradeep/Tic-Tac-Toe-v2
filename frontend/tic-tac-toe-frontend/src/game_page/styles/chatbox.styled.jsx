@@ -1,5 +1,6 @@
 import styled from "styled-components"
 export const ChatWrapper = styled.div`
+
 * {
     box-sizing: border-box;
 }
@@ -14,13 +15,14 @@ body {
     position: fixed;
     bottom: 0;
     right: 15px;
-    border: 3px solid #05c1f0;
+    border: 3px solid #044275;
+    border-radius: 1rem;
     z-index: 100;
     height:450px;
     width:250px;
     background-color: white;
-  
 }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .messages::-webkit-scrollbar {
     display: none;
@@ -30,9 +32,8 @@ body {
 .messages {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  padding:0.4rem;
 }
-
-
 
 .btn {
     padding: 0;
@@ -50,7 +51,6 @@ body {
 {
     opacity: 1;
 }
-
 
 
 @media (max-height: 453px) {
