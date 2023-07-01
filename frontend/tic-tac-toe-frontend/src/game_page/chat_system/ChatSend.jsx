@@ -6,7 +6,7 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 
 const ChatSend = () => {
   return (
-    <div>
+    <div className="lower-strip-size">
       <ChatSendWrapper>
         <div className="lower-strip">
 

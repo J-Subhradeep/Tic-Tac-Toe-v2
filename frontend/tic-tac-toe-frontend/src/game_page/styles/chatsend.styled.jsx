@@ -70,9 +70,9 @@ export const ChatSendWrapper = styled.div`
           border-radius: 2rem;
           display: flex;
           justify-content: center;
-          /* background-color: #9a86f3; */
-          background-color: #260483;
-          color:white;
+          background-color: #9a86f3;
+          /* background-color: #260483; */
+          /* color:white; */
           align-items: center;
           border: none;
          

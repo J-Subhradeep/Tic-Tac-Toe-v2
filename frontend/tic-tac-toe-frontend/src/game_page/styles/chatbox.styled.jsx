@@ -53,12 +53,14 @@ body {
 }
 
 
-@media (max-height: 453px) {
-    .chat-pop{
-        height: 100%;
-       
-    }
-    
+@media only screen and (max-height: 449px) {
+    .chat-popup{
+        height:100%;
+          }
+          .gyCPYO {
+    position: absolute;
+    bottom: 0;
+}
   }
 
 `

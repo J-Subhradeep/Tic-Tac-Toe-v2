@@ -9,6 +9,11 @@ export const PopIconWrapper = styled.div`
         -moz-transition: all 0.33s ease;
 }
 
+.css-kmh32b-MuiBadge-root {
+    right: 10px;
+    bottom: -10px;
+}
+
 .hello{ 
         // Position
         position: absolute;
@@ -38,24 +43,34 @@ export const PopIconWrapper = styled.div`
         width: 120px;
         height: 110px;
     }
-    .chatButton:hover,.chatButton:hover ~ .hello {
+    .chatButton:hover,.icon .chatButton:hover ~ .hello {
     opacity: 1;}
 
     @media only screen and (max-width: 850px) {
+    
     .chatButton{
         width: 110px;
         height: 100px;
     }
-    
-  
+}
 
+@media only screen and (min-width: 851px) {
+    .css-kmh32b-MuiBadge-root {
+        right: 8px;
+        bottom:2px;
+}
+}
 @media only screen and (max-height: 550px) {
     .chatButton{
         width: 90px;
         height: 80px;
     }
+    .css-kmh32b-MuiBadge-root {
+        left:-30px;
+        top:30px;
+}
 } 
   
-}
+
 
 `

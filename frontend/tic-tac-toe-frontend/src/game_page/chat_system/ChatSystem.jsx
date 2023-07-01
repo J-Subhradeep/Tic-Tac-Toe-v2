@@ -27,30 +27,11 @@ const ChatSystem = () => {
   return (
     <ChatWrapper>
       <div className="container">
-        {/* <div className="open-button">
-        <div className="hello" >
-            Let's Chat
-        </div>
-          <StyledBadge badgeContent={4} color="secondary">
-            <img
-              src={img1}
-              className="open-button"
-              onClick={openForm}
-              alt="logo"
-              style={{ width: 120, height: 110 }}
-            />
-          </StyledBadge>
-        </div> */}
-        
-        <PopIcon />
-        
-        
+        <PopIcon /> 
         <div class="chat-popup" id="myForm">
             <ChatHeader />
             <ChatBody />
             <ChatSend />
-            
-          {/* </form> */}
         </div>
       </div>
     </ChatWrapper>
