@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SmallBoxWrapper } from '../styles/smallBox.styled'
-import img1 from '../../assets/images/game_page/letter-o.png'
+import img1 from '../../assets/images/game_page/letter-o2.png'
 import img2 from '../../assets/images/game_page/unchecked.png'
 import { Howl } from "howler"
 import sound_1 from '../../assets/audios/game-sounds/lclick-13694.mp3'
@@ -28,9 +28,13 @@ const SmallBox = (props) => {
       html5: true
     });
 
-    sound.play();
+    
+    !clicked ? sound.play() : sound.pause();
+
 
     setClicked(true)
+
+
     let collections = document.getElementsByClassName('cross')
     const myElements = Array.from(collections);
 

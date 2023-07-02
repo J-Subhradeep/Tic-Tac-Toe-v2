@@ -1,0 +1,175 @@
+import styled from "styled-components"
+export const IntroWrapper = styled.div`
+@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.content{
+    
+    background: #001E3C;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.heading{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading h1{
+    font-family: 'Nova Oval', cursive;
+    font-size: 5rem;
+    color: white;
+    margin-top: 200px;
+    z-index: 10;
+}
+.credits{
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    grid-column-gap: 80px;
+}
+
+.buttons{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.carousel h2{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.img{
+    width: 220px;
+    height: 220px;
+    opacity: 0.4;
+    z-index: 10;
+}
+
+
+.wrapper2 span {
+	position: fixed;
+	bottom: -80px;
+	animation: animate 10s linear infinite;
+	font-size: 40px;
+	z-index: 5;
+}
+
+.wrapper2 span:nth-child(1){
+    left: 60px;
+    animation-delay: 0.6s;    
+}
+.wrapper2 span:nth-child(2){
+    left: 10%;
+    animation-delay: 3s;  
+}
+.wrapper2 span:nth-child(3){
+    left: 20%;
+    animation-delay: 2s;    
+}
+.wrapper2 span:nth-child(4){
+    left: 30%;
+    animation-delay: 5s;   
+}
+.wrapper2 span:nth-child(5){
+    left: 40%;
+    animation-delay: 1s;    
+}
+.wrapper2 span:nth-child(6){
+    left: 50%;
+    animation-delay: 7s;    
+}
+.wrapper2 span:nth-child(7){
+    left: 60%;
+    animation-delay: 6s;  
+}
+.wrapper2 span:nth-child(8){
+    left: 70%;
+    animation-delay: 8s;    
+}
+.wrapper2 span:nth-child(9){
+    left: 80%;
+    animation-delay: 6s;  
+}
+.wrapper2 span:nth-child(10){
+    left: 90%;
+    animation-delay: 4s;    
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+
+@keyframes animate{
+    0% {
+      transform: translateY(0);
+        opacity: 1
+    }
+    70%{
+        opacity: .8;
+    }
+    100% {
+      transform: translateY(-800px) rotate(360deg);	
+        opacity: 0
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    
+    .content{
+        flex-direction: column;
+    }
+
+    .heading{
+    width: 100%;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .heading h1{
+        font-size: 3rem;
+        margin-top: 0;
+    }
+
+    .img{
+        display: none;
+    }
+
+    .credits{
+    width: 100%;
+    /* height: 50vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 0;
+}
+
+    
+  }
+
+
+`
