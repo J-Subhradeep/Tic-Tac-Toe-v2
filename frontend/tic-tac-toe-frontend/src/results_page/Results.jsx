@@ -1,8 +1,12 @@
 import React from 'react'
-import Winner from './Winner'
+// import Winner from './Winner'
+import Loser from './Loser';
+// import Tie from './Tie';
 const Results = () => {
   return (
-    <Winner />
+    // <Winner />
+    <Loser/>
+    // <Tie/>
   )
 }
 
