@@ -25,13 +25,12 @@ const Intro = () => {
                 <div class="banner">
                     <div class="content">
                         <div className="heading">
-                            <h1>
-                                Real <br /> tic-tac-toe
-                            </h1>
+                            <span>Real</span>
+                            <span>tic-tac-toe</span>
                             <div className="buttons">
-                                <Button size="large" variant="contained" sx={{ zIndex: 5, fontWeight: 'bold', }} startIcon={<SportsEsportsIcon />}>Play Now</Button>
+                                <Button className="button" href="/Login" variant="contained" sx={{ zIndex: 5, fontWeight: 'bold', }} startIcon={<SportsEsportsIcon />}>Play Now</Button>
                                 <br/>
-                                <Button size="large" variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
+                                <Button className="button" href="/"  variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
                             </div>
                         </div>
                         <div className="credits">

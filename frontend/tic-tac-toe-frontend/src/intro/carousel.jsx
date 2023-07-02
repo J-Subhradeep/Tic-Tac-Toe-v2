@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { CarouselWrapper } from './styles/carousel.styled';
+
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MobileStepper from '@mui/material/MobileStepper';
@@ -60,7 +62,8 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-      <Box sx={{ maxWidth: 300, flexGrow: 1, }}>
+    <CarouselWrapper>
+      <Box className="main-box" sx={{ width: 300, flexGrow: 1, }}>
         <Paper
           square
           elevation={0}
@@ -76,14 +79,13 @@ function SwipeableTextMobileStepper() {
             // opacity: 0.6
           }}
         >
-          <Typography color='white' sx={{
-            fontWeight: 'bold',
-          }}
+          <Typography color='white' className='typography'
           >
-          {images[activeStep].Name}
+            {images[activeStep].Name}
           </Typography>
           <Link className='linkedin' href={images[activeStep].Linkedin} target="_blank" >
-            <LinkedInIcon fontSize='large' sx={{color: 'white'}}/>
+            <LinkedInIcon className='largeicon' fontSize='large' sx={{ color: 'white' }} />
+            <LinkedInIcon className='smallicon' fontSize='small' sx={{ color: 'white' }} />
           </Link>
         </Paper>
         <AutoPlaySwipeableViews
@@ -96,11 +98,12 @@ function SwipeableTextMobileStepper() {
             <div key={step.Name}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
+                className='photo'
                   component="img"
                   sx={{
                     height: 255,
                     display: 'block',
-                    maxWidth: 400,
+                    maxWidth: 300,
                     overflow: 'hidden',
                     width: '100%',
                   }}
@@ -123,33 +126,34 @@ function SwipeableTextMobileStepper() {
             display: 'flex',
             justifyContent: 'center'
           }}
-          // nextButton={
-          //   <Button
-          //     size="small"
-          //     onClick={handleNext}
-          //     disabled={activeStep === maxSteps - 1}
-          //     sx={{color: 'white'}}
-          //   >
-          //     Next
-          //     {theme.direction === 'rtl' ? (
-          //       <KeyboardArrowLeft />
-          //     ) : (
-          //       <KeyboardArrowRight />
-          //     )}
-          //   </Button>
-          // }
-          // backButton={
-          //   <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color: 'white'}}>
-          //     {theme.direction === 'rtl' ? (
-          //       <KeyboardArrowRight />
-          //     ) : (
-          //       <KeyboardArrowLeft />
-          //     )}
-          //     Back
-          //   </Button>
-          // }
+        // nextButton={
+        //   <Button
+        //     size="small"
+        //     onClick={handleNext}
+        //     disabled={activeStep === maxSteps - 1}
+        //     sx={{color: 'white'}}
+        //   >
+        //     Next
+        //     {theme.direction === 'rtl' ? (
+        //       <KeyboardArrowLeft />
+        //     ) : (
+        //       <KeyboardArrowRight />
+        //     )}
+        //   </Button>
+        // }
+        // backButton={
+        //   <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color: 'white'}}>
+        //     {theme.direction === 'rtl' ? (
+        //       <KeyboardArrowRight />
+        //     ) : (
+        //       <KeyboardArrowLeft />
+        //     )}
+        //     Back
+        //   </Button>
+        // }
         />
       </Box>
+    </CarouselWrapper>
   );
 }
 
