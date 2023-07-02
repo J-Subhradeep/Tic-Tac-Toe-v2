@@ -133,7 +133,16 @@ function Winner() {
   return (
     <WinnerWrapper>
       <div className="app">
-        <canvas id="Canvas"></canvas>  
+        <canvas id="Canvas"></canvas> 
+        <IconButton
+            className="bt"
+            aria-label="back-to-home"
+            color="primary"
+            sx={{color:'white',fontSize:50}}
+            href=""
+          >
+          <HomeIcon fontSize="inherit" />
+        </IconButton> 
         <header className="app-header-win">
           <img src="./trophy.png" className="logo" alt="trophy" />
           <p className="result">
@@ -142,14 +151,6 @@ function Winner() {
           <p className="win">
             Winner
           </p>
-          <IconButton
-            aria-label="back-to-home"
-            color="primary"
-            size="large"
-            href=""
-          >
-            <HomeIcon fontSize="inherit" />
-          </IconButton>
         </header>
       </div>
     </WinnerWrapper>

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 export const WinnerWrapper = styled.div`
-  .app {
-    text-align: center;
+
+  .bt{
+      padding-left:20px
   }
 
   canvas {

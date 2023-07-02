@@ -18,20 +18,20 @@ function Tie() {
   return (
     <TieWrapper>
       <div className="app">
-        <div class="canvas-123"></div>
+        <div className="canvas-123"></div>
+        <IconButton
+            className="bt"
+            aria-label="back-to-home"
+            color="primary"
+            sx={{color:'white',fontSize:50}}
+            href=""
+          >
+          <HomeIcon fontSize="inherit" />
+        </IconButton>
         <header className="app-header-tie">
           <img src="./duo-fight.gif" className="fight-gif" alt="tie" />
           <p className="result-tie">Woopsie!</p>
           <p className="tie">It's a Tie</p>
-          <IconButton
-            // onClick={() => alert("Clicked")}
-            aria-label="back-to-home"
-            color="primary"
-            size="large"
-            href=""
-          >
-            <HomeIcon fontSize="inherit" />
-          </IconButton>
         </header>
       </div>
     </TieWrapper>

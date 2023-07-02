@@ -1,8 +1,9 @@
 import styled from "styled-components";
 export const LoserWrapper = styled.div`
-  .app {
-    text-align: center;
+  .bt{
+      padding-left:20px
   }
+  
   .canvas-12 {
     position: fixed;
     top: 0;

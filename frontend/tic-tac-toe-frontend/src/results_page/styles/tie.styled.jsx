@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const TieWrapper = styled.div`
-  .app {
-    text-align: center;
+  .bt{
+      padding-left:20px
   }
 
   .canvas-123 {

@@ -19,8 +19,8 @@ function Loser() {
     <LoserWrapper>
       <div className="app">
         {/* <canvas className="canvas-12"></canvas> */}
-        <div class="canvas-12"></div>
-        <div class="wrapper">
+        <div className="canvas-12"></div>
+        <div className="wrapper">
           <span>&#128531;</span>
           <span>&#128532;</span>
           <span>&#128534;</span>
@@ -37,18 +37,19 @@ function Loser() {
           <span>&#128560;</span>
           <span>&#128555;</span>
         </div>
+        <IconButton
+            className="bt"
+            aria-label="back-to-home"
+            color="primary"
+            sx={{color:'white',fontSize:50}}
+            href=""
+          >
+          <HomeIcon fontSize="inherit" />
+        </IconButton>
         <header className="app-header-lose">
           <img src="./sad-gif.gif" className="gif" alt="gif" />
           <p className="result">Better luck next time!</p>
           <p className="lose">You lost</p>
-          <IconButton
-            aria-label="back-to-home"
-            color="primary"
-            size="large"
-            href=""
-          >
-            <HomeIcon fontSize="inherit" />
-          </IconButton>
         </header>
       </div>
     </LoserWrapper>
