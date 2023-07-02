@@ -60,7 +60,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-      <Box sx={{ maxWidth: 350, flexGrow: 1, }}>
+      <Box sx={{ maxWidth: 300, flexGrow: 1, }}>
         <Paper
           square
           elevation={0}
@@ -71,20 +71,19 @@ function SwipeableTextMobileStepper() {
             height: 50,
             pl: 2,
             pr: 2,
-            bgcolor: 'rgb(100, 149, 237, 0.3)',
+            bgcolor: '#132F4C',
             borderRadius: '10px 10px 0px 0px'
             // opacity: 0.6
           }}
         >
-          <Typography sx={{
+          <Typography color='white' sx={{
             fontWeight: 'bold',
-            color: 'white'
           }}
           >
           {images[activeStep].Name}
           </Typography>
           <Link className='linkedin' href={images[activeStep].Linkedin} target="_blank" >
-            <LinkedInIcon fontSize='large' sx={{ color: 'white' }}/>
+            <LinkedInIcon fontSize='large' sx={{color: 'white'}}/>
           </Link>
         </Paper>
         <AutoPlaySwipeableViews
@@ -116,35 +115,39 @@ function SwipeableTextMobileStepper() {
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
+          color='white'
           sx={{
-            bgcolor: 'rgb(100, 149, 237, 0.3)',
-            borderRadius: '0px 0px 10px 10px'
+            bgcolor: '#132F4C',
+            color: 'white',
+            borderRadius: '0px 0px 10px 10px',
+            display: 'flex',
+            justifyContent: 'center'
           }}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={activeStep === maxSteps - 1}
-              sx={{color: 'white'}}
-            >
-              Next
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowLeft />
-              ) : (
-                <KeyboardArrowRight />
-              )}
-            </Button>
-          }
-          backButton={
-            <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color: 'white'}}>
-              {theme.direction === 'rtl' ? (
-                <KeyboardArrowRight />
-              ) : (
-                <KeyboardArrowLeft />
-              )}
-              Back
-            </Button>
-          }
+          // nextButton={
+          //   <Button
+          //     size="small"
+          //     onClick={handleNext}
+          //     disabled={activeStep === maxSteps - 1}
+          //     sx={{color: 'white'}}
+          //   >
+          //     Next
+          //     {theme.direction === 'rtl' ? (
+          //       <KeyboardArrowLeft />
+          //     ) : (
+          //       <KeyboardArrowRight />
+          //     )}
+          //   </Button>
+          // }
+          // backButton={
+          //   <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color: 'white'}}>
+          //     {theme.direction === 'rtl' ? (
+          //       <KeyboardArrowRight />
+          //     ) : (
+          //       <KeyboardArrowLeft />
+          //     )}
+          //     Back
+          //   </Button>
+          // }
         />
       </Box>
   );
