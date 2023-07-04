@@ -13,7 +13,7 @@ export const IntroWrapper = styled.div`
 }
 
 .heading{
-    width: 50%;
+    width: 35%;
     height: 100vh;
     display: flex;
     /* justify-content: center; */
@@ -22,11 +22,16 @@ export const IntroWrapper = styled.div`
     padding-top: 180px;
 }
 
+.span-div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 .heading span{
     font-family: 'Nova Oval', cursive;
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: white;
-    /* margin-top: 200px; */
     z-index: 10;
 }
 .credits{
@@ -36,6 +41,12 @@ export const IntroWrapper = styled.div`
     align-items: center;
     grid-template-columns: auto auto;
     grid-column-gap: 80px;
+}
+
+.technology-stack{
+    width: 240px;
+
+    z-index: 10;
 }
 
 .buttons{
@@ -180,6 +191,10 @@ export const IntroWrapper = styled.div`
     align-items: center;
     padding-top: 0;
     }
+
+    .span-div{
+    align-items: center;
+}
 
     .heading span{
         font-size: 3rem;

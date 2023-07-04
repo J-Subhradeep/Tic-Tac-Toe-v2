@@ -63,7 +63,7 @@ function SwipeableTextMobileStepper() {
 
   return (
     <CarouselWrapper>
-      <Box className="main-box" sx={{ width: 300, flexGrow: 1, }}>
+      <Box className="main-box" sx={{ width: 260, flexGrow: 1, }}>
         <Paper
           square
           elevation={0}
@@ -101,9 +101,9 @@ function SwipeableTextMobileStepper() {
                 className='photo'
                   component="img"
                   sx={{
-                    height: 255,
+                    height: 225,
                     display: 'block',
-                    maxWidth: 300,
+                    maxWidth: 260,
                     overflow: 'hidden',
                     width: '100%',
                   }}
