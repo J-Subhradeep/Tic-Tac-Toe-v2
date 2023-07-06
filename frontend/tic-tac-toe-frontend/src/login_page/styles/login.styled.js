@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 .whole{
   box-sizing: border-box;
   height: 100vh;
-  background-image: linear-gradient(to right, #160264 5%, #6a026a 95%);
+  ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +34,9 @@ export const GlobalStyle = createGlobalStyle`
     ${"" /* margin-top: 25vh; */}
 }
 .playFriends{
+  ${'' /* background-color: black; */}
+  ${'' /* z-index: 200;
+  opacity: 1; */}
     /* min-width: 15vw; */
     ${"" /* min-height: 150px; */}
     ${"" /* position: relative; */}
