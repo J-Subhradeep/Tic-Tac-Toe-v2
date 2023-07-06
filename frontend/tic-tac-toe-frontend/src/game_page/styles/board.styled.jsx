@@ -22,12 +22,13 @@ export const BoxWrapper = styled.div`
     grid-row-gap: 6px;
     grid-column-gap: 6px;
     grid-template-columns: auto auto auto;
-    /* border: 2px solid #e0eff1; */
-    /* padding: 10px; */
-    /* background: rgba(0,0,0,0.5); */
     overflow: hidden;
     /* border-radius: 20px; */
     z-index: 10;
+}
+
+.winStyle{
+  background-color: red;
 }
 
 
