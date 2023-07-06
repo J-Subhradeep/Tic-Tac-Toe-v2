@@ -9,22 +9,29 @@ export const IntroWrapper = styled.div`
     height: 100vh;
     width: 100%;
     display: flex;
+    overflow-y: hidden;
 }
 
 .heading{
-    width: 50%;
+    width: 35%;
     height: 100vh;
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
+    padding-top: 180px;
 }
 
-.heading h1{
+.span-div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.heading span{
     font-family: 'Nova Oval', cursive;
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: white;
-    margin-top: 200px;
     z-index: 10;
 }
 .credits{
@@ -36,10 +43,21 @@ export const IntroWrapper = styled.div`
     grid-column-gap: 80px;
 }
 
+.technology-stack{
+    width: 240px;
+
+    z-index: 10;
+}
+
 .buttons{
-    width: 40%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.button{
+    width: 155px;
+    margin: 40px 10px 0 10px;
 }
 
 .carousel{
@@ -137,6 +155,29 @@ export const IntroWrapper = styled.div`
 }
 
 
+@media only screen and (max-width: 1200px) {
+
+    .img{
+    width: 150px;
+    height: 150px;
+    }
+    .heading{
+    width: 40%;
+    }
+    .heading span{
+        font-size: 4rem;
+    }
+    .button{
+    width: 140px;
+    margin: 40px 10px 0 10px;
+    font-size: small;
+    }
+    .credits{
+        width: 60%;
+    }
+
+}
+
 @media only screen and (max-width: 850px) {
     
     .content{
@@ -148,11 +189,15 @@ export const IntroWrapper = styled.div`
     height: 40vh;
     justify-content: center;
     align-items: center;
+    padding-top: 0;
     }
 
-    .heading h1{
+    .span-div{
+    align-items: center;
+}
+
+    .heading span{
         font-size: 3rem;
-        margin-top: 0;
     }
 
     .img{
@@ -161,11 +206,25 @@ export const IntroWrapper = styled.div`
 
     .credits{
     width: 100%;
-    /* height: 50vh; */
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column-gap: 0;
+    }
+
+    .carousel{
+        width: 100%;
+    }
+
+    .button{
+    width: 120px;
+    margin: 40px 10px 0 10px;
+    font-size: x-small;
+    }
+
+    .carousel h2{
+    font-size: 1rem;
 }
 
     

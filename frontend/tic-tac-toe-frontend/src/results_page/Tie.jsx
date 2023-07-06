@@ -23,7 +23,7 @@ function Tie() {
             className="bt"
             aria-label="back-to-home"
             color="primary"
-            sx={{color:'white',fontSize:50}}
+            sx={{color:'white',fontSize:50,position:"absolute"}}
             href=""
           >
           <HomeIcon fontSize="inherit" />
