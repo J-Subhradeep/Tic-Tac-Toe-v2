@@ -1,72 +1,76 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { ChatBodyWrapper } from "../styles/chatbody.styled";
+
+
 const ChatBody = () => {
+  const messagesRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesRef.current) {
+      messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+    }
+  }, [messagesRef]);
+
+
   return (
-    <div className="messages" style={{height:'76%',overflow: 'auto' }}>
+   
+    <div className="messages" ref={messagesRef}> 
       <ChatBodyWrapper>
-        <div className="chat-messages">
-          <div class="message receiver">
+        <div className="chat-messages"  >
+          <div className="message receiver">
             <div className="content">
-            
               <p>Hello</p>
-             
             </div>
           </div>
-          <div class="message sender">
+          <div className="message sender">
             <div className="content">
-             
-              <p>Hi,How are you?I am fine. You?</p>
-            
+              <p>Hi, How are you? I am fine. You?</p>
             </div>
           </div>
-          <div class="message receiver">
+          <div className="message receiver">
             <div className="content">
-                <p>Hello</p>
-                                     
-            </div>
-          </div>
-          <div class="message sender">
-            <div className="content">
-                                                                                                                                        
               <p>Hello</p>
-              
             </div>
           </div>
+          <div className="message sender">
+            <div className="content">
+              <p>Hello</p>
+            </div>
+          </div>
+          <div className="message sender">
+             <div className="content">
+               <p>Hello</p>
+             </div>
+           </div>
 
-          <div class="message sender">
+          <div className="message sender">
             <div className="content">
-              <p>Hello</p>
+               <p>Hello</p>
             </div>
-          </div>
-
-          <div class="message sender">
-            <div className="content">
-              <p>Hello</p>
-            </div>
-          </div>
+           </div>
          
-          <div class="message sender">
-            <div className="content">
-              <p>Hello</p>
-            </div>
-          </div>
+           <div className="message sender">
+             <div className="content">
+               <p>Hello</p>
+             </div>
+           </div>
 
-          <div class="message sender">
-            <div className="content">
-              <p>Hi,How are you?I am fine. You?</p>
-            </div>
-          </div>
+           <div className="message sender">
+             <div className="content">
+               <p>Hi,How are you?I am fine. You?</p>
+             </div>
+           </div>
 
-          <div class="message receiver">
-            <div className="content">
-              <p>Hi,How are you?I am fine. You?</p>
-            </div>
-          </div>
-          
+          <div className="message receiver">
+             <div className="content">
+               <p>Hi,How are you?I am fine. You?</p>
+             </div>
+           </div>
+        
         </div>
-      
       </ChatBodyWrapper>
     </div>
+   
   );
 };
 

@@ -10,7 +10,7 @@ const Game = () => {
         <>
             <GameWrapper>
             <ChatSystem/>
-                <div class="wrapper">
+                <div className="wrapper">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -23,7 +23,7 @@ const Game = () => {
                     <span></span>
                 </div>
 
-                <div class="banner">
+                <div className="banner">
                     <div className="upper">
                     <div className='player'>
 

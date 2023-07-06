@@ -22,7 +22,7 @@ const PopIcon = (props) => {
   };
   return (
     <div
-      classname="whole"
+      className="whole"
       style={{ position: "fixed", bottom: "15px", right: "15px" }}
     >
       <PopIconWrapper>
