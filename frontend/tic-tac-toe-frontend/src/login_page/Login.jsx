@@ -167,7 +167,7 @@ const Login = () => {
                 {/* <Developers/>   */}
       </Box>
        
-     
+     </div>
                  
     </>
   )
