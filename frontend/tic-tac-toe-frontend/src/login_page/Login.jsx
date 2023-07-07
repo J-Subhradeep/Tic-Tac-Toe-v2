@@ -117,6 +117,7 @@ const Login = () => {
 
   return (
     <>
+    <div>
       <GlobalStyle responsive />
       <Box component='form' noValidate id='login-form' onSubmit={handelSubmit} className="whole">
         <div className="subWhole">
