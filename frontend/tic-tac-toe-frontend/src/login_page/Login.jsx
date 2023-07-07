@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Box, Alert} from '@mui/material';
 // import IconButton from '@mui/material/IconButton';
 // import DeleteIcon from '@mui/icons-material/Delete';
 // import subhradeep from '../assets/images/login_page/'
@@ -17,10 +18,13 @@ import Tooltip from '@mui/material/Tooltip';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 // import copy from "copy-to-clipboard";
 import { GlobalStyle } from "./styles/login.styled";
 import { Button } from "@mui/material";
+import Developers from "./Developers";
+import { GameWrapper } from "../game_page/styles/game.styled";
+import axios from "axios";
 // import './styles/Login.css';
 
 const colorAnimation = keyframes`
@@ -39,25 +43,16 @@ const TextAnimation = styled.h1`
   animation-duration: 3s;
   animation-iteration-count: infinite;
 `;
-const A = styled.a`
-  font-size: 25px;
-  border-radius: 3px;
-  padding: 1px;
-  color: #0A66C2;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-    0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 12px 0 rgba(0, 0, 0, 0.2),
-    0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  &:hover{
-    background-color: #0A66C2;
-    color: #fff;
-  }
-`;
+
 
 const Login = () => {
+
+  const [error, setError] = useState({
+    status: false,
+    message: "",
+    type: ""
+})
+
   const [copyText, setCopyText] = useState('');
 
   const handleCopyText = (e) => {
@@ -68,32 +63,106 @@ const Login = () => {
     copy(copyText);
     alert(`You have copied the room code`);
   }
+
+
+  const generateRoomCode = () => {
+    axios.get("https://api.play-real-tictactoe.cloud/api/unique")
+    .then((res) => setCopyText(res.data.room))
+  }
+
+  const [loginInfo, setLoginInfo] = useState({});
+
+    
+        // return loginInfo;
+
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const actualData = {
+        name: data.get('name'),
+        roomCode: data.get('roomCode'),
+    }
+    if (actualData.name && actualData.roomCode) {
+        // console.log(actualData);
+         var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {
+          method: "POST",
+          body: {
+              group_name: actualData.roomCode
+          }
+          })
+          setLoginInfo(res.data)
+        console.log(res.data.both)
+        document.getElementById('login-form').reset()
+        if(!res.data.both){
+            setError({
+                status: true,
+                message: "Login Success",
+                type: 'success'
+            })
+            // storeToken(res.data.token)
+            // navigate('/dashboard');
+            console.log('success')
+        } else{
+            setError({ status: true, message: res.data.message, type: 'error'})
+        }
+    }
+    // else {
+    //     setError({
+    //         status: true,
+    //         message: "All Fileds Are Required",
+    //         type: 'error'
+    //     })
+    // }
+}
+
+
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle responsive />
+
+      
       <div className="whole">
+      <GameWrapper style={{zIndex:-1}}>
+
+                <div className="wrapper">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+      </GameWrapper>
+      <Box component='form' noValidate id='login-form' onSubmit={handelSubmit} className="whole">
         <div className="subWhole">
           <div className="playFriends">
             <div style={{paddingTop:"20px"}}>
               <TextAnimation>Play With Friends</TextAnimation>
             </div>
-            <TextField id="outlined-basic" label="Name" variant="outlined" size="medium" style={{ width: "200px" }} />
+            <TextField id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "200px" }} />
             <div className="roomCodeField">
               <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Room Code</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-password"
+                  name="roomCode"
                   type={'text'}
+                  required
                   value={copyText}
                   onChange={handleCopyText}
                   endAdornment={
                     <InputAdornment position="end">
+                      <Tooltip title="Copy Room Code">
                       <IconButton
                         onClick={copyToClipboard}
                         color="primary"
                         edge="end"
                       ><ContentCopyIcon/>
-                      </IconButton>
+                      </IconButton></Tooltip>
                     </InputAdornment>
                   }
                   label="Room Code"
@@ -104,59 +173,21 @@ const Login = () => {
             <div className="buttonSection">
               <Tooltip title="Generate Room Code">
 
-              <Button variant="contained" style={{ borderRadius: "20px" }}><AutoModeIcon/></Button>
+              <Button onClick={generateRoomCode} variant="contained" style={{ borderRadius: "20px" }}><AutoModeIcon/></Button>
               </Tooltip>
               <Tooltip title="Join to Play">
-              <Button variant="contained" style={{ borderRadius: "20px" }}><SportsEsportsIcon /></Button>
+              <Button type='submit' variant="contained" style={{ borderRadius: "20px" }}><SportsEsportsIcon /></Button>
               </Tooltip>
 
             </div>
           </div>
-
-        </div>
-      </div>
-      <div className="devSection">
-      {/* <h2>Developed By:</h2> */}
-      <ul className="developers">
-                  {/* <h2>Developed By:</h2> */}
-                  <li><p style={{ color: "#fff",fontSize: "18px" }}>Developed By:</p></li>
-                      <li>
-                      <div className="eachElement">
-                        <img src="../src/assets/images/login_page/subhradeep.jpeg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">Subhradeep Pal</p>
-                        <A href="#"><RiLinkedinFill /></A>
-                      </div>
-                      </li>
-                      <li>
-                      <div className="eachElement">
-                        <img src="../src/assets/images/login_page/deblina.jpeg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">Deblina Mandal</p>
-                        <A href="#"><RiLinkedinFill /></A>
-                      </div>
-                      </li>
-                      <li>
-                      <div className="eachElement">
-                        <img src="../src/assets/images/login_page/kashmira.jpeg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">Kashmira Jha</p>
-                        <A href="#"><RiLinkedinFill /></A>
-                      </div>
-                      </li>
-                      <li>
-                      <div className="eachElement">
-                        <img src="../src/assets/images/login_page/pratyush.jpg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">Pratyush Banerjee</p>
-                        <A href="#"><RiLinkedinFill /></A>
-                      </div>
-                      </li>
-                      <li>
-                      <div className="eachElement">
-                        <img src="../src/assets/images/login_page/safiul.jpg" style={{ width: "40px" }}></img>
-                        <p className="nameDev">MD Safiul Haque</p>
-                        <A href="#"><RiLinkedinFill /></A>
-                      </div> 
-                      </li>             
-      </ul>
-      </div>           
+          {error.status ? <Alert severity={error.type}>{error.message}</Alert> : ''}
+          </div>
+                {/* <Developers/>   */}
+      </Box>
+       
+     
+                 
     </>
   )
 }

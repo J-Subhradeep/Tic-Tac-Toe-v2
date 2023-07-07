@@ -1,32 +1,58 @@
-import "./style.css";
+import { LoserWrapper } from "./styles/loser.styled";
+import { IconButton } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+// import { Howl } from "howler";
+// import { useEffect } from "react";
+// import music from "../assets/audios/lose.wav";
 
 function Loser() {
+  // useEffect(() => {
+  //   const sound = new Howl({
+  //     src: [music],
+  //     loop: true,
+  //   });
+  //   sound.play();
+  //   return () => {};
+  // }, []);
+
   return (
-    <div className="app">
-      <canvas id="Canvas"></canvas>  
-      <div class="wrapper">
-        <span>&#128531;</span>
-        <span>&#128532;</span>
-        <span>&#128534;</span>
-        <span>&#128547;</span>
-        <span>&#128553;</span>
-        <span>&#128546;</span>
-        <span>&#128557;</span>
-        <span>&#128560;</span>
-        <span>&#128555;</span>
-        <span>&#128542;</span>
-        <span>&#128532;</span>
-        <span>&#128546;</span>
-        <span>&#128546;</span>
-        <span>&#128560;</span>
-        <span>&#128555;</span>
+    <LoserWrapper>
+      <div className="app">
+        {/* <canvas className="canvas-12"></canvas> */}
+        <div className="canvas-12"></div>
+        <div className="wrapper">
+          <span>&#128531;</span>
+          <span>&#128532;</span>
+          <span>&#128534;</span>
+          <span>&#128547;</span>
+          <span>&#128553;</span>
+          <span>&#128546;</span>
+          <span>&#128557;</span>
+          <span>&#128560;</span>
+          <span>&#128555;</span>
+          <span>&#128542;</span>
+          <span>&#128532;</span>
+          <span>&#128546;</span>
+          <span>&#128546;</span>
+          <span>&#128560;</span>
+          <span>&#128555;</span>
+        </div>
+        <IconButton
+            className="bt"
+            aria-label="back-to-home"
+            color="primary"
+            sx={{color:'white',fontSize:50,position:"absolute"}}
+            href=""
+          >
+          <HomeIcon fontSize="inherit" />
+        </IconButton>
+        <header className="app-header-lose">
+          <img src="./sad-gif.gif" className="gif" alt="gif" />
+          <p className="result">Better luck next time!</p>
+          <p className="lose">You lost</p>
+        </header>
       </div>
-      <header className="app-header-lose">
-        <img src="./sad-gif.gif" className="gif" alt="gif" />
-        <p className="result">Better luck next time!</p>
-        <p className="lose">You lost</p>
-      </header>
-    </div>
+    </LoserWrapper>
   );
 }
 

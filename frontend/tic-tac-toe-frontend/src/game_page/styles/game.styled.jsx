@@ -21,25 +21,25 @@ body{
     width: 250px;
     /* background-color: aqua; */
     display: inline-block;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 
 .board{
     height: 90vh;
     /* background-color: rgb(6, 167, 121); */
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .player2{
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     /* background-color: aqua; */
     display: inline-block;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .bottom{
@@ -159,6 +159,8 @@ body{
     .bottom{
         display: grid;
         grid-template-columns: auto auto;
+        align-items: start;
+        /* padding-top */
     }
 
     .wrapper span:nth-child(1) {
