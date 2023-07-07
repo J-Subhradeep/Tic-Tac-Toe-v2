@@ -23,7 +23,6 @@ import styled, { keyframes, css } from 'styled-components';
 import { GlobalStyle } from "./styles/login.styled";
 import { Button } from "@mui/material";
 import Developers from "./Developers";
-import { GameWrapper } from "../game_page/styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
 
@@ -86,9 +85,9 @@ const Login = () => {
         // console.log(actualData);
          var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {
           method: "POST",
-          body: {
+          body: ({
               group_name: actualData.roomCode
-          }
+          })
           })
           setLoginInfo(res.data)
         console.log(res.data.both)
@@ -119,24 +118,6 @@ const Login = () => {
   return (
     <>
       <GlobalStyle responsive />
-
-      
-      <div className="whole">
-      <GameWrapper style={{zIndex:-1}}>
-
-                <div className="wrapper">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-      </GameWrapper>
       <Box component='form' noValidate id='login-form' onSubmit={handelSubmit} className="whole">
         <div className="subWhole">
           <div className="playFriends">
