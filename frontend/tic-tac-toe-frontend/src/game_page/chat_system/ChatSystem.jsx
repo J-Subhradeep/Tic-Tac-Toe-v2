@@ -28,7 +28,7 @@ const ChatSystem = () => {
     <ChatWrapper>
       <div className="container">
         <PopIcon /> 
-        <div class="chat-popup" id="myForm">
+        <div className="chat-popup" id="myForm">
             <ChatHeader />
             <ChatBody />
             <ChatSend />
