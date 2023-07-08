@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { Box, Alert} from '@mui/material';
 // import IconButton from '@mui/material/IconButton';
 // import DeleteIcon from '@mui/icons-material/Delete';
@@ -54,6 +55,9 @@ const Login = () => {
 })
 
   const [copyText, setCopyText] = useState('');
+  const [name, setName] = useState('')
+  const [roomCode, setRoomCode] = useState('')
+
 
   const handleCopyText = (e) => {
     setCopyText(e.target.value);
@@ -67,10 +71,10 @@ const Login = () => {
 
   const generateRoomCode = () => {
     axios.get("https://api.play-real-tictactoe.cloud/api/unique")
-    .then((res) => setCopyText(res.data.room))
+    .then((res) => console.log(res.data.room))
   }
 
-  const [loginInfo, setLoginInfo] = useState({});
+  // const [loginInfo, setLoginInfo] = useState({});
 
     
         // return loginInfo;
@@ -78,20 +82,17 @@ const Login = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const actualData = {
-        name: data.get('name'),
-        roomCode: data.get('roomCode'),
-    }
-    if (actualData.name && actualData.roomCode) {
+
+    if (name && roomCode) {
         // console.log(actualData);
+         console.log(roomCode)
          var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {
           method: "POST",
           body: {
-              group_name: actualData.roomCode
+              group_name: roomCode
           }
           })
-          setLoginInfo(res.data)
-        console.log(res.data.both)
+        console.log(res.data)
         document.getElementById('login-form').reset()
         if(!res.data.both){
             setError({
@@ -102,17 +103,25 @@ const Login = () => {
             // storeToken(res.data.token)
             // navigate('/dashboard');
             console.log('success')
-        } else{
-            setError({ status: true, message: res.data.message, type: 'error'})
-        }
+            localStorage.setItem('name', name)
+            localStorage.setItem('roomCode', roomCode)
+            if(res.data.is_first){
+              localStorage.setItem('symbol', 'x')
+            }else{
+              localStorage.setItem('symbol', 'o')
+            }
+        } 
+        // else{
+        //     setError({ status: true, message: res.data.message, type: 'error'})
+        // }
     }
-    // else {
-    //     setError({
-    //         status: true,
-    //         message: "All Fileds Are Required",
-    //         type: 'error'
-    //     })
-    // }
+    else {
+        setError({
+            status: true,
+            message: "All Fileds Are Required",
+            type: 'error'
+        })
+    }
 }
 
 
@@ -143,17 +152,16 @@ const Login = () => {
             <div style={{paddingTop:"20px"}}>
               <TextAnimation>Play With Friends</TextAnimation>
             </div>
-            <TextField id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "200px" }} />
+            <TextField value={name} onChange = {(e)=>setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "200px" }} />
             <div className="roomCodeField">
-              <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Room Code</InputLabel>
+              <FormControl id='room' sx={{ m: 1, width: '25ch' }} variant="outlined">
+                <InputLabel required htmlFor="outlined-adornment-password">Room Code</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-password"
                   name="roomCode"
                   type={'text'}
                   required
-                  value={copyText}
-                  onChange={handleCopyText}
+                  value={roomCode} onChange = {(e)=>setRoomCode(e.target.value)}
                   endAdornment={
                     <InputAdornment position="end">
                       <Tooltip title="Copy Room Code">
