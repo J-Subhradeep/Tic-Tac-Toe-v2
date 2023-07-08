@@ -54,7 +54,6 @@ const Login = () => {
     type: ""
 })
 
-  const [copyText, setCopyText] = useState('');
   const [name, setName] = useState('')
   const [roomCode, setRoomCode] = useState('')
 
@@ -71,13 +70,9 @@ const Login = () => {
 
   const generateRoomCode = () => {
     axios.get("https://api.play-real-tictactoe.cloud/api/unique")
-    .then((res) => console.log(res.data.room))
+    .then((res) => setRoomCode(res.data.room))
   }
 
-  // const [loginInfo, setLoginInfo] = useState({});
-
-    
-        // return loginInfo;
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -85,13 +80,8 @@ const Login = () => {
 
     if (name && roomCode) {
         // console.log(actualData);
-         console.log(roomCode)
-         var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {
-          method: "POST",
-          body: {
-              group_name: roomCode
-          }
-          })
+        //  console.log(roomCode)
+         var res = await axios.post("https://api.play-real-tictactoe.cloud/api/",  {group_name: roomCode})
         console.log(res.data)
         document.getElementById('login-form').reset()
         if(!res.data.both){
@@ -111,9 +101,9 @@ const Login = () => {
               localStorage.setItem('symbol', 'o')
             }
         } 
-        // else{
-        //     setError({ status: true, message: res.data.message, type: 'error'})
-        // }
+        else{
+            setError({ status: true, message: "Room Full", type: 'error'})
+        }
     }
     else {
         setError({

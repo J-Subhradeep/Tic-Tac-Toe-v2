@@ -7,6 +7,7 @@ import { GameWrapper } from './styles/game.styled'
 import ChatSystem from './chat_system/ChatSystem'
 
 const Game = () => {
+    // let roomCode = localStorage.getItem(roomCode)
     return (
         <>
             <GameWrapper>
@@ -23,8 +24,10 @@ const Game = () => {
                     <span></span>
                     <span></span>
                 </div>
-
                 <div className="banner">
+                <div className='room-code'>
+                    Room Code: <br/> {localStorage.getItem("roomCode")}
+                </div>
                     <div className="upper">
                     <div className='player'>
                         <Players/>
