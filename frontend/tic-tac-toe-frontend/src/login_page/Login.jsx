@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { Box, Alert} from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import subhradeep from '../assets/images/login_page/'
+import { useNavigate } from 'react-router-dom';
 import { RiLinkedinFill } from 'react-icons/ri'
 import OutlinedInput from '@mui/material/OutlinedInput';
 import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
@@ -56,14 +54,9 @@ const Login = () => {
 
   const [name, setName] = useState('')
   const [roomCode, setRoomCode] = useState('')
-
-
-  const handleCopyText = (e) => {
-    setCopyText(e.target.value);
-  }
-
+  const navigate = useNavigate()
   const copyToClipboard = () => {
-    copy(copyText);
+    navigator.clipboard.writeText(roomCode)
     alert(`You have copied the room code`);
   }
 
@@ -76,23 +69,11 @@ const Login = () => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-
     if (name && roomCode) {
-        // console.log(actualData);
-        //  console.log(roomCode)
-         var res = await axios.post("https://api.play-real-tictactoe.cloud/api/",  {group_name: roomCode})
+        var res = await axios.post("https://api.play-real-tictactoe.cloud/api/",  {group_name: roomCode})
         console.log(res.data)
-        document.getElementById('login-form').reset()
         if(!res.data.both){
-            setError({
-                status: true,
-                message: "Login Success",
-                type: 'success'
-            })
-            // storeToken(res.data.token)
-            // navigate('/dashboard');
-            console.log('success')
+            setError({status: true,message: "Login Successful",type: 'success'})
             localStorage.setItem('name', name)
             localStorage.setItem('roomCode', roomCode)
             if(res.data.is_first){
@@ -100,21 +81,18 @@ const Login = () => {
             }else{
               localStorage.setItem('symbol', 'o')
             }
+            setTimeout(()=>{
+              navigate("/game");
+            },1000)
         } 
         else{
-            setError({ status: true, message: "Room Full", type: 'error'})
+            setError({ status: true, message: "Room is Full", type: 'error'})
         }
     }
     else {
-        setError({
-            status: true,
-            message: "All Fileds Are Required",
-            type: 'error'
-        })
+        setError({status: true,message: "All Fileds Are Required",type: 'error'})
     }
-}
-
-
+  }
   return (
     <>
       <GlobalStyle responsive />
