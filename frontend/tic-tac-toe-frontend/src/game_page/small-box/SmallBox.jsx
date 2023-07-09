@@ -44,7 +44,6 @@ const SmallBox = (props) => {
     myElements[clickedElement].style.display = 'block';
   }
 
-
   return (
     <>
       <SmallBoxWrapper>
@@ -57,7 +56,6 @@ const SmallBox = (props) => {
             alt='img'
             className='cross'
             src={img2}></motion.img>
-
         </div>
       </SmallBoxWrapper>
     </>

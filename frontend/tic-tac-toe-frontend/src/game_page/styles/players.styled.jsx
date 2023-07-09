@@ -11,15 +11,15 @@ export const PlayerWrapper = styled.div`
     }
     .user{
         position: relative;
-        height: 200px;
-        width: 200px; 
+        height: 165px;
+        width: 165px; 
         overflow: hidden;
         border-radius: 20px;
         padding: 4px;
     }
     .name{
         background-image: linear-gradient(90deg, #00dbde, #fc00ff);
-        font-size:15px;
+        font-size:25px;
         font-weight:bolder;
         font-family: Arial, Helvetica, sans-serif;
         text-align:center;
