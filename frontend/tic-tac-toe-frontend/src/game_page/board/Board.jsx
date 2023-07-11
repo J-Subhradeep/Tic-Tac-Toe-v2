@@ -44,13 +44,13 @@ const Board = () => {
 
   // }, [lastMessage, messageHistory])
 
-  const handleClickOnBoardElement = (e) => {
-    console.log(e.id); 
+  // const handleClickOnBoardElement = (e) => {
+    // console.log(e.id); 
     // identify the element/index
 
     // localstorage symbol x/0
 
-    const arr = boardElements;
+    // const arr = boardElements;
     // if(arr[index]==x/0)
     // else{
       // arr[index] = x/0
@@ -58,7 +58,7 @@ const Board = () => {
     // sendMessage(JSON.stringify({arr:arr, lastSymbol:localStorage.getItem(symbol)}))
 
 
-  }
+  // }
   return (
     <>
       <BoxWrapper>
