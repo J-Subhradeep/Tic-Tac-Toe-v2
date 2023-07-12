@@ -138,8 +138,8 @@ function Winner() {
             className="bt"
             aria-label="back-to-home"
             color="primary"
-            sx={{color:'white',fontSize:50}}
-            href=""
+            sx={{color:'white',fontSize:50,position:"absolute"}}
+            href="/Login"
           >
           <HomeIcon fontSize="inherit" />
         </IconButton> 
