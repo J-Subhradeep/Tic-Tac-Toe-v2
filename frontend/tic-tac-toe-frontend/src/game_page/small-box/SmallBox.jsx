@@ -21,7 +21,7 @@ const SmallBox = (props) => {
 
   const handleClick = (e) => {
 
-    console.log(e);
+    // console.log(e);
 
     var sound = new Howl({
       src: [sounds ? sound_1 : sound_2],
