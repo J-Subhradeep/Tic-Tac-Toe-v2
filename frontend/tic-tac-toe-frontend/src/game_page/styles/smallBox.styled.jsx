@@ -15,12 +15,10 @@ export const SmallBoxWrapper = styled.div`
 
 .circle{
     width: 15%;
-    visibility: hidden;
 }
 
 .cross{
     width: 10%;
-    visibility: hidden;
 }
 
 
