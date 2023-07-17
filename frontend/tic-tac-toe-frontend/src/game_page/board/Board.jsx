@@ -19,7 +19,7 @@ const Board = () => {
   const [messageHistory, setMessageHistory] = useState([]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-  const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
+  // const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
 
   useEffect(() => {
     if (lastMessage !== null) {
@@ -27,6 +27,8 @@ const Board = () => {
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
       setLastBox(JSON.parse(lastMessage.data).lastBox)
+
+      
     }
     // getting last message
   }, [lastMessage, setMessageHistory]);
@@ -39,6 +41,9 @@ const Board = () => {
 
     if (boardElements[index] == 'x' || boardElements[index] == 'o') {
       console.log('already clkd')
+    }
+    else if(lastSymbol == localStorage.getItem('symbol')){
+      console.log('next turn')
     }
     else {
 
@@ -86,15 +91,15 @@ const Board = () => {
         {/* <button onClick={()=>win(a)}>c</button> */}
         <div className='box'>
           <div className='game-box'>
-            <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='1' onClick={handleClickOnBoardElement}><SmallBox id='1' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='2' onClick={handleClickOnBoardElement}><SmallBox id='2' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='3' onClick={handleClickOnBoardElement}><SmallBox id='3' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='4' onClick={handleClickOnBoardElement}><SmallBox id='4' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='5' onClick={handleClickOnBoardElement}><SmallBox id='5' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='6' onClick={handleClickOnBoardElement}><SmallBox id='6' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='7' onClick={handleClickOnBoardElement}><SmallBox id='7' arr={boardElements} lastBox={lastBox} /></div>
-            <div className='8' onClick={handleClickOnBoardElement}><SmallBox id='8' arr={boardElements} lastBox={lastBox} /></div>
+            <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>
+            <div className='1' onClick={handleClickOnBoardElement}><SmallBox id='1' arr={boardElements} /></div>
+            <div className='2' onClick={handleClickOnBoardElement}><SmallBox id='2' arr={boardElements} /></div>
+            <div className='3' onClick={handleClickOnBoardElement}><SmallBox id='3' arr={boardElements} /></div>
+            <div className='4' onClick={handleClickOnBoardElement}><SmallBox id='4' arr={boardElements} /></div>
+            <div className='5' onClick={handleClickOnBoardElement}><SmallBox id='5' arr={boardElements} /></div>
+            <div className='6' onClick={handleClickOnBoardElement}><SmallBox id='6' arr={boardElements} /></div>
+            <div className='7' onClick={handleClickOnBoardElement}><SmallBox id='7' arr={boardElements} /></div>
+            <div className='8' onClick={handleClickOnBoardElement}><SmallBox id='8' arr={boardElements} /></div>
           </div>
         </div>
       </BoxWrapper>
