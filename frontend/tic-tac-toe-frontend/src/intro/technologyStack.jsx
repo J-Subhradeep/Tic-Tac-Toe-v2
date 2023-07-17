@@ -47,16 +47,16 @@ export default function FileSystemNavigator() {
         <TreeItem nodeId="10" label="Database" style={{color:"white",fontFamily:"Arial"}}>
         <div className='node-wrapper'>
             <img className='icons' src='../../src/assets/images/landing-page/techStack/SQLite_Logo.png' style={{height:"20px",width:"40px"}} />
-            <span className='node'>SQL Lite</span>
+            <span className='node'>SQLite</span>
           </div>
         </TreeItem>
         <TreeItem nodeId="15" label="WebSocket" style={{color:"white",fontFamily:"Arial"}}>
         <div className='node-wrapper' >
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/dj.png' />
+            <img className='icons' src='../../src/assets/images/landing-page/techStack/djch.png' style={{width:"20px"}} />
             <span className='node'>Django Channels</span>
           </div>
           <div className='node-wrapper' >
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/redis.png' style={{height:"20px",width:"20px"}}/>
+            <img className='icons' src='../../src/assets/images/landing-page/techStack/red.png' style={{height:"10px",width:"20px"}}/>
             <span className='node'>Redis</span>
           </div>
         </TreeItem>
@@ -66,8 +66,8 @@ export default function FileSystemNavigator() {
             <span className='node'>Nginx</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/js.png' />
-            <span className='node'>Daphne</span>
+            <img className='icons' src='../../src/assets/images/landing-page/techStack/uvicorn.png' />
+            <span className='node'>Uvicorn</span>
           </div>
           <div className='node-wrapper'>
             <img className='icons' src='../../src/assets/images/landing-page/techStack/docker.png' />
