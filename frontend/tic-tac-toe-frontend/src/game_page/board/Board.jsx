@@ -14,12 +14,10 @@ const Board = () => {
   const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}_board/`);
   const [socketUrl2, setSocketUrl2] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/seconduser/${localStorage.getItem('roomCode')}/${localStorage.getItem('name')}/`);
   console.log(socketUrl2)
-  // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-  // const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}/_board`);
   const [messageHistory, setMessageHistory] = useState([]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-  // const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
+  const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
 
   useEffect(() => {
     if (lastMessage !== null) {
@@ -27,8 +25,6 @@ const Board = () => {
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
       setLastBox(JSON.parse(lastMessage.data).lastBox)
-
-      
     }
     // getting last message
   }, [lastMessage, setMessageHistory]);
