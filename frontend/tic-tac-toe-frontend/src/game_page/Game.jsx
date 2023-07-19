@@ -1,6 +1,5 @@
 import Board from "./board/Board";
 import Players from "./players/Players";
-
 import React, { useState } from "react";
 import { GameWrapper } from "./styles/game.styled";
 import ChatSystem from "./chat_system/ChatSystem";
@@ -37,6 +36,7 @@ const Game = () => {
       }
     }
   }, [lastMessage, setMessageHistory]);
+
 
   return (
     <>
