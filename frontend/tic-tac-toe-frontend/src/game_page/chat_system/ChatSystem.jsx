@@ -1,331 +1,3 @@
-/*{import React, { useState } from "react";
-import { ChatWrapper } from "../styles/chatbox.styled";
-import img1 from "../../assets/images/game_page/chat.jfif";
-// import img2 from "../../assets/images/game_page/close-icon-30.png";
-
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
-// import IconButton from "@mui/material/IconButton";
-import ChatHeader from "./ChatHeader";
-import ChatBody from "./ChatBody";
-import ChatSend from "./ChatSend";
-import PopIcon from "./PopIcon";
-
-// ChatHeader, ChatBody, ChatSend
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    right: -48,
-    top: -70,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 4px",
-  },
-}));
-
-const ChatSystem = () => {
-  // const [messages, setMessages] = useState([{from:"",to:"",msg:""},{from:"",
-  //   to:"",
-  //   msg:""},{from:"",
-  //   to:"",
-  //   msg:""}
-  // ]);
-  
-  // const [socketUrl, setSocketUrl] = useState('wss://api.play-real-tictactoe.cloud/api/ws/chat/localstorage.getitem('roomCode')_chat/x/');
-  // const [messageHistory, setMessageHistory] = useState([]);
-
-  // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-
-  // useEffect(() => { // whenever a message is received
-  //   if (lastMessage !== null) {
-  //     setMessageHistory((prev) => prev.concat(lastMessage));
-  //   }
-    `1 lastMessage -> {"from":"koushik", "to":"subhradeep", "msg":"hi"}
-    
-    var data = convert javascript object JSON.parse
-    {
-      from:"",to:"",msg:"
-    }
-
-    localStorage -> name, symbol, roomcode
-    from compare localStorage.getItem(name)
-
-    if matches :
-      I have sent it
-    else:
-      other user
-    `
-  // }, [lastMessage, setMessageHistory]);
-
-  // const handleClickChangeSocketUrl = useCallback(
-  //   () => setSocketUrl('wss://demos.kaazing.com/echo'),
-  //   []
-  // );
-
-  // const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
-
-  // const connectionStatus = {
-  //   [ReadyState.CONNECTING]: 'Connecting',
-  //   [ReadyState.OPEN]: 'Open',
-  //   [ReadyState.CLOSING]: 'Closing',
-  //   [ReadyState.CLOSED]: 'Closed',
-  //   [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
-  // }[readyState];
-
-  
-  // const send = (message)=>{
-  //   sendMessage(
-  //     JSON.stringify({
-  //       from:
-  //       to:
-  //       message:
-  //     })
-  //   )
-  // }
-
-  const [messages, setMessages] = useState([]);
-  // console.log(localStorage.getItem('roomCode'))
-  const [socketUrl, setSocketUrl] = useState('wss://api.play-real-tictactoe.cloud/api/ws/chat/'+localStorage.getItem('roomCode')+'_chat/'+localStorage.getItem('symbol')+'/');
-  // const [messageHistory, setMessageHistory] = useState([]);
-
-  // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-
-  // useEffect(() => { // whenever a message is received
-  //   if (lastMessage !== null) {
-  //     setMessageHistory((prev) => prev.concat(lastMessage));
-  //   }
-
-  //   var data = JSON.parse(lastMessage.data);
-  //   var chat_user = False;
-  //   if (data.from === localStorage.getitem('name'))
-  //   {chat_user=True;}
-   
-  //   `
-  //   var data = convert javascript object JSON.parse
-  //   {
-  //     from:"",to:"",msg:"
-  //   }
-
-  //   localStorage -> name, symbol, roomcode
-  //   from compare localStorage.getItem(name)
-
-  //   if matches :
-  //     I have sent it
-  //   else:
-  //     other user
-  //   `
-  // }, [lastMessage, setMessageHistory]);
-
-  // const handleClickChangeSocketUrl = useCallback(
-  //   () => setSocketUrl('wss://demos.kaazing.com/echo'),
-  //   []
-  // );
-
-  // const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
-
-  // const connectionStatus = {
-  //   [ReadyState.CONNECTING]: 'Connecting',
-  //   [ReadyState.OPEN]: 'Open',
-  //   [ReadyState.CLOSING]: 'Closing',
-  //   [ReadyState.CLOSED]: 'Closed',
-  //   [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
-  // }[readyState];
-
-  
-  // const send = (message)=>{
-  //   sendMessage(
-  //     JSON.stringify({
-  //       from:"",
-  //       to:"",
-  //       message: message
-  //     })
-  //   )
-  // }
-
-  return (
-    <ChatWrapper>
-      <div className="container">
-        <PopIcon /> 
-        <div className="chat-popup" id="myForm">
-            <ChatHeader />
-            <ChatBody />
-            <ChatSend />
-        </div>
-      </div>
-    </ChatWrapper>
-  );
-};
-
-export default ChatSystem;}*/
-
-/*{import React, { useState, useCallback, useEffect } from "react";
-import { ChatWrapper } from "../styles/chatbox.styled";
-import img1 from "../../assets/images/game_page/chat.jfif";
-// import img2 from "../../assets/images/game_page/close-icon-30.png";
-import useWebSocket, { ReadyState } from "react-use-websocket";
-
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
-// import IconButton from "@mui/material/IconButton";
-import ChatHeader from "./ChatHeader";
-import ChatBody from "./ChatBody";
-import ChatSend from "./ChatSend";
-import PopIcon from "./PopIcon";
-
-// ChatHeader, ChatBody, ChatSend
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    right: -48,
-    top: -70,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 4px",
-  },
-}));
-
-const ChatSystem = () => {
-  // const [messages, setMessages] = useState([{from:"",to:"",msg:""},{from:"",
-  //   to:"",
-  //   msg:""},{from:"",
-  //   to:"",
-  //   msg:""}
-  // ]);
-
-  // const [socketUrl, setSocketUrl] = useState('wss://api.play-real-tictactoe.cloud/api/ws/chat/localstorage.getitem('roomCode')_chat/x/');
-  // const [messageHistory, setMessageHistory] = useState([]);
-
-  // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-
-  // useEffect(() => { // whenever a message is received
-  //   if (lastMessage !== null) {
-  //     setMessageHistory((prev) => prev.concat(lastMessage));
-  //   }
-  `1 lastMessage -> {"from":"koushik", "to":"subhradeep", "msg":"hi"}
-    
-    var data = convert javascript object JSON.parse
-    {
-      from:"",to:"",msg:"
-    }
-
-    localStorage -> name, symbol, roomcode
-    from compare localStorage.getItem(name)
-
-    if matches :
-      I have sent it
-    else:
-      other user
-    `;
-  // }, [lastMessage, setMessageHistory]);
-
-  // const handleClickChangeSocketUrl = useCallback(
-  //   () => setSocketUrl('wss://demos.kaazing.com/echo'),
-  //   []
-  // );
-
-  // const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
-
-  // const connectionStatus = {
-  //   [ReadyState.CONNECTING]: 'Connecting',
-  //   [ReadyState.OPEN]: 'Open',
-  //   [ReadyState.CLOSING]: 'Closing',
-  //   [ReadyState.CLOSED]: 'Closed',
-  //   [ReadyState.UNINSTANTIATED]: 'Uninstantiated',
-  // }[readyState];
-
-  // const send = (message)=>{
-  //   sendMessage(
-  //     JSON.stringify({
-  //       from:
-  //       to:
-  //       message:
-  //     })
-  //   )
-  // }
-
-  const [messages, setMessages] = useState([]);
-
-  const [socketUrl, setSocketUrl] = useState(
-    "wss://api.play-real-tictactoe.cloud/api/ws/chat/" +
-      localStorage.getItem("roomCode") +
-      "_chat/" +
-      localStorage.getItem("symbol") +
-      "/"
-  );
-  const [messageHistory, setMessageHistory] = useState([]);
-
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-
-  useEffect(() => {
-    // whenever a message is received
-    if (lastMessage !== null) {
-      setMessageHistory((prev) => prev.concat(lastMessage));
-    }
-
-    //   var data = JSON.parse(lastMessage.data);
-    //   const chat_user = False;
-    //   if (data.from === localStorage.getitem('name'))
-    //   {chat_user=True;}
-
-    `
-    var data = convert javascript object JSON.parse
-    {
-      from:"",to:"",msg:"
-    }
-
-    localStorage -> name, symbol, roomcode
-    from compare localStorage.getItem(name)
-
-    if matches :
-      I have sent it
-    else:
-      other user
-    `;
-  }, [lastMessage, setMessageHistory]);
-
-  const handleClickChangeSocketUrl = useCallback(
-    () => setSocketUrl("wss://demos.kaazing.com/echo"),
-    []
-  );
-
-  // const handleClickSendMessage = useCallback(() => sendMessage("Hello"), []);
-
-  const connectionStatus = {
-    [ReadyState.CONNECTING]: "Connecting",
-    [ReadyState.OPEN]: "Open",
-    [ReadyState.CLOSING]: "Closing",
-    [ReadyState.CLOSED]: "Closed",
-    [ReadyState.UNINSTANTIATED]: "Uninstantiated",
-  }[readyState];
-
-  // const send = (message)=>{
-  //   sendMessage(
-  //     JSON.stringify({
-  //       from:"",
-  //       to:"",
-  //       message: message
-  //     })
-  //   )
-  // }
-
-  return (
-    <ChatWrapper>
-      <div className="container">
-        <PopIcon />
-        <div className="chat-popup" id="myForm">
-          <ChatHeader />
-          <ChatBody
-            messageHistory={messageHistory}
-            // setMessageHistory={setMessageHistory}
-            // lastMessage={lastMessage}
-          />
-          <ChatSend sendMessage={sendMessage}/>
-        </div>
-      </div>
-    </ChatWrapper>
-  );
-};
-
-export default ChatSystem;
-}*/
 import React, { useState, useEffect } from "react";
 import { ChatWrapper } from "../styles/chatbox.styled";
 import useWebSocket, { ReadyState } from "react-use-websocket";
@@ -336,17 +8,7 @@ import ChatBody from "./ChatBody";
 import ChatSend from "./ChatSend";
 import PopIcon from "./PopIcon";
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  "& .MuiBadge-badge": {
-    right: -48,
-    top: -70,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: "0 4px",
-  },
-}));
-
 const ChatSystem = () => {
-  // const [messages, setMessages] = useState([]);
   const [socketUrl, setSocketUrl] = useState(
     "wss://api.play-real-tictactoe.cloud/api/ws/chat/" +
       localStorage.getItem("roomCode") +
@@ -355,28 +17,39 @@ const ChatSystem = () => {
       "/"
   );
 
-
-  //console.log
-  console.log(socketUrl);
-  console.log("roomCode:", localStorage.getItem("roomCode"));
-  console.log("symbol:", localStorage.getItem("symbol"));
-  console.log("name:", localStorage.getItem("name"));
-
   const [messageHistory, setMessageHistory] = useState([]);
+
+  // Unseen chats
+  const [unseenChatsFromOthers, setUnseenChatsFromOthers] = useState(0);
+  const [unseenChatsFromSender, setUnseenChatsFromSender] = useState(0);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
     shouldReconnect: (closeEvent) => true,
     reconnectAttempts: 10,
     reconnectInterval: 2000,
   });
-  // Event listener for WebSocket open
 
   useEffect(() => {
     // Whenever a message is received
     if (lastMessage !== null) {
       setMessageHistory((prev) => [...prev, JSON.parse(lastMessage.data)]);
+
+      // To check unseen Chats from others
+      const newMessage = JSON.parse(lastMessage.data);
+      if (newMessage.from === localStorage.getItem("symbol")) {
+     
+        setUnseenChatsFromSender((prevCount) => prevCount + 1);
+      } else {
+        setUnseenChatsFromOthers((prevCount) => prevCount + 1);
+      }
     }
   }, [lastMessage, setMessageHistory]);
+
+  // Function to reset unseenChats to zero
+  const markMessagesAsSeen = () => {
+    setUnseenChatsFromSender(0);
+    setUnseenChatsFromOthers(0);
+  };
 
   const connectionStatus = {
     [ReadyState.CONNECTING]: "Connecting",
@@ -393,7 +66,10 @@ const ChatSystem = () => {
   return (
     <ChatWrapper>
       <div className="container">
-        <PopIcon />
+        <PopIcon
+          unseenChats={localStorage.getItem("symbol") === "sender" ? unseenChatsFromSender : unseenChatsFromOthers}
+          onClick={markMessagesAsSeen}
+        />
 
         <div className="chat-popup" id="myForm">
           <ChatHeader />

@@ -20,7 +20,10 @@ body {
     z-index: 100;
     height:450px;
     width:250px;
-    background-color: white;
+    /* background-color:  #f8f6f8; */
+    background-color: #f1f3f5;
+    /* background-color: #e3ecf5; */
+    /* background-color: white; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -3,7 +3,8 @@ export const ChatSendWrapper = styled.div`
   display: grid;
   grid-template-columns: 3;
   align-items: center;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  /* background-color: #c4c7c7e4; */
   padding-bottom: 0.3rem;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
@@ -15,7 +16,10 @@ export const ChatSendWrapper = styled.div`
 
  
   .lower-strip {
-    background-color: #53525234;
+    /* background-color: #53525234; */
+    /* background-color: #e3ecf5; */
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
     /* width:100%; */
     border-radius: 2rem;
     display: flex;
@@ -70,7 +74,11 @@ export const ChatSendWrapper = styled.div`
           border-radius: 2rem;
           display: flex;
           justify-content: center;
-          background-color: #9a86f3;
+          /* background-color:#9e5eff; */
+          background-color: #eaf0f7;
+          color:#260483;
+          box-shadow: 1px 1px 5px black;
+          /* background-color: #9a86f3; */
           /* background-color: #260483; */
           /* color:white; */
           align-items: center;
