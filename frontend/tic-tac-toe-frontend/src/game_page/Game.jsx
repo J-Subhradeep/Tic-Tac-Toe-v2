@@ -1,6 +1,5 @@
 import Board from "./board/Board";
 import Players from "./players/Players";
-
 import React, { useState } from "react";
 import { GameWrapper } from "./styles/game.styled";
 import ChatSystem from "./chat_system/ChatSystem";
@@ -24,7 +23,11 @@ const Game = () => {
       "/"
   );
   const [messageHistory, setMessageHistory] = useState([]);
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
+  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
+    shouldReconnect: (closeEvent) => true,
+    reconnectAttempts: 10,
+    reconnectInterval: 2000,
+  });
 
   useEffect(() => {
     if (lastMessage !== null) {
@@ -46,6 +49,7 @@ const Game = () => {
       }
     }
   }, [lastMessage, setMessageHistory]);
+
 
   return (
     <>
