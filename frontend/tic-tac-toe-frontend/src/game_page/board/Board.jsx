@@ -1,7 +1,4 @@
-
-import React, { useState, useCallback, useEffect } from 'react';
-import useWebSocket, { ReadyState } from 'react-use-websocket';
-
+import React, { useEffect, useState } from 'react'
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 import { convertLength } from '@mui/material/styles/cssUtils'
@@ -128,15 +125,15 @@ const Board = () => {
         {/* <button onClick={()=>win(a)}>c</button> */}
         <div className='box'>
           <div className='game-box'>
-            <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>
-            <div className='1' onClick={handleClickOnBoardElement}><SmallBox id='1' arr={boardElements} /></div>
-            <div className='2' onClick={handleClickOnBoardElement}><SmallBox id='2' arr={boardElements} /></div>
-            <div className='3' onClick={handleClickOnBoardElement}><SmallBox id='3' arr={boardElements} /></div>
-            <div className='4' onClick={handleClickOnBoardElement}><SmallBox id='4' arr={boardElements} /></div>
-            <div className='5' onClick={handleClickOnBoardElement}><SmallBox id='5' arr={boardElements} /></div>
-            <div className='6' onClick={handleClickOnBoardElement}><SmallBox id='6' arr={boardElements} /></div>
-            <div className='7' onClick={handleClickOnBoardElement}><SmallBox id='7' arr={boardElements} /></div>
-            <div className='8' onClick={handleClickOnBoardElement}><SmallBox id='8' arr={boardElements} /></div>
+            <SmallBox id='0' />
+            <SmallBox id='1' />
+            <SmallBox id='2' />
+            <SmallBox id='3' />
+            <SmallBox id='4' />
+            <SmallBox id='5' />
+            <SmallBox id='6' />
+            <SmallBox id='7' />
+            <SmallBox id='8' />
           </div>
         </div>
       </BoxWrapper>

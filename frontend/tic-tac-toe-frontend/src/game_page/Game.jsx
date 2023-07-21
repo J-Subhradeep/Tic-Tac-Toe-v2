@@ -48,7 +48,6 @@ const Game = () => {
     }, [lastMessage, setMessageHistory]);
 
 
-
     return (
         <>
             <GameWrapper>
