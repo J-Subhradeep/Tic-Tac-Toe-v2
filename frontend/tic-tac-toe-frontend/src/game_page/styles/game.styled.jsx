@@ -1,6 +1,5 @@
 import styled from "styled-components"
 export const GameWrapper = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 body{
   background: #111;
@@ -55,9 +54,7 @@ body{
 }
 
 .room-code{
-    background-color: rgb(255, 255, 255, 0);
-    color: white;
-    width: 420px;
+    width: 200px;
     height: 80px;
     display: inline-flex;
     justify-content: center;
@@ -65,11 +62,7 @@ body{
     position: absolute;
     right: 30px;
     top: 30px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border-radius: 20px;
-    border: 8px solid rgb(0, 71, 171);
+    z-index: 10;
 }
 
 
@@ -183,12 +176,7 @@ body{
     .room-code{
         bottom: 40px;
         left: 20px;
-        width: 350px;
-        height: 70px;
         top: auto;
-        font-size: 1.1rem;
-        font-weight: bold;
-        border: 5px solid rgb(0, 71, 171);
     }
 
     .wrapper span:nth-child(1) {

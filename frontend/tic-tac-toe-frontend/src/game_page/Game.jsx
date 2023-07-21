@@ -1,3 +1,4 @@
+
 import Board from "./board/Board";
 import Players from "./players/Players";
 import React, { useState } from "react";
@@ -40,6 +41,7 @@ const Game = () => {
       }
     }
   }, [lastMessage, setMessageHistory]);
+
 
 
   return (
