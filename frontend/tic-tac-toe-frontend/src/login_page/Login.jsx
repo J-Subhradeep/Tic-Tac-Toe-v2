@@ -56,8 +56,10 @@ const Login = () => {
   const [roomCode, setRoomCode] = useState('')
   const navigate = useNavigate()
   const copyToClipboard = () => {
-      const content =  roomCode
-      navigator.clipboard.writeText(content);
+
+    roomCode?navigator.clipboard.writeText(roomCode):0
+    roomCode?alert(`You have copied the room code`):0;
+
   }
 
 
