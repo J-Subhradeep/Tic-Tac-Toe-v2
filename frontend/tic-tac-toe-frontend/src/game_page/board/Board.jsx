@@ -1,14 +1,10 @@
-
 import React, { useState, useCallback, useEffect } from 'react';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
-
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
-import { convertLength } from '@mui/material/styles/cssUtils'
 
 
 const Board = () => {
-
 
 
   const [boardElements, setBoardElements] = useState(['.', '.', '.', '.', '.', '.', '.', '.','.'])
@@ -69,7 +65,6 @@ const Board = () => {
 
   // const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
 
-
   let a = [0, 4, 7]
 
 
@@ -85,43 +80,7 @@ const Board = () => {
   }
 
   // win(a)
-  // const [boardElements, setBoardElements] = useState(['.', '.', 'X', '0', '.', '.', '.', 'X'])
-  // const [socketUrl, setSocketUrl] = useState(
-  //   "wss://api.play-real-tictactoe.cloud/api/ws/board/" + room + "_board" + "/"
-  // );
-  // const [messageHistory, setMessageHistory] = useState([]);
-  // const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, { shouldReconnect: (CloseEvent) => true, reconnectAttempts: 10, reconnectInterval: 2000 });
-  // useEffect(() => {
-    // trigger when new message is received
 
-    // if (lastMessage !== null) {
-    //   setMessageHistory((prev) => prev.concat(lastMessage));
-    // }
-
-
-    // getting last message
-    // const data = Json.parse->lastMessage
-    // {arr:size(9),lastSymbol:'X'}
-    // setBoardElements
-
-
-  // }, [lastMessage, messageHistory])
-
-  // const handleClickOnBoardElement = (e) => {
-    // console.log(e.id); 
-    // identify the element/index
-
-    // localstorage symbol x/0
-
-    // const arr = boardElements;
-    // if(arr[index]==x/0)
-    // else{
-      // arr[index] = x/0
-    // }
-    // sendMessage(JSON.stringify({arr:arr, lastSymbol:localStorage.getItem(symbol)}))
-
-
-  // }
   return (
     <>
       <BoxWrapper>
