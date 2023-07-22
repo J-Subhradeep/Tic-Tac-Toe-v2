@@ -24,7 +24,7 @@ function Tie() {
             aria-label="back-to-home"
             color="primary"
             sx={{color:'white',fontSize:50,position:"absolute"}}
-            href="/Login"
+            href=""
           >
           <HomeIcon fontSize="inherit" />
         </IconButton>
