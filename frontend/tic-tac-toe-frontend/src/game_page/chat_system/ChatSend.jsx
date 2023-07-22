@@ -10,11 +10,11 @@ const ChatSend = ({ sendMessage }) => {
     e.preventDefault();
     if (messageInput.trim() !== "") {
       sendMessage(JSON.stringify({
-        from: localStorage.getItem("name"),
-        to: "",
+        from: localStorage.getItem("symbol"),
+        to: localStorage.getItem("symbol") ==="x"  ? "o": "x",
         msg: messageInput,
       }));
-     
+
       setMessageInput("");
     }
   };

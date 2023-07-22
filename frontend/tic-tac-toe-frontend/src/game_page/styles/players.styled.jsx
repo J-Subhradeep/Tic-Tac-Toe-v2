@@ -19,7 +19,7 @@ export const PlayerWrapper = styled.div`
     }
     .name{
         background-image: linear-gradient(90deg, #00dbde, #fc00ff);
-        font-size:18px;
+        font-size:15px;
         font-weight:bolder;
         font-family: Arial, Helvetica, sans-serif;
         text-align:center;
@@ -32,9 +32,6 @@ export const PlayerWrapper = styled.div`
         .user{
             height: 100px;
             width: 100px; 
-        }
-        .name{
-            font-size:15px;
         }
     }
 `

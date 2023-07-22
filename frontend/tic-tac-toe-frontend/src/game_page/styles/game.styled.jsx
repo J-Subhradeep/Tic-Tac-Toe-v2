@@ -69,7 +69,7 @@ body{
     font-size: 1.4rem;
     font-weight: bold;
     border-radius: 20px;
-    border: 8px solid rgb(0, 71, 171);
+   
 }
 
 
@@ -188,7 +188,7 @@ body{
         top: auto;
         font-size: 1.1rem;
         font-weight: bold;
-        border: 5px solid rgb(0, 71, 171);
+        /* border: 5px solid rgb(0, 71, 171); */
     }
 
     .wrapper span:nth-child(1) {
