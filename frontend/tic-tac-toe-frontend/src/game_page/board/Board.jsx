@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 import { convertLength } from '@mui/material/styles/cssUtils'
-
+import useWebSocket, { ReadyState } from "react-use-websocket";
 
 const Board = () => {
 
