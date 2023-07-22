@@ -19,7 +19,7 @@ export const PlayerWrapper = styled.div`
     }
     .name{
         background-image: linear-gradient(90deg, #00dbde, #fc00ff);
-        font-size:25px;
+        font-size:15px;
         font-weight:bolder;
         font-family: Arial, Helvetica, sans-serif;
         text-align:center;
