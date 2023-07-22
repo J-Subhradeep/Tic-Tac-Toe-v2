@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { EightMp } from "@mui/icons-material";
 import Winner from "../results_page/Winner";
+import Alert from "@mui/material/Alert";
 
 const Game = () => {
   let roomCode = localStorage.getItem("roomCode");
@@ -50,7 +51,6 @@ const Game = () => {
     }
   }, [lastMessage, setMessageHistory]);
 
-
   return (
     <>
       {flag ? (
@@ -92,9 +92,24 @@ const Game = () => {
               </div>
             </div>
           </div>
+          {/* {!flag ? (<Alert severity="info">Opponent Disconnected!</Alert>) : ''} */}
         </GameWrapper>
       ) : (
-        <Winner />
+        <>
+          <Alert
+            severity="info"
+            style={{
+              width: "fit-content",
+              position: "absolute",
+              top: "5%",
+              left: "50%",
+              transform: "translate(-50%, 0)",
+            }}
+          >
+            Opponent Disconnected!
+          </Alert>
+          <Winner />
+        </>
       )}
     </>
   );
