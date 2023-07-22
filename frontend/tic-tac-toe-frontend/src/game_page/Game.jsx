@@ -5,13 +5,8 @@ import { GameWrapper } from "./styles/game.styled";
 import ChatSystem from "./chat_system/ChatSystem";
 import { useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-<<<<<<< HEAD
-import { EightMp } from "@mui/icons-material";
 import Winner from "../results_page/Winner";
 import Alert from "@mui/material/Alert";
-=======
-import Button from '@mui/material/Button';
->>>>>>> d74b2d740b3f45b31dcfa9afcd02ab114306db27
 
 const Game = () => {
     let roomCode = localStorage.getItem("roomCode");
@@ -53,7 +48,6 @@ const Game = () => {
         }
     }, [lastMessage, setMessageHistory]);
 
-<<<<<<< HEAD
   return (
     <>
       {flag ? (
@@ -109,59 +103,13 @@ const Game = () => {
               transform: "translate(-50%, 0)",
             }}
           >
-            Opponent Disconnected!
+            Your Opponent got Disconnected!
           </Alert>
           <Winner />
         </>
       )}
     </>
   );
-=======
-
-    return (
-        <>
-            <GameWrapper>
-                <ChatSystem />
-                <div className="wrapper">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div className="banner">
-                    <div className='room-code'>
-                        <Button onClick={copyText} variant="outlined">Copy Room Code</Button>
-                    </div>
-                    <div className="upper">
-                        <div className="player">
-                            <Players name={leftClient} />
-                        </div>
-                        <div className="board">
-                            <Board />
-                        </div>
-                        <div className="player">
-                            <Players name={rightClient} />
-                        </div>
-                    </div>
-                    <div className="bottom">
-                        <div className="player2">
-                            <Players name={leftClient} />
-                        </div>
-                        <div className="player2">
-                            <Players name={rightClient} />
-                        </div>
-                    </div>
-                </div>
-            </GameWrapper>
-        </>
-    );
->>>>>>> d74b2d740b3f45b31dcfa9afcd02ab114306db27
 };
 
 export default Game;
