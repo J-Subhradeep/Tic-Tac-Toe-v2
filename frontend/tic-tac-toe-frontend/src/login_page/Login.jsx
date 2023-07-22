@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
 import { Box, Alert} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -56,8 +56,8 @@ const Login = () => {
   const [roomCode, setRoomCode] = useState('')
   const navigate = useNavigate()
   const copyToClipboard = () => {
-    roomCode?navigator.clipboard.writeText(roomCode):0
-    roomCode?alert(`You have copied the room code`):0;
+      const content =  roomCode
+      navigator.clipboard.writeText(content);
   }
 
 
@@ -70,7 +70,7 @@ const Login = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (name && roomCode) {
-        var res = await axios.post("https://api.play-real-tictactoe.cloud/api/",  {group_name: roomCode})
+        var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {group_name: roomCode})
         console.log(res.data)
         if(!res.data.both){
             setError({status: true,message: "Login Successful",type: 'success'})

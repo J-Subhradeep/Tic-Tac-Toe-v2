@@ -7,12 +7,15 @@ export const ChatHeadWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    background-color: #9a86f3;
+    background-color: white;
+    box-shadow: 0px 1px 8px;
+    /* background-color: #9a86f3; */
     /* background-color: #260483; */
     /* border-top-radius: 0.6rem; */
     border-top-right-radius:0.6rem;
     border-top-left-radius:0.6rem;
     height: 3rem;
+
 
     .heading{
         display:flex;
