@@ -12,12 +12,12 @@ const Board = () => {
   const [lastBox, setLastBox] = useState('')
 
   const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}_board/`);
-  // const [socketUrl2, setSocketUrl2] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/seconduser/${localStorage.getItem('roomCode')}/${localStorage.getItem('name')}/`);
-  // console.log(socketUrl2)
+  const [socketUrl2, setSocketUrl2] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/seconduser/${localStorage.getItem('roomCode')}/${localStorage.getItem('name')}/`);
+  console.log(socketUrl2)
   const [messageHistory, setMessageHistory] = useState([]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-  // const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
+  const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
 
   useEffect(() => {
     if (lastMessage !== null) {
