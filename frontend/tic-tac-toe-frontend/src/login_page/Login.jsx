@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import { Box, Alert} from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import subhradeep from '../assets/images/login_page/'
+import { useNavigate } from 'react-router-dom';
 import { RiLinkedinFill } from 'react-icons/ri'
 import OutlinedInput from '@mui/material/OutlinedInput';
 import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
@@ -53,69 +52,47 @@ const Login = () => {
     type: ""
 })
 
-  const [copyText, setCopyText] = useState('');
-
-  const handleCopyText = (e) => {
-    setCopyText(e.target.value);
-  }
-
+  const [name, setName] = useState('')
+  const [roomCode, setRoomCode] = useState('')
+  const navigate = useNavigate()
   const copyToClipboard = () => {
-    copy(copyText);
-    alert(`You have copied the room code`);
+    roomCode?navigator.clipboard.writeText(roomCode):0
+    roomCode?alert(`You have copied the room code`):0;
   }
 
 
   const generateRoomCode = () => {
     axios.get("https://api.play-real-tictactoe.cloud/api/unique")
-    .then((res) => setCopyText(res.data.room))
+    .then((res) => setRoomCode(res.data.room))
   }
 
-  const [loginInfo, setLoginInfo] = useState({});
-
-    
-        // return loginInfo;
 
   const handelSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const actualData = {
-        name: data.get('name'),
-        roomCode: data.get('roomCode'),
-    }
-    if (actualData.name && actualData.roomCode) {
-        // console.log(actualData);
-         var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", {
-          method: "POST",
-          body: {
-              group_name: actualData.roomCode
-          }
-          })
-          setLoginInfo(res.data)
-        console.log(res.data.both)
-        document.getElementById('login-form').reset()
+    if (name && roomCode) {
+        var res = await axios.post("https://api.play-real-tictactoe.cloud/api/",  {group_name: roomCode})
+        console.log(res.data)
         if(!res.data.both){
-            setError({
-                status: true,
-                message: "Login Success",
-                type: 'success'
-            })
-            // storeToken(res.data.token)
-            // navigate('/dashboard');
-            console.log('success')
-        } else{
-            setError({ status: true, message: res.data.message, type: 'error'})
+            setError({status: true,message: "Login Successful",type: 'success'})
+            localStorage.setItem('name', name)
+            localStorage.setItem('roomCode', roomCode)
+            if(res.data.is_first){
+              localStorage.setItem('symbol', 'x')
+            }else{
+              localStorage.setItem('symbol', 'o')
+            }
+            setTimeout(()=>{
+              navigate("/game");
+            },1000)
+        } 
+        else{
+            setError({ status: true, message: "Room is Full", type: 'error'})
         }
     }
-    // else {
-    //     setError({
-    //         status: true,
-    //         message: "All Fileds Are Required",
-    //         type: 'error'
-    //     })
-    // }
-}
-
-
+    else {
+        setError({status: true,message: "All Fileds Are Required",type: 'error'})
+    }
+  }
   return (
     <>
       <GlobalStyle responsive />
@@ -143,17 +120,16 @@ const Login = () => {
             <div style={{paddingTop:"20px"}}>
               <TextAnimation>Play With Friends</TextAnimation>
             </div>
-            <TextField id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "200px" }} />
+            <TextField value={name} onChange = {(e)=>setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "200px" }} />
             <div className="roomCodeField">
-              <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Room Code</InputLabel>
+              <FormControl id='room' sx={{ m: 1, width: '25ch' }} variant="outlined">
+                <InputLabel required htmlFor="outlined-adornment-password">Room Code</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-password"
                   name="roomCode"
                   type={'text'}
                   required
-                  value={copyText}
-                  onChange={handleCopyText}
+                  value={roomCode} onChange = {(e)=>setRoomCode(e.target.value)}
                   endAdornment={
                     <InputAdornment position="end">
                       <Tooltip title="Copy Room Code">
