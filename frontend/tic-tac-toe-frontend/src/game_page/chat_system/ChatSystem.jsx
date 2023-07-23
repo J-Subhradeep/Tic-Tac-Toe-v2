@@ -7,7 +7,7 @@ import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
 import ChatSend from "./ChatSend";
 import PopIcon from "./PopIcon";
-import Chat_sound from "../../assets/audios/game-sounds/Chat_sound.aac";
+import Chat_sound from "../../assets/audios/game-sounds/Message-pop.mp3";
 
 const ChatSystem = () => {
   const [socketUrl, setSocketUrl] = useState(
@@ -26,23 +26,13 @@ const ChatSystem = () => {
 
   //chat audio
   const [playNewMessageSound, setPlayNewMessageSound] = useState(false);
+  
+
+
   const playSound = () => {
     const audio = new Audio(Chat_sound);
     audio.play();
   };
-
-
- //chat box is open or not
-  const [isSenderChatboxOpen, setIsSenderChatboxOpen] = useState(false);  
-  const [isReceiverChatboxOpen, setIsReceiverChatboxOpen] = useState(false);  
-
-  const toggleSenderChatbox = () => {
-    setIsSenderChatboxOpen((prevStatus) => !prevStatus);
-  };
-  const toggleReceiverChatbox = () => {
-    setIsReceiverChatboxOpen((prevStatus) => !prevStatus);
-  };
-  
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
     shouldReconnect: (closeEvent) => true,
@@ -97,20 +87,10 @@ const ChatSystem = () => {
     <ChatWrapper>
       <div className="container">
         <PopIcon
-          unseenChats={
-            localStorage.getItem("symbol") === "sender"
-              ? unseenChatsFromSender
-              : unseenChatsFromOthers
-          }
-          isChatboxOpen={
-            localStorage.getItem("symbol") === "sender"
-            ? isSenderChatboxOpen
-            : isReceiverChatboxOpen}
-          toggleChatbox={
-            localStorage.getItem("symbol") === "sender"
-            ? toggleSenderChatbox
-            : toggleReceiverChatbox}
-            
+          unseenChats=
+          {localStorage.getItem("symbol") === "sender" ?
+              unseenChatsFromSender : 
+              unseenChatsFromOthers}
           onClick={markMessagesAsSeen}
         />
 
