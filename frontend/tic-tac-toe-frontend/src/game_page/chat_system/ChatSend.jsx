@@ -2,20 +2,33 @@ import React, { useState } from "react";
 import { ChatSendWrapper } from "../styles/chatsend.styled";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import Picker from "emoji-picker-react";
 
-const ChatSend = ({ sendMessage }) => { 
+const ChatSend = ({ sendMessage }) => {
   const [messageInput, setMessageInput] = useState("");
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
+  const handleEmojiPickerHideShow = () => {
+    setShowEmojiPicker(!showEmojiPicker);
+  };
+  const handleEmojiClick = ( emoji) => {
+    let message = messageInput;
+    message += emoji.emoji;
+    setMessageInput(message);
+  };
   const send = (e) => {
     e.preventDefault();
     if (messageInput.trim() !== "") {
-      sendMessage(JSON.stringify({
-        from: localStorage.getItem("symbol"),
-        to: localStorage.getItem("symbol") ==="x"  ? "o": "x",
-        msg: messageInput,
-      }));
+      sendMessage(
+        JSON.stringify({
+          from: localStorage.getItem("symbol"),
+          to: localStorage.getItem("symbol") === "x" ? "o" : "x",
+          msg: messageInput,
+        })
+      );
 
       setMessageInput("");
+      setShowEmojiPicker(false);
     }
   };
 
@@ -29,8 +42,6 @@ const ChatSend = ({ sendMessage }) => {
       send(e);
     }
   };
- 
-  
 
   return (
     <div className="lower-strip-size">
@@ -38,7 +49,15 @@ const ChatSend = ({ sendMessage }) => {
         <div className="lower-strip">
           <div className="btn-container">
             <div className="emoji">
-              <AddReactionOutlinedIcon className="smile" />
+              <AddReactionOutlinedIcon
+                className="smile"
+                onClick={handleEmojiPickerHideShow}
+              />
+              {showEmojiPicker && (
+                <div className="emoji-picker">
+                  <Picker onEmojiClick={handleEmojiClick} />
+                </div>
+              )}
             </div>
           </div>
           <form className="form-container" onSubmit={send}>
