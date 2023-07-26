@@ -69,6 +69,7 @@ body{
     font-size: 1.4rem;
     font-weight: bold;
     border-radius: 20px;
+    z-index: 10;
    
 }
 

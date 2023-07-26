@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
+import { useNavigate } from 'react-router-dom';
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 
@@ -7,17 +8,65 @@ import SmallBox from '../small-box/SmallBox'
 const Board = () => {
 
 
-  const [boardElements, setBoardElements] = useState(['.', '.', '.', '.', '.', '.', '.', '.','.'])
+  const [boardElements, setBoardElements] = useState(['', '', '', '', '', '', '', '', ''])
   const [lastSymbol, setLastSymbol] = useState('.')
   const [lastBox, setLastBox] = useState('')
 
+  const navigate = useNavigate()
+
   const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}_board/`);
-  // const [socketUrl2, setSocketUrl2] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/seconduser/${localStorage.getItem('roomCode')}/${localStorage.getItem('name')}/`);
-  // console.log(socketUrl2)
   const [messageHistory, setMessageHistory] = useState([]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
-  // const { sendMessage2, lastMessage2, readyState2 } = useWebSocket(socketUrl2);
+
+  const checkWinning = (board) => {
+    const winLines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+    for (let i = 0; i < winLines.length; i++) {
+      const [a, b, c] = winLines[i];
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        if (board[a] == localStorage.getItem('symbol')) {
+          winLines[i].forEach(win)
+          setTimeout(() => {
+            navigate("/result", {
+              state: {
+                winner: true
+              },
+            })
+          }, 1000)
+        } else {
+          winLines[i].forEach(win)
+          setTimeout(() => {
+            navigate("/result", {
+              state: {
+                winner: false
+              },
+            })
+          }, 1000)
+        }
+        
+      return
+      }
+    }
+    if (board.every((val) => val !== "")) {
+      setTimeout(() => {
+        navigate("/result", {
+          state: {
+            winner: null
+          },
+        })
+      }, 1000)
+    }
+  };
+
 
   useEffect(() => {
     if (lastMessage !== null) {
@@ -25,6 +74,7 @@ const Board = () => {
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
       setLastBox(JSON.parse(lastMessage.data).lastBox)
+      checkWinning(JSON.parse(lastMessage.data).arr)
     }
     // getting last message
   }, [lastMessage, setMessageHistory]);
@@ -33,58 +83,38 @@ const Board = () => {
   const handleClickOnBoardElement = (e) => {
     // identify the element/index
     let index = e.currentTarget.className
-    // console.log(index)
 
     if (boardElements[index] == 'x' || boardElements[index] == 'o') {
       console.log('already clkd')
     }
-    else if(lastSymbol == localStorage.getItem('symbol')){
+    else if (lastSymbol == localStorage.getItem('symbol')) {
       console.log('next turn')
     }
     else {
 
-        const newState = boardElements
-        if(newState[index] == 'x' || newState[index] == 'o'){
+      const newState = boardElements
+      if (newState[index] == 'x' || newState[index] == 'o') {
 
-        } else{
-          newState[index] = localStorage.getItem('symbol')
-        }
-
-        
-        // setBoardElements(newState);
-        sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index }))
-        // console.log(boardElements)
+      } else {
+        newState[index] = localStorage.getItem('symbol')
+      }
+      sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
 
     }
-    // console.log('clickedboard')
   }
 
-  // console.log(boardElements)
-  // console.log(messageHistory)
 
-
-  // const handleClickSendMessage = useCallback(() => sendMessage('Hello'), []);
-
-  let a = [0, 4, 7]
-
-
-  const win = (a) => {
-    a.forEach(fun)
-  }
-
-  function fun(item, index, arr) {
+  function win(item, index, arr) {
     let winBox = document.getElementById(arr[index])
     console.log(item)
     console.log(winBox)
     winBox.style.backgroundColor = 'red';
   }
 
-  // win(a)
 
   return (
     <>
       <BoxWrapper>
-        {/* <button onClick={()=>win(a)}>c</button> */}
         <div className='box'>
           <div className='game-box'>
             <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>
