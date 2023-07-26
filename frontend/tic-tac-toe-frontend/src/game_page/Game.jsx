@@ -13,7 +13,7 @@ const Game = () => {
     let username = localStorage.getItem("name");
     const [leftClient, setLeftClient] = useState("");
     const [rightClient, setRightClient] = useState("");
-
+    const [flag, setFlag] = useState(true);
     function copyText() {
         const content = roomCode
         navigator.clipboard.writeText(content);
@@ -44,6 +44,11 @@ const Game = () => {
             else if (localStorage.getItem("name") === clientData.second_client) {
                 setLeftClient(clientData.second_client);
                 setRightClient(clientData.first_client);
+
+            }
+            if (clientData.second_client === false) {
+              setRightClient("Disconnected");
+              setFlag(false);
             }
         }
     }, [lastMessage, setMessageHistory]);
