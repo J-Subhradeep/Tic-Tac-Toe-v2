@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import Winner from "../results_page/Winner";
 import Alert from "@mui/material/Alert";
+import { Button } from "@mui/material";
 
 const Game = () => {
     let roomCode = localStorage.getItem("roomCode");
@@ -71,9 +72,9 @@ const Game = () => {
             <span></span>
           </div>
           <div className="banner">
-            <div className="room-code">
-              Room Code: <br /> {localStorage.getItem("roomCode")}
-            </div>
+          <div className='room-code'>
+              <Button onClick={copyText} variant="outlined">Copy Room Code</Button>
+          </div>
             <div className="upper">
               <div className="player">
                 <Players name={leftClient} />
