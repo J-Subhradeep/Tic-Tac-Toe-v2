@@ -7,6 +7,7 @@ import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
 import ChatSend from "./ChatSend";
 import PopIcon from "./PopIcon";
+import Chat_sound from "../../assets/audios/game-sounds/Message-pop.mp3";
 
 const ChatSystem = () => {
   const [socketUrl, setSocketUrl] = useState(
@@ -22,6 +23,16 @@ const ChatSystem = () => {
   // Unseen chats
   const [unseenChatsFromOthers, setUnseenChatsFromOthers] = useState(0);
   const [unseenChatsFromSender, setUnseenChatsFromSender] = useState(0);
+
+  //chat audio
+  const [playNewMessageSound, setPlayNewMessageSound] = useState(false);
+  
+
+
+  const playSound = () => {
+    const audio = new Audio(Chat_sound);
+    audio.play();
+  };
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
     shouldReconnect: (closeEvent) => true,
@@ -41,6 +52,7 @@ const ChatSystem = () => {
         setUnseenChatsFromSender((prevCount) => prevCount + 1);
       } else {
         setUnseenChatsFromOthers((prevCount) => prevCount + 1);
+        setPlayNewMessageSound(true);
       }
     }
   }, [lastMessage, setMessageHistory]);
@@ -50,6 +62,14 @@ const ChatSystem = () => {
     setUnseenChatsFromSender(0);
     setUnseenChatsFromOthers(0);
   };
+
+  useEffect(() => {
+    if (playNewMessageSound) {
+      playSound();
+      // Set the state back to false after playing the sound
+      setPlayNewMessageSound(false);
+    }
+  }, [playNewMessageSound]);
 
   const connectionStatus = {
     [ReadyState.CONNECTING]: "Connecting",
@@ -67,7 +87,10 @@ const ChatSystem = () => {
     <ChatWrapper>
       <div className="container">
         <PopIcon
-          unseenChats={localStorage.getItem("symbol") === "sender" ? unseenChatsFromSender : unseenChatsFromOthers}
+          unseenChats=
+          {localStorage.getItem("symbol") === "sender" ?
+              unseenChatsFromSender : 
+              unseenChatsFromOthers}
           onClick={markMessagesAsSeen}
         />
 

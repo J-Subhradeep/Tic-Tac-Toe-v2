@@ -3,7 +3,7 @@ import { ChatSendWrapper } from "../styles/chatsend.styled";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 
-const ChatSend = ({ sendMessage }) => {
+const ChatSend = ({ sendMessage }) => { 
   const [messageInput, setMessageInput] = useState("");
 
   const send = (e) => {
@@ -30,9 +30,7 @@ const ChatSend = ({ sendMessage }) => {
     }
   };
  
-  // useEffect(() => {
-  //   console.log(meassageInput);
-  // }, []);
+  
 
   return (
     <div className="lower-strip-size">
