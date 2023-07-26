@@ -1,12 +1,18 @@
 import React from 'react'
-// import Winner from './Winner'
+import { useLocation } from "react-router-dom";
+import Winner from './Winner'
 import Loser from './Loser';
-// import Tie from './Tie';
+import Tie from './Tie';
 const Results = () => {
+const location = useLocation();
+const status = location.state.winner
+
   return (
-    // <Winner />
-    <Loser/>
-    // <Tie/>
+    <>
+    {status == true ?  <Winner /> : <></>}
+    {status == false ? <Loser /> : <></>}
+    {status == null ? <Tie /> : <></>}
+    </>
   )
 }
 
