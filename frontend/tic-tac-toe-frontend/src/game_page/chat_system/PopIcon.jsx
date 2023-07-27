@@ -4,7 +4,7 @@ import img1 from "../../assets/images/game_page/chat.jfif";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 
-const PopIcon = ({ unseenChats, onClick}) => {
+const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: -100,
@@ -14,13 +14,14 @@ const PopIcon = ({ unseenChats, onClick}) => {
     },
   }));
 
-  // right: -100,
-  // top: -90,
-
   const openForm = () => {
     document.getElementById("myForm").style.display = "block";
+    console.log(isChatboxOpen,'pop before');
+    setIsChatboxOpen(!isChatboxOpen);
+    console.log(isChatboxOpen,'pop after');
     onClick();
   };
+
   return (
     <div
       className="whole"
@@ -28,7 +29,7 @@ const PopIcon = ({ unseenChats, onClick}) => {
     >
       <PopIconWrapper>
         <div className="icon">
-          {unseenChats > 0 && ( 
+          {unseenChats > 0 && !isChatboxOpen && (
             <StyledBadge
               badgeContent={unseenChats}
               color="secondary"
@@ -44,7 +45,6 @@ const PopIcon = ({ unseenChats, onClick}) => {
 
           <div className="transition-3 hello">Let's Chat 🤙</div>
         </div>
-        {/* </StyledBadge> */}
       </PopIconWrapper>
     </div>
   );
