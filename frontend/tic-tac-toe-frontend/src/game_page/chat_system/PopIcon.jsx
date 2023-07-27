@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PopIconWrapper } from "../styles/popicon.styled";
 import img1 from "../../assets/images/game_page/chat.jfif";
 import Badge from "@mui/material/Badge";
@@ -16,11 +16,13 @@ const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
 
   const openForm = () => {
     document.getElementById("myForm").style.display = "block";
-    console.log(isChatboxOpen,'pop before');
-    setIsChatboxOpen(!isChatboxOpen);
-    console.log(isChatboxOpen,'pop after');
+    setIsChatboxOpen(true);
     onClick();
   };
+
+  useEffect(() => {
+    console.log(isChatboxOpen, "pop after"); // This will log the updated state value
+  }, [isChatboxOpen]);
 
   return (
     <div

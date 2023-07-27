@@ -46,12 +46,14 @@ const ChatSystem = () => {
 
       // To check unseen chats from others
       const newMessage = JSON.parse(lastMessage.data);
+      if (!isChatboxOpen){
       if (newMessage.from === localStorage.getItem("symbol")) {
         setUnseenChatsFromSender((prevCount) => prevCount + 1);
       } else {
         setUnseenChatsFromOthers((prevCount) => prevCount + 1);
         setPlayNewMessageSound(true);
       }
+    }
     }
   }, [lastMessage, setMessageHistory]);
 
