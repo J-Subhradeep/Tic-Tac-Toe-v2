@@ -4,10 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 import { motion } from "framer-motion";
-
+import sound_2 from '../../assets/audios/game-sounds/rclick-13693.mp3'
+import { Howl } from 'howler';
 
 const Board = () => {
-
+  var sound = new Howl({
+    src: [sound_2],
+    html5: true
+  });
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: () => {
@@ -109,6 +113,7 @@ const Board = () => {
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
       // setLastBox(JSON.parse(lastMessage.data).lastBox)
       checkWinning(JSON.parse(lastMessage.data).arr)
+      sound.play();
     }
     // getting last message
   }, [lastMessage, setMessageHistory]);
@@ -131,6 +136,7 @@ const Board = () => {
 
       } else {
         newState[index] = localStorage.getItem('symbol')
+        
       }
       sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
 

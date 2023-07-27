@@ -42,9 +42,22 @@ export const ChatSendWrapper = styled.div`
           font-size: 1.5rem;
           color: black;
           cursor: pointer;
+          
+        }
+        .emoji-picker {
+          position: absolute;
+          top: -470px;
+          left:-120px;
+          z-index: 1;
+          background-color: #f1f1f1;
+          box-shadow: 1px 1px 5px black;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+
         }
       }
-    }
+    } 
+ 
     .form-container{
        
         margin-top: 0.4rem;
