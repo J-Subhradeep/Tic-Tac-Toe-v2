@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PopIconWrapper } from "../styles/popicon.styled";
 import img1 from "../../assets/images/game_page/chat.jfif";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import zIndex from "@mui/material/styles/zIndex";
 
-const PopIcon = ({ unseenChats, onClick}) => {
+const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
       right: -100,
@@ -15,13 +15,16 @@ const PopIcon = ({ unseenChats, onClick}) => {
     },
   }));
 
-  // right: -100,
-  // top: -90,
-
   const openForm = () => {
     document.getElementById("myForm").style.display = "block";
+    setIsChatboxOpen(true);
     onClick();
   };
+
+  useEffect(() => {
+    console.log(isChatboxOpen, "pop after"); // This will log the updated state value
+  }, [isChatboxOpen]);
+
   return (
     <div
       className="whole"
@@ -29,7 +32,7 @@ const PopIcon = ({ unseenChats, onClick}) => {
     >
       <PopIconWrapper>
         <div className="icon">
-          {unseenChats > 0 && ( 
+          {unseenChats > 0 && !isChatboxOpen && (
             <StyledBadge
               badgeContent={unseenChats}
               color="secondary"
@@ -45,7 +48,6 @@ const PopIcon = ({ unseenChats, onClick}) => {
 
           <div className="transition-3 hello">Let's Chat 🤙</div>
         </div>
-        {/* </StyledBadge> */}
       </PopIconWrapper>
     </div>
   );
