@@ -12,11 +12,12 @@ export const BoxWrapper = styled.div`
   overflow: hidden;
   border-radius: 20px;
   padding: 4px;
+  z-index: 5;
   }
 
 .game-box{
-    height: 350px;
-    width: 350px;
+    height: 360px;
+    width: 360px;
     display: grid;
     justify-content: space-between;
     grid-row-gap: 6px;
@@ -24,12 +25,29 @@ export const BoxWrapper = styled.div`
     grid-template-columns: auto auto auto;
     overflow: hidden;
     /* border-radius: 20px; */
-    z-index: 10;
+    z-index: 5;
 }
 
-.winStyle{
-  background-color: red;
+.motion_body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  width: 350px;
+  /* min-height: 100vh; */
+  /* background: #222222; */
+  position: absolute;
+  /* border: 2px solid red; */
+  z-index: 10;
 }
+
+line {
+  stroke-width: 20px;
+  stroke-linecap: round;
+  fill: transparent;
+  z-index: 10;
+}
+
 
 
 .box::before{
@@ -77,6 +95,15 @@ transform: rotate(360deg);
         width: 220px;
     }
 
+    .motion_body {
+      height: 210px;
+      width: 210px;
+    }
+
+    line {
+      stroke-width: 20px;
+    }
+
     .box{
       height: 227px;
       width: 227px;
@@ -99,6 +126,14 @@ transform: rotate(360deg);
         width: 150px;
         grid-row-gap: 2px;
         grid-column-gap: 2px;
+    }
+    .motion_body {
+      height: 140px;
+      width: 140px;
+    }
+
+    line {
+      stroke-width: 20px;
     }
     .box{
       height: 154px;
