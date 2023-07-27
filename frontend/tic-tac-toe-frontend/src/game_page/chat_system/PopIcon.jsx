@@ -3,6 +3,7 @@ import { PopIconWrapper } from "../styles/popicon.styled";
 import img1 from "../../assets/images/game_page/chat.jfif";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
+import zIndex from "@mui/material/styles/zIndex";
 
 const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -27,7 +28,7 @@ const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   return (
     <div
       className="whole"
-      style={{ position: "fixed", bottom: "15px", right: "15px" }}
+      style={{ position: "fixed", bottom: "15px", right: "15px", zIndex: 10}}
     >
       <PopIconWrapper>
         <div className="icon">

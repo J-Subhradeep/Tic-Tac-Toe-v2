@@ -1,9 +1,11 @@
 import { LoserWrapper } from "./styles/loser.styled";
 import { IconButton } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import { Howl } from "howler";
-import { useEffect } from "react";
+// import { Howl } from "howler";
+// import { useEffect } from "react";
 import music from "../assets/audios/lose.mp3";
+import { useEffect } from "react";
+import { Howl } from "howler";
 
 function Loser() {
   useEffect(() => {
@@ -42,7 +44,7 @@ function Loser() {
             aria-label="back-to-home"
             color="primary"
             sx={{color:'white',fontSize:50,position:"absolute"}}
-            href="/Login"
+            href=""
           >
           <HomeIcon fontSize="inherit" />
         </IconButton>
