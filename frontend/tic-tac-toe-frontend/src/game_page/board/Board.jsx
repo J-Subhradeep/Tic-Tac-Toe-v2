@@ -3,14 +3,31 @@ import useWebSocket, { ReadyState } from 'react-use-websocket';
 import { useNavigate } from 'react-router-dom';
 import { BoxWrapper } from '../styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
+import { motion } from "framer-motion";
 
 
 const Board = () => {
 
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: () => {
+      const delay = 1
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+          opacity: { delay, duration: 0.01 }
+        }
+      };
+    }
+  };
 
   const [boardElements, setBoardElements] = useState(['', '', '', '', '', '', '', '', ''])
+  const [winElements, setWinElements] = useState(['','','',''])
   const [lastSymbol, setLastSymbol] = useState('.')
-  const [lastBox, setLastBox] = useState('')
+  const [win, setWin] = useState(false)
+  const [winColor, setWinColor] = useState('')
 
   const navigate = useNavigate()
 
@@ -30,27 +47,44 @@ const Board = () => {
       [0, 4, 8],
       [2, 4, 6],
     ];
+    const lengths = [
+      ['15', '95', '585', '95'],
+      ['15', '300', '585', '300'],
+      ['15', '510', '585', '510'],
+      ['90', '20', '90', '580'],
+      ['300', '20', '300', '580'],
+      ['515', '20', '515', '580'],
+      ['20', '20', '585', '585'],
+      ['20', '585', '585', '20'],
+    ]
     for (let i = 0; i < winLines.length; i++) {
       const [a, b, c] = winLines[i];
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        setWin(true)
+        setWinElements(lengths[i])
+        if(board[a]=='o'){
+          setWinColor('#055C9D')
+        }
+        else{
+          setWinColor('#AA336A')
+        }
         if (board[a] == localStorage.getItem('symbol')) {
-          winLines[i].forEach(win)
           setTimeout(() => {
             navigate("/result", {
               state: {
                 winner: true
               },
             })
-          }, 1000)
+          }, 3000)
         } else {
-          winLines[i].forEach(win)
+          // winLines[i].forEach(win)
           setTimeout(() => {
             navigate("/result", {
               state: {
                 winner: false
               },
             })
-          }, 1000)
+          }, 3000)
         }
         
       return
@@ -73,7 +107,7 @@ const Board = () => {
       setMessageHistory((prev) => prev.concat(lastMessage));
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
-      setLastBox(JSON.parse(lastMessage.data).lastBox)
+      // setLastBox(JSON.parse(lastMessage.data).lastBox)
       checkWinning(JSON.parse(lastMessage.data).arr)
     }
     // getting last message
@@ -104,18 +138,61 @@ const Board = () => {
   }
 
 
-  function win(item, index, arr) {
-    let winBox = document.getElementById(arr[index])
-    console.log(item)
-    console.log(winBox)
-    winBox.style.backgroundColor = 'red';
-  }
+  // function win(item, index, arr) {
+  //   let winBox = document.getElementById(arr[index])
+  //   console.log(item)
+  //   console.log(winBox)
+  //   winBox.style.backgroundColor = 'red';
+  // }
 
 
   return (
     <>
       <BoxWrapper>
         <div className='box'>
+    {win==true? 
+      <motion.svg
+      width="350"
+      height="350"
+      className='motion_body'
+      viewBox="0 0 600 600"
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.line
+        x1 = {winElements[0]}
+        y1= {winElements[1]}
+        x2= {winElements[2]}
+        y2= {winElements[3]}
+        stroke={winColor}
+        variants={draw}
+        custom={2}
+      />
+      
+    </motion.svg>
+     : <></>
+    }
+    
+      {/* <motion.svg
+      // width="350"
+      // height="350"
+      className='motion_body'
+      viewBox="0 0 600 600"
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.line
+        x1 = '20'
+        y1= '585'
+        x2= '585'
+        y2= '20'
+        stroke="#2E2E2E"
+        variants={draw}
+        custom={2}
+      /> 
+      
+    </motion.svg> */}
+    
           <div className='game-box'>
             <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>
             <div className='1' onClick={handleClickOnBoardElement}><SmallBox id='1' arr={boardElements} /></div>
