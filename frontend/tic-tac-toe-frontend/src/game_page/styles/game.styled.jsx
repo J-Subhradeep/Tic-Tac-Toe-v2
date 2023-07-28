@@ -182,14 +182,14 @@ body{
     }
 
     .room-code{
+        justify-content: start;
         bottom: 40px;
-        left: 20px;
+        left: 25px;
         width: 350px;
         height: 70px;
         top: auto;
         font-size: 1.1rem;
         font-weight: bold;
-        /* border: 5px solid rgb(0, 71, 171); */
     }
 
     .wrapper span:nth-child(1) {
