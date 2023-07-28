@@ -21,9 +21,6 @@ const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
     onClick();
   };
 
-  useEffect(() => {
-    console.log(isChatboxOpen, "pop after"); // This will log the updated state value
-  }, [isChatboxOpen]);
 
   return (
     <div
