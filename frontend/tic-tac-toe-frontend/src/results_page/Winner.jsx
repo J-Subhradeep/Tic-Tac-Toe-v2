@@ -14,6 +14,10 @@ function Winner() {
     });
     sound.play();
 
+    return ()=>{
+      sound.stop();
+    }
+    
     var c = document.getElementById("Canvas");
     var ctx = c.getContext("2d");
     

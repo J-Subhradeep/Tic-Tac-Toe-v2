@@ -13,7 +13,9 @@ function Tie() {
       loop: true,
     });
     sound.play();
-    return () => {};
+    return ()=>{
+      sound.stop();
+    }
   }, []);
 
 

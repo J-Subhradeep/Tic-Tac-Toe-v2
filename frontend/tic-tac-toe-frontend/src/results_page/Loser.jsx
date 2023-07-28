@@ -15,7 +15,9 @@ function Loser() {
       loop: true,
     });
     sound.play();
-    return () => {};
+    return ()=>{
+      sound.stop();
+    }
   }, []);
 
   const navigate = useNavigate()
