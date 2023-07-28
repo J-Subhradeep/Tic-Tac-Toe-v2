@@ -24,7 +24,7 @@ class SecondUserConsumer(AsyncJsonWebsocketConsumer):
         #     await self.channel_layer.group_add(self.kwargs.get('grp_name'), self.channel_name)
         #     await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': {'first_client': first_client, 'second_client': self.kwargs.get('client_name')}})
         # await self.channel_layer.group_add(self.kwargs.get('grp_name'), self.channel_name)
-        data = await sync_to_async(requests.post)("http://localhost:8001/secondclient/",
+        data = await sync_to_async(requests.post)("http://localhost:8001/api/secondclient/",
                                                   data={"grp_name": self.kwargs["grp_name"], 'name': self.kwargs["client_name"]})
         print(data.json())
         if data.json().get('both'):
@@ -44,7 +44,7 @@ class SecondUserConsumer(AsyncJsonWebsocketConsumer):
         await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': {'second_client': False}})
         await self.channel_layer.group_discard(self.kwargs.get('grp_name'), self.channel_name)
         if close_code != 3001:
-            await sync_to_async(requests.post)("http://localhost:8001/groupdelete/", {"grp_name": self.kwargs["grp_name"]})
+            await sync_to_async(requests.post)("http://localhost:8001/api/groupdelete/", {"grp_name": self.kwargs["grp_name"]})
 
     async def chat_message(self, event):
         print(event)

@@ -9,18 +9,19 @@ export const SmallBoxWrapper = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: .3125rem;
+    visibility: visible;
 }
 
 
 .circle{
     width: 15%;
-    display: none;
 }
 
 .cross{
     width: 10%;
-    display: none;
 }
+
+
 
 @media only screen and (max-width: 850px) {
     .main{

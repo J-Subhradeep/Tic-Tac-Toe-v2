@@ -20,19 +20,38 @@ body {
     z-index: 100;
     height:450px;
     width:250px;
-    background-color: white;
+    /* background-color:  #f8f6f8; */
+    background-color: #f1f3f5;
+    /* background-color: #e3ecf5; */
+    /* background-color: white; */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.messages::-webkit-scrollbar {
+/* .messages::-webkit-scrollbar {
     display: none;
-}
+} */
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .messages {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  /* -ms-overflow-style: none;  
+  scrollbar-width: none;   */
   padding:0.4rem;
+  height:76%;
+  overflow: auto;
+}
+
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+.messages::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
 .btn {

@@ -1,70 +1,37 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { ChatBodyWrapper } from "../styles/chatbody.styled";
-const ChatBody = () => {
+
+const ChatBody = ({ messageHistory }) => {
+  const chatBoxRef = useRef(null);
+
+  // Scroll to the bottom of the chat box
+  const scrollToBottom = () => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messageHistory]);
+
   return (
-    <div className="messages" style={{height:'76%',overflow: 'auto' }}>
+    <div className="messages" ref={chatBoxRef} id="scrollChat">
       <ChatBodyWrapper>
         <div className="chat-messages">
-          <div class="message receiver">
-            <div className="content">
-            
-              <p>Hello</p>
-             
-            </div>
-          </div>
-          <div class="message sender">
-            <div className="content">
-             
-              <p>Hi,How are you?I am fine. You?</p>
-            
-            </div>
-          </div>
-          <div class="message receiver">
-            <div className="content">
-                <p>Hello</p>
-                                     
-            </div>
-          </div>
-          <div class="message sender">
-            <div className="content">
-                                                                                                                                        
-              <p>Hello</p>
-              
-            </div>
-          </div>
-
-          <div class="message sender">
-            <div className="content">
-              <p>Hello</p>
-            </div>
-          </div>
-
-          <div class="message sender">
-            <div className="content">
-              <p>Hello</p>
-            </div>
-          </div>
-         
-          <div class="message sender">
-            <div className="content">
-              <p>Hello</p>
-            </div>
-          </div>
-
-          <div class="message sender">
-            <div className="content">
-              <p>Hi,How are you?I am fine. You?</p>
-            </div>
-          </div>
-
-          <div class="message receiver">
-            <div className="content">
-              <p>Hi,How are you?I am fine. You?</p>
-            </div>
-          </div>
-          
+          {messageHistory.map((message, index) => {
+            const isChatUser = message.from === localStorage.getItem("symbol");
+            return (
+              <div
+                className={`message ${isChatUser ? "sender" : ""}`}
+                key={index}
+              >
+                <div className="content">
+                  <p>{message.msg}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      
       </ChatBodyWrapper>
     </div>
   );

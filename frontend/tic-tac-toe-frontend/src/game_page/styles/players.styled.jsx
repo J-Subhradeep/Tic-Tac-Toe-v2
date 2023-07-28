@@ -11,8 +11,8 @@ export const PlayerWrapper = styled.div`
     }
     .user{
         position: relative;
-        height: 200px;
-        width: 200px; 
+        height: 165px;
+        width: 165px; 
         overflow: hidden;
         border-radius: 20px;
         padding: 4px;

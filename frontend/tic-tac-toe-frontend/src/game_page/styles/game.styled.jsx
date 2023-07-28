@@ -1,5 +1,6 @@
 import styled from "styled-components"
 export const GameWrapper = styled.div`
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 body{
   background: #111;
@@ -21,25 +22,25 @@ body{
     width: 250px;
     /* background-color: aqua; */
     display: inline-block;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 
 .board{
     height: 90vh;
     /* background-color: rgb(6, 167, 121); */
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .player2{
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     /* background-color: aqua; */
     display: inline-block;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .bottom{
@@ -53,7 +54,24 @@ body{
     display: none;
 }
 
-
+.room-code{
+    background-color: rgb(255, 255, 255, 0);
+    color: white;
+    width: 420px;
+    height: 80px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 20px;
+    z-index: 10;
+   
+}
 
 
 .wrapper span {
@@ -159,6 +177,19 @@ body{
     .bottom{
         display: grid;
         grid-template-columns: auto auto;
+        align-items: start;
+        /* padding-top */
+    }
+
+    .room-code{
+        bottom: 40px;
+        left: 20px;
+        width: 350px;
+        height: 70px;
+        top: auto;
+        font-size: 1.1rem;
+        font-weight: bold;
+        /* border: 5px solid rgb(0, 71, 171); */
     }
 
     .wrapper span:nth-child(1) {
@@ -228,12 +259,10 @@ body{
         height: 120px;
         width: 120px;
         display: inline-block;
-        border: 2px solid black;
     }
 
     .board{
         height: 90vh;
-    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,10 +271,15 @@ body{
     .bottom{
         display: none;
     }
-    
-  }
 
-  .wrapper span:nth-child(1) {
+    .room-code{
+        top: 20px;
+        right: 20px;
+        bottom: auto;
+        left: auto;
+    }
+
+    .wrapper span:nth-child(1) {
 	left: 60px;
 	animation-delay: 0.6s;
     }
@@ -293,6 +327,57 @@ body{
         left: 90%;
         animation-delay: 4s;
     }
+    
+  }
+
+  /* .wrapper span:nth-child(1) {
+	left: 60px;
+	animation-delay: 0.6s;
+    }
+    .wrapper span:nth-child(2) {
+        left: 10%;
+        animation-delay: 3s;
+        width: 25px;
+        height: 25px;
+    }
+    .wrapper span:nth-child(3) {
+        left: 20%;
+        animation-delay: 2s;
+    }
+    .wrapper span:nth-child(4) {
+        left: 30%;
+        animation-delay: 5s;
+        width: 45px;
+        height: 45px;
+    }
+    .wrapper span:nth-child(5) {
+        left: 40%;
+        animation-delay: 1s;
+    }
+    .wrapper span:nth-child(6) {
+        left: 50%;
+        animation-delay: 7s;
+    }
+    .wrapper span:nth-child(7) {
+        left: 60%;
+        animation-delay: 6s;
+        width: 55px;
+        height: 55px;
+    }
+    .wrapper span:nth-child(8) {
+        left: 70%;
+        animation-delay: 8s;
+    }
+    .wrapper span:nth-child(9) {
+        left: 80%;
+        animation-delay: 6s;
+        width: 50px;
+        height: 50px;
+    }
+    .wrapper span:nth-child(10) {
+        left: 90%;
+        animation-delay: 4s;
+    } */
 
   
 `
