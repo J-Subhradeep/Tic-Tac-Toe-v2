@@ -8,6 +8,7 @@ import useWebSocket, { ReadyState } from "react-use-websocket";
 import Winner from "../results_page/Winner";
 import Alert from "@mui/material/Alert";
 import { Button } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 const Game = () => {
     let roomCode = localStorage.getItem("roomCode");
@@ -15,6 +16,8 @@ const Game = () => {
     const [leftClient, setLeftClient] = useState("");
     const [rightClient, setRightClient] = useState("");
     const [flag, setFlag] = useState(true);
+    const navigate = useNavigate();
+
     function copyText() {
         const content = roomCode
         navigator.clipboard.writeText(content);
@@ -50,6 +53,13 @@ const Game = () => {
             if (clientData.second_client === false) {
               setRightClient("Disconnected");
               setFlag(false);
+              setTimeout(()=>{
+                navigate('/result',{
+                  state:{
+                    winner:true
+                  },
+                })
+              },3000)
             }
         }
     }, [lastMessage, setMessageHistory]);
@@ -111,7 +121,7 @@ const Game = () => {
           >
             Your Opponent got Disconnected!
           </Alert>
-          <Winner />
+          {/* <Winner /> */}
         </>
       )}
     </>
