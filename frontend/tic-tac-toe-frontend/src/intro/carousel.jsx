@@ -24,12 +24,12 @@ const images = [
   },
   {
     Name: 'Kashmira Jha',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/kashmira-jha-52405022b/',
     imgPath: '../../src/assets/images/landing-page/kashmira.jpeg',
   },
   {
     Name: 'Deblina Mandal',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/deblina-mandal-13b990226/',
     imgPath: '../../src/assets/images/landing-page/deblina.jpeg',
   },
   {
