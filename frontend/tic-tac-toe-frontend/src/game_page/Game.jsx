@@ -62,11 +62,17 @@ const Game = () => {
               },3000)
             }
         }
+        return () => {
+          setFlag(true);
+        }
+
+
     }, [lastMessage, setMessageHistory]);
 
+    
   return (
     <>
-      {flag ? (
+      
         <GameWrapper>
           <ChatSystem />
           <div className="wrapper">
@@ -107,7 +113,7 @@ const Game = () => {
           </div>
           {/* {!flag ? (<Alert severity="info">Opponent Disconnected!</Alert>) : ''} */}
         </GameWrapper>
-      ) : (
+      {!flag ? (
         <>
           <Alert
             severity="info"
@@ -117,13 +123,14 @@ const Game = () => {
               top: "5%",
               left: "50%",
               transform: "translate(-50%, 0)",
+              zIndex:"10000"
             }}
           >
             Your Opponent got Disconnected!
           </Alert>
           {/* <Winner /> */}
         </>
-      )}
+      ):<></>}
     </>
   );
 };
