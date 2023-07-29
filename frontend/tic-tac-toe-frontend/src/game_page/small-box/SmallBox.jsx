@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { SmallBoxWrapper } from '../styles/smallBox.styled'
-import img1 from '../../assets/images/game_page/letter-o2.png'
-import img2 from '../../assets/images/game_page/unchecked.png'
+import img1 from '../../assets/images/game_page/letter-o7.png'
+import img2 from '../../assets/images/game_page/delete.png'
 import { Howl } from "howler"
 import sound_1 from '../../assets/audios/game-sounds/lclick-13694.mp3'
 import sound_2 from '../../assets/audios/game-sounds/rclick-13693.mp3'
@@ -32,7 +32,7 @@ const SmallBox = (props) => {
     <>
       <SmallBoxWrapper>
         <div id={props.id} className="main" >
-        {array[props.id] == 'o' ?  <motion.img animate={{ scale: 6 }}
+        {array[props.id] == 'o' ?  <motion.img animate={{ scale: 8 }}
             initial={{ scale: 0 }} alt='img' className='circle' src={img1}></motion.img> : <></>}
         {array[props.id] == 'x' ?  <motion.img
             animate={{ scale: 6 }}
