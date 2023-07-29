@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Howl } from "howler";
 import { useEffect } from "react";
 import music from "../assets/audios/tie.wav";
+import { useNavigate } from 'react-router-dom';
 
 function Tie() {
   useEffect(() => {
@@ -12,8 +13,16 @@ function Tie() {
       loop: true,
     });
     sound.play();
-    return () => {};
+    return ()=>{
+      sound.stop();
+    }
   }, []);
+
+
+  const navigate = useNavigate()
+  const navigateToHome = () =>{
+      navigate('/Login');
+  };
 
   return (
     <TieWrapper>
@@ -24,7 +33,7 @@ function Tie() {
             aria-label="back-to-home"
             color="primary"
             sx={{color:'white',fontSize:50,position:"absolute"}}
-            href="/Login"
+            onClick={navigateToHome}
           >
           <HomeIcon fontSize="inherit" />
         </IconButton>

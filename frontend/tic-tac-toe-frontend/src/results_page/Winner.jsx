@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { Howl } from "howler";
 import { useEffect } from "react";
 import music from "../assets/audios/win.wav";
+import { useNavigate } from 'react-router-dom';
 
 function Winner() {
   useEffect(() => {
@@ -13,6 +14,10 @@ function Winner() {
     });
     sound.play();
 
+    return ()=>{
+      sound.stop();
+    }
+    
     var c = document.getElementById("Canvas");
     var ctx = c.getContext("2d");
     
@@ -130,6 +135,11 @@ function Winner() {
     }
   }, [])
   
+  const navigate = useNavigate()
+  const navigateToHome = () =>{
+      navigate('/Login');
+  };
+
   return (
     <WinnerWrapper>
       <div className="app">
@@ -139,7 +149,7 @@ function Winner() {
             aria-label="back-to-home"
             color="primary"
             sx={{color:'white',fontSize:50,position:"absolute"}}
-            href="/Login"
+            onClick={navigateToHome}
           >
           <HomeIcon fontSize="inherit" />
         </IconButton> 
