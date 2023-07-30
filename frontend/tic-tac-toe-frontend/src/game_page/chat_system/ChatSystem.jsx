@@ -19,15 +19,14 @@ const ChatSystem = () => {
   );
 
   const [messageHistory, setMessageHistory] = useState([]);
+  const [isChatboxOpen, setIsChatboxOpen] = useState(false);
 
   // Unseen chats
   const [unseenChatsFromOthers, setUnseenChatsFromOthers] = useState(0);
   const [unseenChatsFromSender, setUnseenChatsFromSender] = useState(0);
 
-  //chat audio
+  // Chat audio
   const [playNewMessageSound, setPlayNewMessageSound] = useState(false);
-  
-
 
   const playSound = () => {
     const audio = new Audio(Chat_sound);
@@ -45,19 +44,20 @@ const ChatSystem = () => {
     if (lastMessage !== null) {
       setMessageHistory((prev) => [...prev, JSON.parse(lastMessage.data)]);
 
-      // To check unseen Chats from others
+      // To check unseen chats from others
       const newMessage = JSON.parse(lastMessage.data);
+      if (!isChatboxOpen){
       if (newMessage.from === localStorage.getItem("symbol")) {
-     
         setUnseenChatsFromSender((prevCount) => prevCount + 1);
       } else {
         setUnseenChatsFromOthers((prevCount) => prevCount + 1);
         setPlayNewMessageSound(true);
       }
     }
+    }
   }, [lastMessage, setMessageHistory]);
 
-  // Function to reset unseenChats to zero
+  // Function to reset unseen chats to zero
   const markMessagesAsSeen = () => {
     setUnseenChatsFromSender(0);
     setUnseenChatsFromOthers(0);
@@ -87,15 +87,21 @@ const ChatSystem = () => {
     <ChatWrapper>
       <div className="container">
         <PopIcon
-          unseenChats=
-          {localStorage.getItem("symbol") === "sender" ?
-              unseenChatsFromSender : 
-              unseenChatsFromOthers}
+          unseenChats={
+            localStorage.getItem("symbol") === "sender"
+              ? unseenChatsFromSender
+              : unseenChatsFromOthers
+          }
           onClick={markMessagesAsSeen}
+          setIsChatboxOpen={setIsChatboxOpen}
+          isChatboxOpen={isChatboxOpen}
         />
 
         <div className="chat-popup" id="myForm">
-          <ChatHeader />
+          <ChatHeader
+            setIsChatboxOpen={setIsChatboxOpen}
+            isChatboxOpen={isChatboxOpen}
+          />
           <ChatBody messageHistory={messageHistory} />
           <ChatSend sendMessage={sendMessage} />
         </div>
