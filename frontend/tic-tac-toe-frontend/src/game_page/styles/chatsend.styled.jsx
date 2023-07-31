@@ -27,14 +27,14 @@ export const ChatSendWrapper = styled.div`
     gap: 0.2rem;
     
 
-    .btn-container {
+    /* .btn-container {
       display: flex;
       align-items: center;
       color: #000;
-      padding-bottom: 0.2rem;
+      padding-bottom: 0.2rem; */
 
       /* gap:1rem; */
-      .emoji {
+      /* .emoji {
         position: relative;
         padding-left: 0.5rem;
         padding-top:0.2rem;
@@ -55,7 +55,7 @@ export const ChatSendWrapper = styled.div`
           padding: 0.5rem;
 
         }
-      }
+      } */
     } 
  
     .form-container{
@@ -63,13 +63,14 @@ export const ChatSendWrapper = styled.div`
         margin-top: 0.4rem;
         
         .msg{    
-            width: 10rem;
+            width: 11rem;
             height: 70%;
             background-color: transparent;
             color: black;
             border: none;
             margin-top:0.3rem;
-          
+            resize: none;
+            margin-left:1rem;
             &::selection{
                 background-color: #9186f3;
                 overflow: hidden;
@@ -99,7 +100,7 @@ export const ChatSendWrapper = styled.div`
          
         }
     }
-  }
+  
 
   
 `;

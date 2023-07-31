@@ -81,7 +81,6 @@ const Board = () => {
             })
           }, 3000)
         } else {
-          // winLines[i].forEach(win)
           setTimeout(() => {
             navigate("/result", {
               state: {
@@ -111,7 +110,6 @@ const Board = () => {
       setMessageHistory((prev) => prev.concat(lastMessage));
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
-      // setLastBox(JSON.parse(lastMessage.data).lastBox)
       checkWinning(JSON.parse(lastMessage.data).arr)
       sound.play();
     }
@@ -143,15 +141,6 @@ const Board = () => {
     }
   }
 
-
-  // function win(item, index, arr) {
-  //   let winBox = document.getElementById(arr[index])
-  //   console.log(item)
-  //   console.log(winBox)
-  //   winBox.style.backgroundColor = 'red';
-  // }
-
-
   return (
     <>
       <BoxWrapper>
@@ -179,25 +168,6 @@ const Board = () => {
      : <></>
     }
     
-      {/* <motion.svg
-      // width="350"
-      // height="350"
-      className='motion_body'
-      viewBox="0 0 600 600"
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.line
-        x1 = '20'
-        y1= '585'
-        x2= '585'
-        y2= '20'
-        stroke="#2E2E2E"
-        variants={draw}
-        custom={2}
-      /> 
-      
-    </motion.svg> */}
     
           <div className='game-box'>
             <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>

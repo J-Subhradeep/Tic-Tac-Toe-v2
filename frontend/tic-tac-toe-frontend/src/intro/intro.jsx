@@ -4,8 +4,9 @@ import FileSystemNavigator from "./technologyStack";
 
 import Button from '@mui/material/Button';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-
+import { useNavigate } from "react-router-dom";
 const Intro = () => {
+    const navigate = useNavigate();
     return (
         <>
             <IntroWrapper>
@@ -31,14 +32,14 @@ const Intro = () => {
                                 <span>tic-tac-toe</span>
                             </div>
                             <div className="buttons">
-                                <Button className="button" href="/Login" variant="contained" sx={{ zIndex: 5, fontWeight: 'bold', }} startIcon={<SportsEsportsIcon />}>Play Now</Button>
+                                <Button className="button" onClick={() => navigate("/Login")} variant="contained" sx={{ zIndex: 5, fontWeight: 'bold', }} startIcon={<SportsEsportsIcon />}>Play Now</Button>
                                 <br />
-                                <Button className="button" href="/Guide" variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
+                                <Button className="button" onClick={() => navigate("/Guide")} variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
                             </div>
                         </div>
                         <div className="credits">
                             <div className="technology-stack">
-                                <FileSystemNavigator/>
+                                <FileSystemNavigator />
                             </div>
                             <div className="carousel">
                                 <h2>Developed By</h2>

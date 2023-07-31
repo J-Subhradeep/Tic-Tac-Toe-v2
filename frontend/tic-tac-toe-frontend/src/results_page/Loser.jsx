@@ -6,6 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import music from "../assets/audios/lose.mp3";
 import { useEffect } from "react";
 import { Howl } from "howler";
+import { useNavigate } from 'react-router-dom';
 
 function Loser() {
   useEffect(() => {
@@ -14,8 +15,15 @@ function Loser() {
       loop: true,
     });
     sound.play();
-    return () => {};
+    return ()=>{
+      sound.stop();
+    }
   }, []);
+
+  const navigate = useNavigate()
+  const navigateToHome = () =>{
+      navigate('/Login');
+  };
 
   return (
     <LoserWrapper>
@@ -44,7 +52,7 @@ function Loser() {
             aria-label="back-to-home"
             color="primary"
             sx={{color:'white',fontSize:50,position:"absolute"}}
-            href=""
+            onClick={navigateToHome}
           >
           <HomeIcon fontSize="inherit" />
         </IconButton>

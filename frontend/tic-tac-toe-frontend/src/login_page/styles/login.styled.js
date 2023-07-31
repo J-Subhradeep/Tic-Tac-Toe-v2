@@ -1,6 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap');
 
 .whole{
   box-sizing: border-box;
@@ -19,6 +20,13 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.login-heading{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  color: #AA336A;
 }
 .subWhole{
   position: fixed;
@@ -46,11 +54,11 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: 1px solid white;
+    border: 5px solid #BF40BF;
     background-color: white;
     border-radius: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 0px;
     padding-bottom: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -115,6 +123,9 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
   }
+  .error{
+    height: 30px;
+  }
   
   .joinRoom:hover {
     /* background-color: #f50057; */
@@ -139,7 +150,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-top: 0px;
     display: flex;
     flex-direction:row ;
-    gap: 64px;
+    gap: 20px;
   }
   .devSection{
     position: fixed;

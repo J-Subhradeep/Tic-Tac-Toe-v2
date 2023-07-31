@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const ChatHeadWrapper = styled.div`
-
+position: relative; 
+z-index: 1; 
 .strip{
     display:flex;
     justify-content: space-between;
