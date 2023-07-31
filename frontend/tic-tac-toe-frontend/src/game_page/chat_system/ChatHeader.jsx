@@ -7,14 +7,10 @@ import img2 from "../../assets/images/game_page/close-icon-30.png";
 const ChatHeader = ({ setIsChatboxOpen, isChatboxOpen }) => {
   const closeForm = () => {
     document.getElementById("myForm").style.display = "none";
-    console.log(isChatboxOpen, "header before");
     setIsChatboxOpen(false);
   };
 
-  useEffect(() => {
-    console.log(isChatboxOpen, "header after"); // This will log the updated state value
-  }, [isChatboxOpen]);
-
+  
   return (
     <div>
       <ChatHeadWrapper>
