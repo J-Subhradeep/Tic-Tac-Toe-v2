@@ -24,17 +24,17 @@ const images = [
   },
   {
     Name: 'Kashmira Jha',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/kashmira-jha-52405022b/',
     imgPath: '../../src/assets/images/landing-page/kashmira.jpeg',
   },
   {
     Name: 'Deblina Mandal',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/deblina-mandal-13b990226/',
     imgPath: '../../src/assets/images/landing-page/deblina.jpeg',
   },
   {
     Name: 'Pryattush Banerjee',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/pratyush-banerjee-98b66a219/',
     imgPath: '../../src/assets/images/landing-page/pratyush.jpg',
   },
   {
@@ -101,7 +101,7 @@ function SwipeableTextMobileStepper() {
                 className='photo'
                   component="img"
                   sx={{
-                    height: 225,
+                    height: 250,
                     display: 'block',
                     maxWidth: 260,
                     overflow: 'hidden',
