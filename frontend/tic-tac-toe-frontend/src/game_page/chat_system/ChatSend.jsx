@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { ChatSendWrapper } from "../styles/chatsend.styled";
 import AddReactionOutlinedIcon from "@mui/icons-material/AddReactionOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-import Picker from "emoji-picker-react";
+// import Picker from "emoji-picker-react";
 
 const ChatSend = ({ sendMessage }) => {
   const [messageInput, setMessageInput] = useState("");
-  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+  // const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
-  const handleEmojiPickerHideShow = () => {
-    setShowEmojiPicker(!showEmojiPicker);
-  };
-  const handleEmojiClick = ( emoji) => {
-    let message = messageInput;
-    message += emoji.emoji;
-    setMessageInput(message);
-  };
+  // const handleEmojiPickerHideShow = () => {
+  //   setShowEmojiPicker(!showEmojiPicker);
+  // };
+  // const handleEmojiClick = ( emoji) => {
+  //   let message = messageInput;
+  //   message += emoji.emoji;
+  //   setMessageInput(message);
+  // };
   const send = (e) => {
     e.preventDefault();
     if (messageInput.trim() !== "") {
@@ -28,7 +28,7 @@ const ChatSend = ({ sendMessage }) => {
       );
 
       setMessageInput("");
-      setShowEmojiPicker(false);
+      // setShowEmojiPicker(false);
     }
   };
 
@@ -47,7 +47,7 @@ const ChatSend = ({ sendMessage }) => {
     <div className="lower-strip-size">
       <ChatSendWrapper>
         <div className="lower-strip">
-          <div className="btn-container">
+          {/* <div className="btn-container">
             <div className="emoji">
               <AddReactionOutlinedIcon
                 className="smile"
@@ -59,7 +59,7 @@ const ChatSend = ({ sendMessage }) => {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
           <form className="form-container" onSubmit={send}>
             <textarea
               placeholder="Type message.."
