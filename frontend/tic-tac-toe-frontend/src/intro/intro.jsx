@@ -23,8 +23,8 @@ const Intro = () => {
                     <span>❌</span>
                     <span>⭕</span>
                 </div>
-                <div class="banner">
-                    <div class="content">
+                <div className="banner">
+                    <div className="content">
                         <div className="heading">
                             <div className="span-div">
                                 <span>Real</span>
@@ -33,7 +33,7 @@ const Intro = () => {
                             <div className="buttons">
                                 <Button className="button" href="/Login" variant="contained" sx={{ zIndex: 5, fontWeight: 'bold', }} startIcon={<SportsEsportsIcon />}>Play Now</Button>
                                 <br />
-                                <Button className="button" href="/" variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
+                                <Button className="button" href="/Guide" variant="outlined" sx={{ zIndex: 5, fontWeight: 'bold' }}>game Guide</Button>
                             </div>
                         </div>
                         <div className="credits">
