@@ -152,8 +152,8 @@ const Login = () => {
 
               <div className="buttonSection">
 
-                <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "15px" }}>Create Room</Button>
-                <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "15px" }}>Join and play</Button>
+                <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "5px" }}>Create Room</Button>
+                <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "5px" }}>Join and play</Button>
 
               </div>
             </div>

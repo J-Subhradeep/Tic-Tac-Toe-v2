@@ -165,6 +165,12 @@ ${'' /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@
     width: 125px;
     color: #fff;
   }
+
+  Button{
+    height: 35px;
+    ${'' /* border-radius: 15px; */}
+  }
+
   ${(props) =>
     props.responsive &&
     css`
