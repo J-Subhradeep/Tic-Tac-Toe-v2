@@ -3,8 +3,8 @@ export const BoxWrapper = styled.div`
 
 .box{
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 365px;
+  height: 365px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,8 +16,8 @@ export const BoxWrapper = styled.div`
   }
 
 .game-box{
-    height: 360px;
-    width: 360px;
+    height: 350px;
+    width: 350px;
     display: grid;
     justify-content: space-between;
     grid-row-gap: 6px;
@@ -105,8 +105,8 @@ transform: rotate(360deg);
     }
 
     .box{
-      height: 227px;
-      width: 227px;
+      height: 229px;
+      width: 229px;
     }
 
     .box::before{

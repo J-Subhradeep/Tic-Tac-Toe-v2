@@ -24,6 +24,7 @@ import { Button } from "@mui/material";
 import { GameWrapper } from "../game_page/styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
+import img from "../../src/assets/images/landing-page/subhradeep.jpeg"
 
 const colorAnimation = keyframes`
   0% { color: #08812c; }
@@ -67,6 +68,7 @@ const Login = () => {
 
 
   const handelSubmit = async (e) => {
+    console.log('clkdeeee')
     e.preventDefault();
     if (name && roomCode) {
       var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", { group_name: roomCode })
@@ -113,15 +115,18 @@ const Login = () => {
             <span></span>
           </div>
         </GameWrapper>
-        <Box component='form' noValidate id='login-form' onSubmit={handelSubmit} className="whole">
-          <div className="subWhole">
+        <div className='total'>
+          <div className='left'>
+            <img src='../../src/assets/images/login-page/login.png'></img>
+          </div>
+          <Box component='form' noValidate id='login-form' onSubmit={handelSubmit}>
             <div className="playFriends">
               <div style={{ paddingTop: "20px", paddingBottom: "10px" }}>
                 <span className='login-heading'>Play With Friends</span>
               </div>
-              <TextField value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "300px" }} />
+              <TextField value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "250px" }} />
               <div className="roomCodeField">
-                <FormControl id='room' sx={{ m: 1, width: '300px' }} variant="outlined">
+                <FormControl id='room' sx={{ m: 1, width: '250px' }} variant="outlined">
                   <InputLabel required htmlFor="outlined-adornment-password">Paste Room Code</InputLabel>
                   <OutlinedInput
                     id="outlined-adornment-password"
@@ -147,17 +152,17 @@ const Login = () => {
 
               <div className="buttonSection">
 
-                <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "20px" }}>Create Room</Button>
-                <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "20px" }}>Join and play</Button>
+                <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "15px" }}>Create Room</Button>
+                <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "15px" }}>Join and play</Button>
 
               </div>
             </div>
             <div className='error'>
               {error.status ? <Alert severity={error.type}>{error.message}</Alert> : ''}
             </div>
-          </div>
-        </Box>
+          </Box>
 
+        </div>
       </div>
 
     </>
