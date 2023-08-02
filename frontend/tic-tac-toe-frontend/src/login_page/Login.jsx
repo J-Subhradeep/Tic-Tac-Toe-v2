@@ -158,7 +158,7 @@ const Login = () => {
               </div>
             </div>
             <div className='error'>
-              {error.status ? <Alert severity={error.type}>{error.message}</Alert> : ''}
+              {error.status ? <Alert style={{ boxShadow: "1px 1px 7px #000000b0" }} severity={error.type}>{error.message}</Alert> : ''}
             </div>
           </Box>
 
