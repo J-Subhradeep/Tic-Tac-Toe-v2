@@ -1,7 +1,9 @@
 import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-${'' /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap'); */}
+${
+  "" /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap'); */
+}
 
 .total{
   width: 560px;
@@ -23,7 +25,9 @@ ${'' /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@
 .whole{
   box-sizing: border-box;
   height: 100vh;
-  ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
+  ${
+    "" /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,6 +127,12 @@ ${'' /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@
   }
   .error{
     height: 30px;
+    width:250px;
+    position:fixed;
+    left:50%;
+    top:70px;
+    transform:translate(-50%,0);
+    
   }
   
   .joinRoom:hover {
@@ -168,7 +178,7 @@ ${'' /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@
 
   Button{
     height: 35px;
-    ${'' /* border-radius: 15px; */}
+    ${"" /* border-radius: 15px; */}
   }
 
   ${(props) =>

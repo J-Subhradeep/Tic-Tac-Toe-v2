@@ -34,7 +34,7 @@ const images = [
   },
   {
     Name: 'Pryattush Banerjee',
-    Linkedin: '',
+    Linkedin: 'https://www.linkedin.com/in/pratyush-banerjee-98b66a219/',
     imgPath: '../../src/assets/images/landing-page/pratyush.jpg',
   },
   {
@@ -101,7 +101,7 @@ function SwipeableTextMobileStepper() {
                 className='photo'
                   component="img"
                   sx={{
-                    height: 225,
+                    height: 250,
                     display: 'block',
                     maxWidth: 260,
                     overflow: 'hidden',
