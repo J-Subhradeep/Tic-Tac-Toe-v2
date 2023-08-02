@@ -13,8 +13,8 @@ body{
 .gameSs{
     ${'' /* background-color: #2196f3; */}
     ${'' /* height: 100vh; */}
-    margin-top: 30px;
-    margin-bottom: 10px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
