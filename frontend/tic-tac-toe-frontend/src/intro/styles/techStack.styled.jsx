@@ -7,8 +7,9 @@ export const TechStacklWrapper = styled.div`
 }
 
 .icons{
-    width: 15px;
+    width: 10px;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 
