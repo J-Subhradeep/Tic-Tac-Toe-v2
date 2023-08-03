@@ -17,7 +17,6 @@ export const IntroWrapper = styled.div`
     width: 35%;
     height: 100vh;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     padding-top: 180px;
@@ -158,7 +157,8 @@ export const IntroWrapper = styled.div`
 
 @media only screen and (max-width: 1250px) {
     .heading{
-    width: 40%;
+        width: 40%;
+        padding-top: 240px;
     }
     .heading span{
         font-size: 3.6rem;
@@ -221,7 +221,6 @@ export const IntroWrapper = styled.div`
     .button{
     width: 115px;
     margin: 30px 8px 0 8px;
-    font-size: x-small;
     }
 
     .carousel h2{
@@ -232,6 +231,41 @@ export const IntroWrapper = styled.div`
 }
 
     
+  }
+
+  @media only screen and (max-height: 550px) {
+    .heading{
+        width: 40%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0px;
+    }
+    .heading span{
+        font-size: 3rem;
+    }
+    .span-div{
+        align-items: start;
+    }
+
+    .credits{
+        width: 55%;
+        grid-column-gap: 50px;
+        height: 100vh;
+    }
+    
+    .content{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .carousel h2{
+    font-size: 1rem;
+    }
+    .credits h2{
+    font-size: 1rem;
+}
   }
 
 

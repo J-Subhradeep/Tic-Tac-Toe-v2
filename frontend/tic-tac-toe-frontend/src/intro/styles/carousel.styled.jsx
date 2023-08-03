@@ -42,17 +42,36 @@ export const CarouselWrapper = styled.div`
     .smallicon{
         display: block;
     }
+}
 @media only screen and (max-width: 290px) {
     .main-box{
-        width: 140px;
+        width: 170px;
+    }
+    
+    .photo{
+        width: 170px;
+    }
+
+}
+
+@media only screen and (max-height: 550px) {
+    .main-box{
+        width: 180px;
     }
     
     .photo{
         /* height: 160px; */
-        width: 140px;
+        width: 180px;
     }
-
-}
+    .typography{
+        font-size: small;
+    }
+    .largeicon{
+        display: none;
+    }
+    .smallicon{
+        display: block;
+    }
 }
 
 
