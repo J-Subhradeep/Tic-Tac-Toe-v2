@@ -101,7 +101,7 @@ function SwipeableTextMobileStepper() {
                 className='photo'
                   component="img"
                   sx={{
-                    height: 250,
+                    // height: 250,
                     display: 'block',
                     maxWidth: 260,
                     overflow: 'hidden',

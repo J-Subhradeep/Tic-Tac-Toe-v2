@@ -9,6 +9,7 @@ export const IntroWrapper = styled.div`
     height: 100vh;
     width: 100%;
     display: flex;
+    justify-content: space-around;
     overflow-y: hidden;
 }
 
@@ -43,10 +44,17 @@ export const IntroWrapper = styled.div`
     grid-column-gap: 80px;
 }
 
+.credits h2{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .technology-stack{
     width: 240px;
-
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buttons{
@@ -71,13 +79,6 @@ export const IntroWrapper = styled.div`
 .carousel h2{
     color: white;
     font-family: 'Ubuntu', sans-serif;
-}
-
-.img{
-    width: 220px;
-    height: 220px;
-    opacity: 0.4;
-    z-index: 10;
 }
 
 
@@ -155,30 +156,29 @@ export const IntroWrapper = styled.div`
 }
 
 
-@media only screen and (max-width: 1200px) {
-
-    .img{
-    width: 150px;
-    height: 150px;
-    }
+@media only screen and (max-width: 1250px) {
     .heading{
     width: 40%;
     }
     .heading span{
-        font-size: 4rem;
+        font-size: 3.6rem;
     }
     .button{
-    width: 140px;
-    margin: 40px 10px 0 10px;
-    font-size: small;
+    width: 120px;
+    margin: 35px 8px 0 8px;
+    font-size: x-small;
     }
     .credits{
-        width: 60%;
+        width: 55%;
+        grid-column-gap: 50px;
     }
-
+    
+    .content{
+        justify-content: center;
+    }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 950px) {
     
     .content{
         flex-direction: column;
@@ -194,36 +194,40 @@ export const IntroWrapper = styled.div`
 
     .span-div{
     align-items: center;
-}
-
-    .heading span{
-        font-size: 3rem;
     }
 
-    .img{
-        display: none;
+    .heading span{
+        font-size: 2.5rem;
     }
 
     .credits{
     width: 100%;
     height: 60vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     grid-column-gap: 0;
     }
 
-    .carousel{
-        width: 100%;
+    .technology-stack{
+        width: 50%;
     }
 
+    .carousel{
+        width: 50%;
+    }
+
+
     .button{
-    width: 120px;
-    margin: 40px 10px 0 10px;
+    width: 115px;
+    margin: 30px 8px 0 8px;
     font-size: x-small;
     }
 
     .carousel h2{
+    font-size: 1rem;
+    }
+    .credits h2{
     font-size: 1rem;
 }
 
