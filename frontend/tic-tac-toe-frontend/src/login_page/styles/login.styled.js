@@ -1,11 +1,33 @@
 import { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+${
+  "" /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap'); */
+}
+
+.total{
+  width: 560px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 10px #8accef;
+  border-radius: 22px;
+}
+
+.left{
+  width: 280px;
+  height: 450px;
+  background-color: #1976d2;
+  border-radius: 20px 0px 0px 20px;
+}
 
 .whole{
   box-sizing: border-box;
   height: 100vh;
-  ${'' /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */}
+  ${
+    "" /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,46 +42,34 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
 }
-.subWhole{
-  position: fixed;
 
-    ${"" /* padding-top: 100px; */}
-    ${"" /* margin-top: 200px; */}
-    ${"" /* margin-left:40vw; */}
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-     justify-content: center; 
-    gap: 16px;
-    ${"" /* margin-top: 25vh; */}
+.login-heading{
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  color: #1976d2;
 }
+
+.left img{
+  border-radius: 20px 0px 0px 0px;
+  width: 100%;
+}
+
 .playFriends{
-  ${'' /* background-color: black; */}
-  ${'' /* z-index: 200;
-  opacity: 1; */}
-    /* min-width: 15vw; */
-    ${"" /* min-height: 150px; */}
-    ${"" /* position: relative; */}
+    height: 450px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: 1px solid white;
     background-color: white;
-    border-radius: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 0px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-    0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 12px 0 rgba(0, 0, 0, 0.2),
-    0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    
-    
-}
+    border-radius: 0px 20px 20px 0px;
+  }
+
 .userName{
     width: 250px;
     height: 25px;
@@ -115,6 +125,15 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
   }
+  .error{
+    height: 30px;
+    width:250px;
+    position:fixed;
+    left:50%;
+    top:70px;
+    transform:translate(-50%,0);
+    
+  }
   
   .joinRoom:hover {
     /* background-color: #f50057; */
@@ -136,39 +155,10 @@ export const GlobalStyle = createGlobalStyle`
     align-items: center;
   }
   .buttonSection{
-    margin-top: 0px;
+    margin-top: 25px;
     display: flex;
-    flex-direction:row ;
-    gap: 64px;
-  }
-  .devSection{
-    position: fixed;
-   bottom: 0;
-    ${"" /* margin-top: 25vh; */}
-    width: 100vw;
-    ${
-      "" /* background-image: linear-gradient(to right, #160264 5%, #6a026a 95%); */
-    }
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
-    flex-direction: row;
-    ${"" /* align-items: center; */}
-    justify-content: right;
-    ${"" /* padding-right: 10px; */}
-  }
-  .developers{
-    ${"" /* position: fixed; */}
-    list-style: none;
-    margin: 0;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 3px;
-    ${"" /* justify-content: space-evenly; */}
-  }
-  img{
-    border-radius: 50%;
+    flex-direction:column ;
+    gap: 25px;
   }
   .eachElement{
     display: flex;
@@ -185,6 +175,12 @@ export const GlobalStyle = createGlobalStyle`
     width: 125px;
     color: #fff;
   }
+
+  Button{
+    height: 35px;
+    ${"" /* border-radius: 15px; */}
+  }
+
   ${(props) =>
     props.responsive &&
     css`
@@ -215,5 +211,29 @@ export const GlobalStyle = createGlobalStyle`
       }
     `}
   
+      #login-form{
+        display: inline;
+        height: 450px
+      }
+
+      @media only screen and (max-width: 850px) {
+        .total{
+          width: 0px;
+          height: 380px;
+  box-shadow: 0 0 0px 0px #8accef;
+        }
+
+        .left{
+          display: none
+        }
+        .playFriends{
+          height: 100%;
+          border-radius: 10px;
+          box-shadow: 0 0 20px 6px #8accef;
+        }
+        #login-form{
+          height: 100%
+        }
+      }
   `;
 // BsLinkedin

@@ -28,7 +28,7 @@ const Board = () => {
   };
 
   const [boardElements, setBoardElements] = useState(['', '', '', '', '', '', '', '', ''])
-  const [winElements, setWinElements] = useState(['','','',''])
+  const [winElements, setWinElements] = useState(['', '', '', ''])
   const [lastSymbol, setLastSymbol] = useState('.')
   const [win, setWin] = useState(false)
   const [winColor, setWinColor] = useState('')
@@ -66,10 +66,10 @@ const Board = () => {
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         setWin(true)
         setWinElements(lengths[i])
-        if(board[a]=='o'){
+        if (board[a] == 'o') {
           setWinColor('#055C9D')
         }
-        else{
+        else {
           setWinColor('#AA336A')
         }
         if (board[a] == localStorage.getItem('symbol')) {
@@ -81,7 +81,6 @@ const Board = () => {
             })
           }, 3000)
         } else {
-          // winLines[i].forEach(win)
           setTimeout(() => {
             navigate("/result", {
               state: {
@@ -90,8 +89,8 @@ const Board = () => {
             })
           }, 3000)
         }
-        
-      return
+
+        return
       }
     }
     if (board.every((val) => val !== "")) {
@@ -111,7 +110,6 @@ const Board = () => {
       setMessageHistory((prev) => prev.concat(lastMessage));
       setBoardElements(JSON.parse(lastMessage.data).arr)
       setLastSymbol(JSON.parse(lastMessage.data).lastSymbol)
-      // setLastBox(JSON.parse(lastMessage.data).lastBox)
       checkWinning(JSON.parse(lastMessage.data).arr)
       sound.play();
     }
@@ -136,69 +134,41 @@ const Board = () => {
 
       } else {
         newState[index] = localStorage.getItem('symbol')
-        
+
       }
       sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
 
     }
   }
 
-
-  // function win(item, index, arr) {
-  //   let winBox = document.getElementById(arr[index])
-  //   console.log(item)
-  //   console.log(winBox)
-  //   winBox.style.backgroundColor = 'red';
-  // }
-
-
   return (
     <>
       <BoxWrapper>
         <div className='box'>
-    {win==true? 
-      <motion.svg
-      width="350"
-      height="350"
-      className='motion_body'
-      viewBox="0 0 600 600"
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.line
-        x1 = {winElements[0]}
-        y1= {winElements[1]}
-        x2= {winElements[2]}
-        y2= {winElements[3]}
-        stroke={winColor}
-        variants={draw}
-        custom={2}
-      />
-      
-    </motion.svg>
-     : <></>
-    }
-    
-      {/* <motion.svg
-      // width="350"
-      // height="350"
-      className='motion_body'
-      viewBox="0 0 600 600"
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.line
-        x1 = '20'
-        y1= '585'
-        x2= '585'
-        y2= '20'
-        stroke="#2E2E2E"
-        variants={draw}
-        custom={2}
-      /> 
-      
-    </motion.svg> */}
-    
+          {win == true ?
+            <motion.svg
+              width="350"
+              height="350"
+              className='motion_body'
+              viewBox="0 0 600 600"
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.line
+                x1={winElements[0]}
+                y1={winElements[1]}
+                x2={winElements[2]}
+                y2={winElements[3]}
+                stroke={winColor}
+                variants={draw}
+                custom={2}
+              />
+
+            </motion.svg>
+            : <></>
+          }
+
+
           <div className='game-box'>
             <div className='0' onClick={handleClickOnBoardElement}><SmallBox id='0' arr={boardElements} /></div>
             <div className='1' onClick={handleClickOnBoardElement}><SmallBox id='1' arr={boardElements} /></div>
