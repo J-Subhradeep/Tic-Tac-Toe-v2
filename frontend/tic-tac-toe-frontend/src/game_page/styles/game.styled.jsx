@@ -272,12 +272,12 @@ export const GameWrapper = styled.div`
         display: none;
     }
 
-    .room-code{
+    /* .room-code{
         top: 20px;
         right: 20px;
         bottom: auto;
         left: auto;
-    }
+    } */
 
     .wrapper span:nth-child(1) {
 	left: 60px;
