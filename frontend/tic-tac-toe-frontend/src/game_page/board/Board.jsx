@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import sound_2 from '../../assets/audios/game-sounds/rclick-13693.mp3'
 import { Howl } from 'howler';
 
-const Board = () => {
+const Board = (props) => {
   var sound = new Howl({
     src: [sound_2],
     html5: true
@@ -38,7 +38,11 @@ const Board = () => {
   const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}_board/`);
   const [messageHistory, setMessageHistory] = useState([]);
 
-  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
+  const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {
+    shouldReconnect: (closeEvent) => true,
+    reconnectAttempts: 10,
+    reconnectInterval: 2000,
+  });
 
   const checkWinning = (board) => {
     const winLines = [
@@ -118,6 +122,7 @@ const Board = () => {
 
 
   const handleClickOnBoardElement = (e) => {
+    if(props.both == true) {
     // identify the element/index
     let index = e.currentTarget.className
 
@@ -139,6 +144,7 @@ const Board = () => {
       sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
 
     }
+  }
   }
 
   return (
