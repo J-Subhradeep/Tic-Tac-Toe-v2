@@ -90,7 +90,7 @@ const Game = () => {
           <span></span>
           <span></span>
         </div>
-        <div className="banner">
+        <div className="banner2">
           <div className='room-code'>
             <Button onClick={copyText} variant="outlined">Copy Room Code</Button>
           </div>

@@ -2,10 +2,10 @@ import styled from "styled-components"
 export const GameWrapper = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
-body{
+/* body{
   background: #111;
   height: 100vh;
-}
+} */
 
 .upper{
     display: grid;
@@ -132,7 +132,7 @@ body{
 	left: 90%;
 	animation-delay: 4s;
 }
-.banner {
+.banner2 {
 	margin: 0;
     padding: 0;
     background: #111;
@@ -185,7 +185,7 @@ body{
         justify-content: start;
         bottom: 40px;
         left: 25px;
-        width: 350px;
+        width: 190px;
         height: 70px;
         top: auto;
         font-size: 1.1rem;
@@ -263,21 +263,21 @@ body{
 
     .board{
         height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .bottom{
         display: none;
     }
 
-    .room-code{
+    /* .room-code{
         top: 20px;
         right: 20px;
         bottom: auto;
         left: auto;
-    }
+    } */
 
     .wrapper span:nth-child(1) {
 	left: 60px;
@@ -329,55 +329,6 @@ body{
     }
     
   }
-
-  /* .wrapper span:nth-child(1) {
-	left: 60px;
-	animation-delay: 0.6s;
-    }
-    .wrapper span:nth-child(2) {
-        left: 10%;
-        animation-delay: 3s;
-        width: 25px;
-        height: 25px;
-    }
-    .wrapper span:nth-child(3) {
-        left: 20%;
-        animation-delay: 2s;
-    }
-    .wrapper span:nth-child(4) {
-        left: 30%;
-        animation-delay: 5s;
-        width: 45px;
-        height: 45px;
-    }
-    .wrapper span:nth-child(5) {
-        left: 40%;
-        animation-delay: 1s;
-    }
-    .wrapper span:nth-child(6) {
-        left: 50%;
-        animation-delay: 7s;
-    }
-    .wrapper span:nth-child(7) {
-        left: 60%;
-        animation-delay: 6s;
-        width: 55px;
-        height: 55px;
-    }
-    .wrapper span:nth-child(8) {
-        left: 70%;
-        animation-delay: 8s;
-    }
-    .wrapper span:nth-child(9) {
-        left: 80%;
-        animation-delay: 6s;
-        width: 50px;
-        height: 50px;
-    }
-    .wrapper span:nth-child(10) {
-        left: 90%;
-        animation-delay: 4s;
-    } */
 
   
 `
