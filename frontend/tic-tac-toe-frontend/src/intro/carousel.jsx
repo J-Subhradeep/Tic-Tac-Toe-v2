@@ -18,7 +18,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    Name: 'Subhradeep Paul',
+    Name: 'Subhradeep Pal',
     Linkedin: 'https://www.linkedin.com/in/subhradeep-pal/',
     imgPath: '../../src/assets/images/landing-page/subhradeep.jpeg',
   },
@@ -33,7 +33,7 @@ const images = [
     imgPath: '../../src/assets/images/landing-page/deblina.jpeg',
   },
   {
-    Name: 'Pryattush Banerjee',
+    Name: 'Pratyush Banerjee',
     Linkedin: 'https://www.linkedin.com/in/pratyush-banerjee-98b66a219/',
     imgPath: '../../src/assets/images/landing-page/pratyush.jpg',
   },
@@ -98,7 +98,7 @@ function SwipeableTextMobileStepper() {
             <div key={step.Name}>
               {Math.abs(activeStep - index) <= 2 ? (
                 <Box
-                className='photo'
+                  className='photo'
                   component="img"
                   sx={{
                     // height: 250,
