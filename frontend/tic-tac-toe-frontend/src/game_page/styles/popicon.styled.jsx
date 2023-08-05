@@ -49,8 +49,8 @@ export const PopIconWrapper = styled.div`
     @media only screen and (max-width: 850px) {
     
     .chatButton{
-        width: 110px;
-        height: 100px;
+        width: 120px;
+        height: 110px;
     }
 }
 

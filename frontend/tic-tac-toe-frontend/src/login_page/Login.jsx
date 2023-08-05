@@ -25,7 +25,7 @@ import { GameWrapper } from "../game_page/styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
 
-import img from "../../src/assets/images/landing-page/subhradeep.jpeg"
+// import img from "images/landing-page/subhradeep.jpeg"
 
 const colorAnimation = keyframes`
   0% { color: #08812c; }
@@ -126,7 +126,7 @@ const Login = () => {
         </GameWrapper>
         <div className='total'>
           <div className='left'>
-            <img src='../../src/assets/images/login-page/login.png'></img>
+            <img src='images/login-page/login.png'></img>
           </div>
           <Box component='form' noValidate id='login-form' onSubmit={handelSubmit}>
             <div className="playFriends">
