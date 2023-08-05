@@ -10,28 +10,28 @@ export const CarouselWrapper = styled.div`
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
 
         .main-box{
-        width: 250px;
+        width: 220px;
     }
     
     .photo{
-        height: 200px;
-        width: 250px;
+        /* height: 200px; */
+        width: 220px;
 }
 
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 950px) {
 
     .main-box{
-        width: 210px;
+        width: 180px;
     }
     
     .photo{
-        height: 160px;
-        width: 210px;
+        /* height: 160px; */
+        width: 180px;
     }
     .typography{
         font-size: small;
@@ -42,7 +42,36 @@ export const CarouselWrapper = styled.div`
     .smallicon{
         display: block;
     }
+}
+@media only screen and (max-width: 290px) {
+    .main-box{
+        width: 170px;
+    }
+    
+    .photo{
+        width: 170px;
+    }
 
+}
+
+@media only screen and (max-height: 550px) {
+    .main-box{
+        width: 180px;
+    }
+    
+    .photo{
+        /* height: 160px; */
+        width: 180px;
+    }
+    .typography{
+        font-size: small;
+    }
+    .largeicon{
+        display: none;
+    }
+    .smallicon{
+        display: block;
+    }
 }
 
 
