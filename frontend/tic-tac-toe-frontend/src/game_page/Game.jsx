@@ -21,6 +21,7 @@ const Game = () => {
   function copyText() {
     const content = roomCode
     navigator.clipboard.writeText(content);
+    alert("Copied Successfully !!")
   }
 
   const [socketUrl, setSocketUrl] = useState(

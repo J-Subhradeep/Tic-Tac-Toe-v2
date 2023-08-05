@@ -20,27 +20,27 @@ const images = [
   {
     Name: 'Subhradeep Pal',
     Linkedin: 'https://www.linkedin.com/in/subhradeep-pal/',
-    imgPath: '../../src/assets/images/landing-page/subhradeep.jpeg',
+    imgPath: 'images/landing-page/subhradeep.jpeg',
   },
   {
     Name: 'Kashmira Jha',
     Linkedin: 'https://www.linkedin.com/in/kashmira-jha-52405022b/',
-    imgPath: '../../src/assets/images/landing-page/kashmira.jpeg',
+    imgPath: 'images/landing-page/kashmira.jpeg',
   },
   {
     Name: 'Deblina Mandal',
     Linkedin: 'https://www.linkedin.com/in/deblina-mandal-13b990226/',
-    imgPath: '../../src/assets/images/landing-page/deblina.jpeg',
+    imgPath: 'images/landing-page/deblina.jpeg',
   },
   {
     Name: 'Pratyush Banerjee',
     Linkedin: 'https://www.linkedin.com/in/pratyush-banerjee-98b66a219/',
-    imgPath: '../../src/assets/images/landing-page/pratyush.jpg',
+    imgPath: 'images/landing-page/pratyush.jpg',
   },
   {
     Name: 'MD Safiul Haque',
     Linkedin: 'https://www.linkedin.com/in/md-safiul-haque-32a913242/',
-    imgPath: '../../src/assets/images/landing-page/safiul.jpg',
+    imgPath: 'images/landing-page/safiul.jpg',
   },
 ];
 

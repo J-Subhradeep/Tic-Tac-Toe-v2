@@ -79,9 +79,9 @@ const ChatSystem = () => {
     [ReadyState.UNINSTANTIATED]: "Uninstantiated",
   }[readyState];
 
-  useEffect(() => {
-    console.log("WebSocket Connection Status:", readyState);
-  }, [readyState]);
+  // useEffect(() => {
+  //   // console.log("WebSocket Connection Status:", readyState);
+  // }, [readyState]);
 
   return (
     <ChatWrapper>

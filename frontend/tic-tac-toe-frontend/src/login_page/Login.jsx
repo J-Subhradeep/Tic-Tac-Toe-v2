@@ -25,7 +25,7 @@ import { GameWrapper } from "../game_page/styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
 
-import img from "../../src/assets/images/landing-page/subhradeep.jpeg"
+// import img from "images/landing-page/subhradeep.jpeg"
 
 const colorAnimation = keyframes`
   0% { color: #08812c; }
@@ -59,8 +59,13 @@ const Login = () => {
   const copyToClipboard = () => {
     const content = roomCode
     navigator.clipboard.writeText(content);
+    roomCode ?
+      alert("Copied Successfully !!") : "";
   }
 
+  useEffect(() => {
+    localStorage.clear();
+  }, [])
 
 
 
@@ -72,11 +77,11 @@ const Login = () => {
 
 
   const handelSubmit = async (e) => {
-    console.log('clkdeeee')
+    // console.log('clkdeeee')
     e.preventDefault();
     if (name && roomCode) {
       var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", { group_name: roomCode })
-      console.log(res.data)
+      // console.log(res.data)
       if (!res.data.both) {
         setError({ status: true, message: "Login Successful", type: 'success' })
         localStorage.setItem('name', name)
@@ -121,7 +126,7 @@ const Login = () => {
         </GameWrapper>
         <div className='total'>
           <div className='left'>
-            <img src='../../src/assets/images/login-page/login.png'></img>
+            <img src='images/login-page/login.png'></img>
           </div>
           <Box component='form' noValidate id='login-form' onSubmit={handelSubmit}>
             <div className="playFriends">

@@ -5,8 +5,14 @@ import FileSystemNavigator from "./technologyStack";
 import Button from '@mui/material/Button';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Intro = () => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        localStorage.clear();
+    }, [])
+
     return (
         <>
             <IntroWrapper>
@@ -46,7 +52,7 @@ const Intro = () => {
                                 <h2>Developed By</h2>
                                 <SwipeableTextMobileStepper />
                             </div>
-                            {/* <img className="img" src="../../src/assets/images/landing-page/bgimg1.png" /> */}
+                            {/* <img className="img" src="images/landing-page/bgimg1.png" /> */}
                         </div>
                     </div>
                 </div>

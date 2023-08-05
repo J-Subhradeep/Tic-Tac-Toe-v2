@@ -29,7 +29,7 @@ class JoinView(APIView):
 
 class GenerateRoom(APIView):
     def get(self, request, *args, **kwargs):
-        unique_id = str(uuid.uuid4()).split("-")[0]
+        unique_id = str(uuid.uuid4()).replace("-","")
         return Response({'room': unique_id})
 
 

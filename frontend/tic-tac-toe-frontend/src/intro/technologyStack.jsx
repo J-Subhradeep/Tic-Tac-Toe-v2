@@ -5,7 +5,7 @@ import TreeView from '@mui/lab/TreeView';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import TreeItem from '@mui/lab/TreeItem';
-// import TreeItem from '../../src/assets/images/landing-page/techStack';
+// import TreeItem from 'images/landing-page/techStack';
 
 export default function FileSystemNavigator() {
   return (
@@ -20,15 +20,15 @@ export default function FileSystemNavigator() {
       >
         <TreeItem nodeId="1" label="Frontend" style={{ color: "white", fontFamily: "Arial", }}>
           <div className='node-wrapper' >
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/js.png' />
+            <img className='icons' src='images/landing-page/techStack/js.png' />
             <span className='node'>JavaScript</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/react.png' />
+            <img className='icons' src='images/landing-page/techStack/react.png' />
             <span className='node'>React JS</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/mui.png' />
+            <img className='icons' src='images/landing-page/techStack/mui.png' />
             <span className='node'>Material UI</span>
           </div>
         </TreeItem>
@@ -38,41 +38,41 @@ export default function FileSystemNavigator() {
             <TreeItem nodeId="8" label="index.js" />
           </TreeItem> */}
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/python.png' />
+            <img className='icons' src='images/landing-page/techStack/python.png' />
             <span className='node'>Python</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/dj.png' />
+            <img className='icons' src='images/landing-page/techStack/dj.png' />
             <span className='node'>Django</span>
           </div>
         </TreeItem>
         <TreeItem nodeId="10" label="Database" style={{ color: "white", fontFamily: "Arial" }}>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/SQLite_Logo.png' style={{ height: "20px", width: "40px" }} />
+            <img className='icons' src='images/landing-page/techStack/SQLite_Logo.png' style={{ height: "20px", width: "40px" }} />
             <span className='node'>SQLite</span>
           </div>
         </TreeItem>
         <TreeItem nodeId="15" label="WebSocket" style={{ color: "white", fontFamily: "Arial" }}>
           <div className='node-wrapper' >
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/djch.png' style={{ width: "20px" }} />
+            <img className='icons' src='images/landing-page/techStack/djch.png' style={{ width: "20px" }} />
             <span className='node'>Django Channels</span>
           </div>
           <div className='node-wrapper' >
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/red.png' style={{ height: "10px", width: "20px" }} />
+            <img className='icons' src='images/landing-page/techStack/red.png' style={{ height: "10px", width: "20px" }} />
             <span className='node'>Redis</span>
           </div>
         </TreeItem>
         <TreeItem nodeId="20" label="Web Servers & Other Tools" style={{ color: "white", fontFamily: "Arial" }}>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/nginx.png' />
+            <img className='icons' src='images/landing-page/techStack/nginx.png' />
             <span className='node'>Nginx</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/uvicorn.png' />
+            <img className='icons' src='images/landing-page/techStack/uvicorn.png' />
             <span className='node'>Uvicorn</span>
           </div>
           <div className='node-wrapper'>
-            <img className='icons' src='../../src/assets/images/landing-page/techStack/docker.png' />
+            <img className='icons' src='images/landing-page/techStack/docker.png' />
             <span className='node'>Docker</span>
           </div>
         </TreeItem>
