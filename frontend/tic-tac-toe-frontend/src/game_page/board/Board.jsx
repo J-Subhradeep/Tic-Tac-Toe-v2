@@ -127,16 +127,17 @@ const Board = (props) => {
     let index = e.currentTarget.className
 
     if (boardElements[index] == 'x' || boardElements[index] == 'o') {
-      console.log('already clkd')
+      // console.log('already clkd')
     }
     else if (lastSymbol == localStorage.getItem('symbol')) {
-      console.log('next turn')
+      // console.log('next turn')
+      alert("Opponent's turn")
     }
     else {
 
       const newState = boardElements
       if (newState[index] == 'x' || newState[index] == 'o') {
-
+        //
       } else {
         newState[index] = localStorage.getItem('symbol')
 

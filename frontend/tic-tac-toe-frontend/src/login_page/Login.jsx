@@ -59,12 +59,14 @@ const Login = () => {
   const copyToClipboard = () => {
     const content = roomCode
     navigator.clipboard.writeText(content);
+    roomCode ?
+      alert("Copied Successfully !!") : "";
   }
 
   useEffect(() => {
     localStorage.clear();
   }, [])
-  
+
 
 
 
@@ -75,11 +77,11 @@ const Login = () => {
 
 
   const handelSubmit = async (e) => {
-    console.log('clkdeeee')
+    // console.log('clkdeeee')
     e.preventDefault();
     if (name && roomCode) {
       var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", { group_name: roomCode })
-      console.log(res.data)
+      // console.log(res.data)
       if (!res.data.both) {
         setError({ status: true, message: "Login Successful", type: 'success' })
         localStorage.setItem('name', name)
