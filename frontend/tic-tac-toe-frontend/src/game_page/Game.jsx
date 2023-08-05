@@ -5,7 +5,6 @@ import { GameWrapper } from "./styles/game.styled";
 import ChatSystem from "./chat_system/ChatSystem";
 import { useEffect } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import Winner from "../results_page/Winner";
 import Alert from "@mui/material/Alert";
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +15,7 @@ const Game = () => {
   const [leftClient, setLeftClient] = useState("");
   const [rightClient, setRightClient] = useState("");
   const [flag, setFlag] = useState(true);
+  const [both, setBoth] = useState(false);
   const navigate = useNavigate();
 
   function copyText() {
@@ -35,24 +35,29 @@ const Game = () => {
   });
 
   useEffect(() => {
+    username && roomCode ? "" : navigate("/")
+
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
       const clientData = JSON.parse(lastMessage.data);
       if (localStorage.getItem("name") == clientData.first_client) {
         setLeftClient(clientData.first_client);
         setRightClient(clientData.second_client);
+        setBoth(true)
       }
       if (clientData.second_client === null) {
         setRightClient("Waiting...");
+        setBoth(false)
       }
       else if (localStorage.getItem("name") === clientData.second_client) {
         setLeftClient(clientData.second_client);
         setRightClient(clientData.first_client);
-
+        setBoth(true)
       }
       if (clientData.second_client === false) {
         setRightClient("Disconnected");
         setFlag(false);
+        setBoth(false)
         setTimeout(() => {
           navigate('/result', {
             state: {
@@ -87,7 +92,7 @@ const Game = () => {
           <span></span>
           <span></span>
         </div>
-        <div className="banner">
+        <div className="banner2">
           <div className='room-code'>
             <Button onClick={copyText} variant="outlined">Copy Room Code</Button>
           </div>
@@ -96,7 +101,7 @@ const Game = () => {
               <Players name={leftClient} />
             </div>
             <div className="board">
-              <Board />
+              <Board both={both} />
             </div>
             <div className="player">
               <Players name={rightClient} />
@@ -111,7 +116,6 @@ const Game = () => {
             </div>
           </div>
         </div>
-        {/* {!flag ? (<Alert severity="info">Opponent Disconnected!</Alert>) : ''} */}
       </GameWrapper>
       {!flag ? (
         <>
@@ -128,9 +132,9 @@ const Game = () => {
           >
             Your Opponent got Disconnected!
           </Alert>
-          {/* <Winner /> */}
         </>
       ) : <></>}
+
     </>
   );
 };

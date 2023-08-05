@@ -12,7 +12,7 @@ const Intro = () => {
             <IntroWrapper>
 
 
-                <div class="wrapper2">
+                <div className="wrapper2">
                     <span>❌</span>
                     <span>⭕</span>
                     <span>❌</span>
@@ -39,6 +39,7 @@ const Intro = () => {
                         </div>
                         <div className="credits">
                             <div className="technology-stack">
+                                <h2>Tech Stack</h2>
                                 <FileSystemNavigator />
                             </div>
                             <div className="carousel">

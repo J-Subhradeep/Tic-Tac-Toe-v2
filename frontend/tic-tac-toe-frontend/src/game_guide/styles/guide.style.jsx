@@ -4,6 +4,9 @@ export const GlobalStyle = createGlobalStyle`
 body{
     background-color: #132F4C;  
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 .headA{
     font-size: 30px;
 }
@@ -29,8 +32,8 @@ body{
     gap: 10px;
 }
 ${(props) =>
-    props.responsive &&
-    css`
+        props.responsive &&
+        css`
     @media (max-width: 1050px)
     {
         .headA{
