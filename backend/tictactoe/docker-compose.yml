@@ -5,7 +5,6 @@ services:
     build: .
     command: 
       daphne -b 0.0.0.0 -p 8001 tictactoe.asgi:application
-   
   #     # - python manage.py collectstatic --noinput
   #     # - 
     volumes: 
@@ -17,13 +16,14 @@ services:
 
     stdin_open: true
     tty: true
-    links:
-      - redis
-  redis:
-    image: redis
-    command: redis-server
-    ports:
-      - '6379:6379'
+#    links:
+ #     - redis
+  #redis:
+   # image: redis
+    #command: redis-server --appendonly yes --replica-read-only no
+
+   # ports:
+    #  - '6379:6379'
   # jupyter:
   #   build:
   #     context: . 
@@ -37,5 +37,5 @@ services:
   #   stdin_open: true
   #   tty: true
     
-volumes: 
-  static:
+#volumes: 
+  #static:
