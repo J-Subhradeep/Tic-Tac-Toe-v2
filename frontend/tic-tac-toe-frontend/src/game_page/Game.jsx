@@ -35,6 +35,8 @@ const Game = () => {
   });
 
   useEffect(() => {
+    username && roomCode ? "" : navigate("/")
+
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
       const clientData = JSON.parse(lastMessage.data);
@@ -132,23 +134,7 @@ const Game = () => {
           </Alert>
         </>
       ) : <></>}
-      {!both ? (
-        <>
-          <Alert
-            severity="info"
-            style={{
-              width: "fit-content",
-              position: "absolute",
-              top: "5%",
-              left: "50%",
-              transform: "translate(-50%, 0)",
-              zIndex: "10000",
-            }}
-          >
-            Wait for your opponent to join
-          </Alert>
-        </>
-      ) : <></>}
+
     </>
   );
 };

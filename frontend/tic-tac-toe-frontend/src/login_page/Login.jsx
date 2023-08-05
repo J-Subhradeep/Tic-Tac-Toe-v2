@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Box, Alert } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { RiLinkedinFill } from 'react-icons/ri'
 import OutlinedInput from '@mui/material/OutlinedInput';
 import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
@@ -24,6 +24,7 @@ import { Button } from "@mui/material";
 import { GameWrapper } from "../game_page/styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
+
 import img from "../../src/assets/images/landing-page/subhradeep.jpeg"
 
 const colorAnimation = keyframes`
@@ -59,6 +60,9 @@ const Login = () => {
     const content = roomCode
     navigator.clipboard.writeText(content);
   }
+
+
+
 
 
   const generateRoomCode = () => {
