@@ -5,8 +5,14 @@ import FileSystemNavigator from "./technologyStack";
 import Button from '@mui/material/Button';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Intro = () => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+        localStorage.clear();
+    }, [])
+
     return (
         <>
             <IntroWrapper>

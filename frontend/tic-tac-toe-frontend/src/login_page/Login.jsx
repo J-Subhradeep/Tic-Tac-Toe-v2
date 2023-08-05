@@ -61,7 +61,10 @@ const Login = () => {
     navigator.clipboard.writeText(content);
   }
 
-
+  useEffect(() => {
+    localStorage.clear();
+  }, [])
+  
 
 
 
