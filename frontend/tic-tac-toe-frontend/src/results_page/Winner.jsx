@@ -13,10 +13,6 @@ function Winner() {
       loop: true,
     });
     sound.play();
-
-    return ()=>{
-      sound.stop();
-    }
     
     var c = document.getElementById("Canvas");
     var ctx = c.getContext("2d");
@@ -130,8 +126,8 @@ function Winner() {
       requestAnimationFrame(Run);
     }
     
-  
-    return () => {
+    return ()=>{
+      sound.stop();
     }
   }, [])
   
