@@ -36,7 +36,7 @@ const Game = () => {
   });
 
   useEffect(() => {
-    username && roomCode ? "" : location.assign("/")
+
 
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
@@ -68,9 +68,14 @@ const Game = () => {
         }, 3000)
       }
     }
+
+    username && roomCode ? "" : location.assign("/");
+    window.addEventListener("unload", () => {
+      localStorage.clear();
+    });
     return () => {
       setFlag(true);
-      localStorage.clear();
+      // localStorage.clear();
     }
 
 
