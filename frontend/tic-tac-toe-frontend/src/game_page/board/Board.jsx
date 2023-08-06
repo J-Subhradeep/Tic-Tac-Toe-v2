@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
 import { useNavigate } from 'react-router-dom';
-import { BoxWrapper } from '../styles/Board.styled'
+import { BoxWrapper } from './styles/Board.styled'
 import SmallBox from '../small-box/SmallBox'
 import { motion } from "framer-motion";
 import sound_2 from '../../assets/audios/game-sounds/rclick-13693.mp3'
@@ -122,30 +122,30 @@ const Board = (props) => {
 
 
   const handleClickOnBoardElement = (e) => {
-    if(props.both == true) {
-    // identify the element/index
-    let index = e.currentTarget.className
+    if (props.both == true) {
+      // identify the element/index
+      let index = e.currentTarget.className
 
-    if (boardElements[index] == 'x' || boardElements[index] == 'o') {
-      // console.log('already clkd')
-    }
-    else if (lastSymbol == localStorage.getItem('symbol')) {
-      // console.log('next turn')
-      alert("Opponent's turn")
-    }
-    else {
+      if (boardElements[index] == 'x' || boardElements[index] == 'o') {
+        // console.log('already clkd')
+      }
+      else if (lastSymbol == localStorage.getItem('symbol')) {
+        // console.log('next turn')
+        alert("Opponent's turn")
+      }
+      else {
 
-      const newState = boardElements
-      if (newState[index] == 'x' || newState[index] == 'o') {
-        //
-      } else {
-        newState[index] = localStorage.getItem('symbol')
+        const newState = boardElements
+        if (newState[index] == 'x' || newState[index] == 'o') {
+          //
+        } else {
+          newState[index] = localStorage.getItem('symbol')
+
+        }
+        sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
 
       }
-      sendMessage(JSON.stringify({ arr: newState, lastSymbol: localStorage.getItem('symbol'), lastBox: index, }))
-
     }
-  }
   }
 
   return (

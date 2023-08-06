@@ -1,7 +1,7 @@
 import React from 'react'
 // import img from 'images/game_page/user1.jpg';
 // import img from 'images/game_page/user2.jpg';
-import { PlayerWrapper } from '../styles/players.styled';
+import { PlayerWrapper } from './styles/players.styled';
 
 const Players = (props) => {
   let userName;
