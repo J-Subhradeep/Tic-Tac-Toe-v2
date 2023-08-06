@@ -19,9 +19,9 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import styled, { keyframes, css } from 'styled-components';
 // import copy from "copy-to-clipboard";
-import { GlobalStyle } from "./styles/login.styled";
+import {  LoginWrapper } from "./styles/login.styled";
 import { Button } from "@mui/material";
-import { GameWrapper } from "../game_page/styles/game.styled";
+import { GameWrapper } from "./styles/game.styled";
 import axios from "axios";
 // import './styles/Login.css';
 
@@ -105,75 +105,75 @@ const Login = () => {
   }
   return (
     <>
-      <GlobalStyle responsive />
+      <LoginWrapper>
 
 
-      <div className="whole">
-        <GameWrapper style={{ zIndex: -1 }}>
+        <div className="whole">
+          <GameWrapper style={{ zIndex: -1 }}>
 
-          <div className="wrapper">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </GameWrapper>
-        <div className='total'>
-          <div className='left'>
-            <img src='images/login-page/login.png'></img>
-          </div>
-          <Box component='form' noValidate id='login-form' onSubmit={handelSubmit}>
-            <div className="playFriends">
-              <div style={{ paddingTop: "20px", paddingBottom: "10px" }}>
-                <span className='login-heading'>Play With Friends</span>
-              </div>
-              <TextField value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "250px" }} />
-              <div className="roomCodeField">
-                <FormControl id='room' sx={{ m: 1, width: '250px' }} variant="outlined">
-                  <InputLabel required htmlFor="outlined-adornment-password">Paste Room Code</InputLabel>
-                  <OutlinedInput
-                    id="outlined-adornment-password"
-                    name="roomCode"
-                    type={'text'}
-                    required
-                    value={roomCode} onChange={(e) => setRoomCode(e.target.value)}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <Tooltip title="Copy Room Code">
-                          <IconButton
-                            onClick={copyToClipboard}
-                            color="primary"
-                            edge="end"
-                          ><ContentCopyIcon />
-                          </IconButton></Tooltip>
-                      </InputAdornment>
-                    }
-                    label="Room Code"
-                  />
-                </FormControl>
-              </div>
-
-              <div className="buttonSection">
-
-                <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "5px" }}>Create Room</Button>
-                <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "5px" }}>Join and play</Button>
-
-              </div>
+            <div className="wrapper">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div className='error'>
-              {error.status ? <Alert style={{ boxShadow: "1px 1px 7px #000000b0" }} severity={error.type}>{error.message}</Alert> : ''}
+          </GameWrapper>
+          <div className='total'>
+            <div className='left'>
+              <img src='images/login-page/login.png'></img>
             </div>
-          </Box>
+            <Box component='form' noValidate id='login-form' onSubmit={handelSubmit}>
+              <div className="playFriends">
+                <div style={{ paddingTop: "20px", paddingBottom: "10px" }}>
+                  <span className='login-heading'>Play With Friends</span>
+                </div>
+                <TextField value={name} onChange={(e) => setName(e.target.value)} id="outlined-basic" required label="Name" name="name" variant="outlined" size="medium" style={{ width: "250px" }} />
+                <div className="roomCodeField">
+                  <FormControl id='room' sx={{ m: 1, width: '250px' }} variant="outlined">
+                    <InputLabel required htmlFor="outlined-adornment-password">Paste Room Code</InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      name="roomCode"
+                      type={'text'}
+                      required
+                      value={roomCode} onChange={(e) => setRoomCode(e.target.value)}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <Tooltip title="Copy Room Code">
+                            <IconButton
+                              onClick={copyToClipboard}
+                              color="primary"
+                              edge="end"
+                            ><ContentCopyIcon />
+                            </IconButton></Tooltip>
+                        </InputAdornment>
+                      }
+                      label="Room Code"
+                    />
+                  </FormControl>
+                </div>
 
+                <div className="buttonSection">
+
+                  <Button size='small' onClick={generateRoomCode} endIcon={<AutoModeIcon />} variant="contained" style={{ borderRadius: "5px" }}>Create Room</Button>
+                  <Button type='submit' size='small' variant="contained" endIcon={<SportsEsportsIcon />} style={{ borderRadius: "5px" }}>Join and play</Button>
+
+                </div>
+              </div>
+              <div className='error'>
+                {error.status ? <Alert style={{ boxShadow: "1px 1px 7px #000000b0" }} severity={error.type}>{error.message}</Alert> : ''}
+              </div>
+            </Box>
+
+          </div>
         </div>
-      </div>
-
+      </LoginWrapper>
     </>
   )
 }
