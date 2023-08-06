@@ -26,7 +26,7 @@ class SecondUserConsumer(AsyncJsonWebsocketConsumer):
         # await self.channel_layer.group_add(self.kwargs.get('grp_name'), self.channel_name)
         data = await sync_to_async(requests.post)("http://localhost:8001/api/secondclient/",
                                                   data={"grp_name": self.kwargs["grp_name"], 'name': self.kwargs["client_name"]})
-        print(data.json())
+        # print(data.json())
         if data.json().get('both'):
             await self.send_json({'allowed': False})
             await self.close(3001)
@@ -47,7 +47,7 @@ class SecondUserConsumer(AsyncJsonWebsocketConsumer):
             await sync_to_async(requests.post)("http://localhost:8001/api/groupdelete/", {"grp_name": self.kwargs["grp_name"]})
 
     async def chat_message(self, event):
-        print(event)
+        # print(event)
         await self.send_json(event['msg'])
 
 
@@ -59,35 +59,35 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
         await self.channel_layer.group_add(self.kwargs.get('grp_name'), self.channel_name)
 
     async def chat_message(self, event):
-        print(event)
+        # print(event)
         await self.send_json(event['msg'])
 
     async def receive(self, text_data=None, bytes_data=None):
-        print("receive...", text_data)
+        # print("receive...", text_data)
         await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': json.loads(text_data)})
         # await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': })
 
     async def disconnect(self, close_code):
-        print("Webbsocket disconnect...")
+        # print("Webbsocket disconnect...")
         await self.channel_layer.group_discard(self.kwargs.get('grp_name'), self.channel_name)
 
 
 class BoardConsumer(AsyncJsonWebsocketConsumer):
     async def connect(self):
-        print("chat websocket connected")
+        # print("chat websocket connected")
         await self.accept()
         self.kwargs = self.scope["url_route"]["kwargs"]
         await self.channel_layer.group_add(self.kwargs.get('grp_name'), self.channel_name)
 
     async def chat_message(self, event):
-        print(event)
+        # print(event)
         await self.send_json(event['msg'])
 
     async def receive(self, text_data=None, bytes_data=None):
-        print("receive...", text_data)
+        # print("receive...", text_data)
         await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': json.loads(text_data)})
         # await self.channel_layer.group_send(self.kwargs.get('grp_name'), {'type': 'chat.message', 'msg': })
 
     async def disconnect(self, close_code):
-        print("Webbsocket disconnect...")
+        # print("Webbsocket disconnect...")
         await self.channel_layer.group_discard(self.kwargs.get('grp_name'), self.channel_name)
