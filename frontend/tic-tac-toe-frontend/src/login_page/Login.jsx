@@ -19,7 +19,7 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import styled, { keyframes, css } from 'styled-components';
 // import copy from "copy-to-clipboard";
-import {  LoginWrapper } from "./styles/login.styled";
+import { LoginWrapper } from "./styles/login.styled";
 import { Button } from "@mui/material";
 import { GameWrapper } from "./styles/game.styled";
 import axios from "axios";
@@ -56,12 +56,11 @@ const Login = () => {
   const [name, setName] = useState('')
   const [roomCode, setRoomCode] = useState('')
   const navigate = useNavigate()
-  const copyToClipboard = () => {
-    const content = roomCode
-    navigator.clipboard.writeText(content);
-    roomCode ?
-      alert("Copied Successfully !!") : "";
-  }
+  // const copyToClipboard = () => {
+  //   navigator.clipboard.writeText(roomCode);
+  //   roomCode ?
+  //     alert("Copied Successfully !!") : "";
+  // }
 
   useEffect(() => {
     localStorage.clear();
@@ -147,7 +146,9 @@ const Login = () => {
                         <InputAdornment position="end">
                           <Tooltip title="Copy Room Code">
                             <IconButton
-                              onClick={copyToClipboard}
+                              onClick={() => {
+                                navigator.clipboard.writeText(roomCode);
+                              }}
                               color="primary"
                               edge="end"
                             ><ContentCopyIcon />

@@ -13,15 +13,15 @@ function Tie() {
       loop: true,
     });
     sound.play();
-    return ()=>{
+    return () => {
       sound.stop();
     }
   }, []);
 
 
   const navigate = useNavigate()
-  const navigateToHome = () =>{
-      navigate('/Login');
+  const navigateToHome = () => {
+    location.assign("/Login")
   };
 
   return (
@@ -29,12 +29,12 @@ function Tie() {
       <div className="app">
         <div className="canvas-123"></div>
         <IconButton
-            className="bt"
-            aria-label="back-to-home"
-            color="primary"
-            sx={{color:'white',fontSize:50,position:"absolute"}}
-            onClick={navigateToHome}
-          >
+          className="bt"
+          aria-label="back-to-home"
+          color="primary"
+          sx={{ color: 'white', fontSize: 50, position: "absolute" }}
+          onClick={navigateToHome}
+        >
           <HomeIcon fontSize="inherit" />
         </IconButton>
         <header className="app-header-tie">
