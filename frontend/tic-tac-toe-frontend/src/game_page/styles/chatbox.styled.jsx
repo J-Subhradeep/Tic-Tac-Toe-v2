@@ -71,7 +71,12 @@ body {
     opacity: 1;
 }
 
-
+.chat-send-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
 @media only screen and (max-height: 449px) {
     .chat-popup{
         height:100%;

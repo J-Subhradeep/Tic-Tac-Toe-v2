@@ -33,43 +33,50 @@ export const PopIconWrapper = styled.div`
         cursor: pointer;
     }
 
-    .chatButton {
+.chatButton {
         cursor: pointer;
         color: white;
         padding: 16px 20px;
         border: none;
         border-radius: 25%;
         opacity:0.85;
-        width: 120px;
-        height: 110px;
-    }
-    .chatButton:hover,.icon .chatButton:hover ~ .hello {
-    opacity: 1;}
-
-    @media only screen and (max-width: 850px) {
-    
-    .chatButton{
-        width: 120px;
-        height: 110px;
-    }
-}
-
-@media only screen and (min-width: 851px) {
-    .css-kmh32b-MuiBadge-root {
-        right: 8px;
-        bottom:2px;
-}
-}
-@media only screen and (max-height: 550px) {
-    .chatButton{
         width: 90px;
         height: 80px;
     }
-    .css-kmh32b-MuiBadge-root {
-        left:-30px;
-        top:30px;
-}
-} 
+.chatButton:hover,.icon .chatButton:hover ~ .hello {
+    opacity: 1;
+    }
+
+@media only screen and (max-width: 850px) {
+    .chatButton {
+      width: 90px;
+      height: 80px;
+    }
+    /* .css-kmh32b-MuiBadge-root {
+      right: 8px;
+      bottom: 2px;
+      left: -30px;
+      top: 30px;
+    } */
+  }
+
+  @media only screen and (min-width: 851px) {
+    /* .css-kmh32b-MuiBadge-root {
+      right: 8px;
+      bottom: 2px;
+    } */
+  }
+
+  @media only screen and (max-height: 550px) {
+    .chatButton {
+      width: 90px;
+      height: 80px;
+    }
+    /* .css-kmh32b-MuiBadge-root {
+      left: -30px;
+      top: 30px;
+    } */
+  }
   
 
 

@@ -26,6 +26,7 @@ export const ChatSendWrapper = styled.div`
     align-content: center;
     gap: 0.2rem;
     
+    
 
     /* .btn-container {
       display: flex;

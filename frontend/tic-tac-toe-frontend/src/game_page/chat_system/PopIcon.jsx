@@ -8,8 +8,8 @@ import zIndex from "@mui/material/styles/zIndex";
 const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
-      right: -100,
-      top: -90,
+      right: -73,
+      top: -65,
       border: `2px solid ${theme.palette.background.paper}`,
       padding: "0 4px",
     },
