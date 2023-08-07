@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ChatWrapper } from "../styles/chatbox.styled";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-import Badge from "@mui/material/Badge";
-import { styled } from "@mui/material/styles";
+// import Badge from "@mui/material/Badge";
+// import { styled } from "@mui/material/styles";
 import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
 import ChatSend from "./ChatSend";
@@ -46,14 +46,14 @@ const ChatSystem = () => {
 
       // To check unseen chats from others
       const newMessage = JSON.parse(lastMessage.data);
-      if (!isChatboxOpen){
-      if (newMessage.from === localStorage.getItem("symbol")) {
-        setUnseenChatsFromSender((prevCount) => prevCount + 1);
-      } else {
-        setUnseenChatsFromOthers((prevCount) => prevCount + 1);
-        setPlayNewMessageSound(true);
+      if (!isChatboxOpen) {
+        if (newMessage.from === localStorage.getItem("symbol")) {
+          setUnseenChatsFromSender((prevCount) => prevCount + 1);
+        } else {
+          setUnseenChatsFromOthers((prevCount) => prevCount + 1);
+          setPlayNewMessageSound(true);
+        }
       }
-    }
     }
   }, [lastMessage, setMessageHistory]);
 
@@ -103,7 +103,9 @@ const ChatSystem = () => {
             isChatboxOpen={isChatboxOpen}
           />
           <ChatBody messageHistory={messageHistory} />
-          <ChatSend sendMessage={sendMessage} />
+          <div className="chat-send-wrapper">
+            <ChatSend sendMessage={sendMessage} />
+          </div>
         </div>
       </div>
     </ChatWrapper>
