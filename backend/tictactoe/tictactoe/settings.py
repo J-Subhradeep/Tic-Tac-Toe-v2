@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,8 +28,7 @@ SECRET_KEY = 'django-insecure-rfxc#%tcj349u4ytz$wwk94*+5bd7%x%w=cb45qid)bje$_lzn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+ALLOWED_HOSTS = ["*",'']
 
 # Application definition
 
@@ -46,10 +46,21 @@ INSTALLED_APPS = [
     "corsheaders",
 
 ]
+CORS_ORIGIN_WHITELIST = [
+"https://domain.com",
+"https://play-real-tictactoe.cloud*",
+"https://www.play-real-tictactoe.cloud*",
+"https://api-tictactoe-by-sp.online*",
+"https://www.api-tictactoe-by-sp.online*",
+"http://localhost:8001*",
+"http://127.0.0.1:8001*"
+]
+
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+# 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -111,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-HTTPS = True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -147,7 +158,8 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("localhost","6379")]
+            "hosts":[(os.environ.get('ip'),'6379')],
         },
     },
 }
+

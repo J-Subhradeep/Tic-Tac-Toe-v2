@@ -1,6 +1,6 @@
-import { createGlobalStyle, css } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const LoginWrapper = styled.div`
 ${
   "" /* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&display=swap'); */
 }

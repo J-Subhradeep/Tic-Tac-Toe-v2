@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { PopIconWrapper } from "../styles/popicon.styled";
-import img1 from "../../assets/images/game_page/chat.jfif";
+// import img1 from "images/game_page/chat.jfif";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import zIndex from "@mui/material/styles/zIndex";
@@ -25,7 +25,7 @@ const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
   return (
     <div
       className="whole"
-      style={{ position: "fixed", bottom: "15px", right: "15px", zIndex: 10}}
+      style={{ position: "fixed", bottom: "15px", right: "15px", zIndex: 10 }}
     >
       <PopIconWrapper>
         <div className="icon">
@@ -37,7 +37,7 @@ const PopIcon = ({ unseenChats, onClick, isChatboxOpen, setIsChatboxOpen }) => {
             ></StyledBadge>
           )}
           <img
-            src={img1}
+            src="images/game_page/chat.jfif"
             alt="logo"
             className=" transition-3 chatButton"
             onClick={openForm}

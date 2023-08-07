@@ -51,7 +51,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/intro.jpg"
+                image="images/game_guide/intro.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -65,12 +65,19 @@ const Guide = () => {
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
-                      <span className='headB'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                        malesuada lacus ex, sit amet blandit leo lobortis eget.</span>
+                      <span className='headB'>1.	This is the Landing page of the Real Time Tic-Tac-Toe game.
+                      </span>
                     </Typography>
                     <Typography>
-                      <span className='headB'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                        malesuada lacus ex, sit amet blandit leo lobortis eget.</span>
+                      <span className='headB'>2.	The tech stack section shows what we have used to make this project.
+                      </span>
+                    </Typography>
+                    <Typography>
+                      <span className='headB'>3.	The Developed By section shows all the members who have worked on this project along with there LinkedIn profile attached.
+                      </span>
+                    </Typography>
+                    <Typography>
+                      <span className='headB'>4.		There are two buttons, ‘Play Now’ button will redirect you to the Login page of the game and the ‘Game Guide’ button will carry you to the guide page where you can understand how this web application works.</span>
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -83,7 +90,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/login.png"
+                image="images/game_guide/login.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -124,7 +131,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/gamepage.png"
+                image="images/game_guide/gamepage.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -163,7 +170,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/chat.png"
+                image="images/game_guide/chat.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -201,7 +208,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/result (2).png"
+                image="images/game_guide/result (2).png"
                 alt="green iguana"
               />
               <CardContent>
