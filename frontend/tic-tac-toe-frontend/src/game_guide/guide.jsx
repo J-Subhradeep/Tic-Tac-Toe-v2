@@ -51,7 +51,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/intro.png"
+                image="images/game_guide/intro.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -90,7 +90,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/login.png"
+                image="images/game_guide/login.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -131,7 +131,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/gamepage.png"
+                image="images/game_guide/gamepage.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -170,7 +170,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/chat.png"
+                image="images/game_guide/chat.png"
                 alt="green iguana"
               />
               <CardContent>
@@ -208,7 +208,7 @@ const Guide = () => {
               <CardMedia
                 component="img"
                 maxHeight="200"
-                image="src/assets/images/game_guide/result (2).png"
+                image="images/game_guide/result (2).png"
                 alt="green iguana"
               />
               <CardContent>

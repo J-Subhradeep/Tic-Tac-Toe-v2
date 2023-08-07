@@ -133,7 +133,7 @@ function Winner() {
   
   const navigate = useNavigate()
   const navigateToHome = () =>{
-      navigate('/Login');
+      location.assign("/Login")
   };
 
   return (
