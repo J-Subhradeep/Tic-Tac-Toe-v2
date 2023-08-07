@@ -40,8 +40,8 @@ export const PopIconWrapper = styled.div`
         border: none;
         border-radius: 25%;
         opacity:0.85;
-        width: 120px;
-        height: 110px;
+        width: 90px;
+        height: 80px;
     }
 .chatButton:hover,.icon .chatButton:hover ~ .hello {
     opacity: 1;
@@ -49,22 +49,22 @@ export const PopIconWrapper = styled.div`
 
 @media only screen and (max-width: 850px) {
     .chatButton {
-      width: 110px;
-      height: 100px;
+      width: 90px;
+      height: 80px;
     }
-    .css-kmh32b-MuiBadge-root {
+    /* .css-kmh32b-MuiBadge-root {
       right: 8px;
       bottom: 2px;
       left: -30px;
       top: 30px;
-    }
+    } */
   }
 
   @media only screen and (min-width: 851px) {
-    .css-kmh32b-MuiBadge-root {
+    /* .css-kmh32b-MuiBadge-root {
       right: 8px;
       bottom: 2px;
-    }
+    } */
   }
 
   @media only screen and (max-height: 550px) {
@@ -72,10 +72,10 @@ export const PopIconWrapper = styled.div`
       width: 90px;
       height: 80px;
     }
-    .css-kmh32b-MuiBadge-root {
+    /* .css-kmh32b-MuiBadge-root {
       left: -30px;
       top: 30px;
-    }
+    } */
   }
   
 
