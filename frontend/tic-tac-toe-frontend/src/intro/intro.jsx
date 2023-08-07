@@ -52,7 +52,7 @@ const Intro = () => {
                                 <h2>Developed By</h2>
                                 <SwipeableTextMobileStepper />
                             </div>
-                            {/* <img className="img" src="../../src/assets/images/landing-page/bgimg1.png" /> */}
+                            {/* <img className="img" src="images/landing-page/bgimg1.png" /> */}
                         </div>
                     </div>
                 </div>

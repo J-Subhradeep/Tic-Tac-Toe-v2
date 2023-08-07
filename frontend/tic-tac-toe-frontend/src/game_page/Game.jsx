@@ -8,7 +8,7 @@ import useWebSocket, { ReadyState } from "react-use-websocket";
 import Alert from "@mui/material/Alert";
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
-
+import { CopyToClipboard } from "react-copy-to-clipboard";
 const Game = () => {
   let roomCode = localStorage.getItem("roomCode");
   let username = localStorage.getItem("name");
@@ -18,10 +18,11 @@ const Game = () => {
   const [both, setBoth] = useState(false);
   const navigate = useNavigate();
 
-  function copyText() {
-    const content = roomCode
-    navigator.clipboard.writeText(content);
-  }
+  // function copyText() {
+  //   const content = roomCode
+  //   navigator.clipboard.writeText(content);
+  //   alert("Copied Successfully !!")
+  // }
 
   const [socketUrl, setSocketUrl] = useState(
     "wss://api.play-real-tictactoe.cloud/api/ws/seconduser/" +
@@ -35,7 +36,7 @@ const Game = () => {
   });
 
   useEffect(() => {
-    username && roomCode ? "" : navigate("/")
+
 
     if (lastMessage !== null) {
       setMessageHistory((prev) => prev.concat(lastMessage));
@@ -67,8 +68,14 @@ const Game = () => {
         }, 3000)
       }
     }
+
+    username && roomCode ? "" : location.assign("/");
+    window.addEventListener("unload", () => {
+      localStorage.clear();
+    });
     return () => {
       setFlag(true);
+      // localStorage.clear();
     }
 
 
@@ -94,7 +101,10 @@ const Game = () => {
         </div>
         <div className="banner2">
           <div className='room-code'>
-            <Button onClick={copyText} variant="outlined">Copy Room Code</Button>
+            <CopyToClipboard text={roomCode} onCopy={() => alert("Copied Successfully !!!")}>
+
+              <Button variant="outlined">Copy Room Code</Button>
+            </CopyToClipboard>
           </div>
           <div className="upper">
             <div className="player">
