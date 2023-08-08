@@ -102,7 +102,9 @@ const ChatSystem = () => {
             setIsChatboxOpen={setIsChatboxOpen}
             isChatboxOpen={isChatboxOpen}
           />
+          
           <ChatBody messageHistory={messageHistory} />
+
           <div className="chat-send-wrapper">
             <ChatSend sendMessage={sendMessage} />
           </div>
