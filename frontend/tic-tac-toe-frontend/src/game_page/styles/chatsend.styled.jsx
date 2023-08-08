@@ -14,6 +14,7 @@ export const ChatSendWrapper = styled.div`
     height: 3rem;
   } */
 
+  
  
   .lower-strip {
     /* background-color: #53525234; */

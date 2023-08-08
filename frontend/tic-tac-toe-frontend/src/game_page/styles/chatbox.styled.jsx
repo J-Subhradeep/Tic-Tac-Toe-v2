@@ -36,8 +36,21 @@ body {
   /* -ms-overflow-style: none;  
   scrollbar-width: none;   */
   padding:0.4rem;
-  height:76%;
+  height:78%;
   overflow: auto;
+
+  @media only screen and (max-height: 410px) and (min-height:365px) {
+    height: 76%;
+    }
+  @media only screen and (max-height: 364px) and (min-height:330px) {
+    height: 74%;
+    }
+  @media only screen and (max-height: 329px) and (min-height:280px) {
+    height: 70%;
+    }
+  @media only screen and (max-height: 280px)  {
+    height: 65%;
+    }
 }
 
 .messages::-webkit-scrollbar {
@@ -75,16 +88,17 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+    
   }
   
 @media only screen and (max-height: 449px) {
     .chat-popup{
         height:100%;
           }
-          .gyCPYO {
+    .gyCPYO {
     position: absolute;
     bottom: 0;
-}
+            }
   }
 
 `
