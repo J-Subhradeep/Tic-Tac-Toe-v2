@@ -14,6 +14,7 @@ export const ChatSendWrapper = styled.div`
     height: 3rem;
   } */
 
+  
  
   .lower-strip {
     /* background-color: #53525234; */
@@ -25,6 +26,7 @@ export const ChatSendWrapper = styled.div`
     display: flex;
     align-content: center;
     gap: 0.2rem;
+    
     
 
     /* .btn-container {
