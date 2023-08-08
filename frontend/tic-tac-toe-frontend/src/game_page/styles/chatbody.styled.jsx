@@ -11,7 +11,7 @@ padding-top: 0.3rem;
     flex-direction:column;
     gap:0.5rem;
     overflow:auto;
-  
+    margin-bottom: 15px;
     
     .message{
       display:flex;
