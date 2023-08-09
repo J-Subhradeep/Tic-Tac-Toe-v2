@@ -183,7 +183,7 @@ export const GameWrapper = styled.div`
 
     .room-code{
         justify-content: start;
-        bottom: 40px;
+        bottom: 24px;
         left: 25px;
         width: 190px;
         height: 70px;
