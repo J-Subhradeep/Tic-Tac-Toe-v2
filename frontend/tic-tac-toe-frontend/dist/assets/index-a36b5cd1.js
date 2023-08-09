@@ -1644,7 +1644,7 @@ transform: rotate(360deg);
 
     .room-code{
         justify-content: start;
-        bottom: 40px;
+        bottom: 24px;
         left: 25px;
         width: 190px;
         height: 70px;
@@ -2122,8 +2122,8 @@ padding-top: 0.3rem;
         // Position
         position: absolute;
     
-        left: calc(-70% );
-        top: calc(30% - 24px); 
+        left: calc(-93% );
+        top: calc(30% - 38px); 
          // Layering 
         z-index: 10000;
         box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.33);

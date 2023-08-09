@@ -18,8 +18,8 @@ export const PopIconWrapper = styled.div`
         // Position
         position: absolute;
     
-        left: calc(-70% );
-        top: calc(30% - 24px); 
+        left: calc(-93% );
+        top: calc(30% - 38px); 
          // Layering 
         z-index: 10000;
         box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.33);
