@@ -21,7 +21,9 @@ export const GameWrapper = styled.div`
     height: 250px;
     width: 250px;
     /* background-color: aqua; */
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid black; */
 }
 
@@ -257,8 +259,6 @@ export const GameWrapper = styled.div`
 
     .player{
         display: flex;
-        justify-content: center;
-        align-items: center;
         height: 120px;
         width: 120px;
     }
