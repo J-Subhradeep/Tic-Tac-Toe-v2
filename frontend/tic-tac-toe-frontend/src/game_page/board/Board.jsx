@@ -6,6 +6,7 @@ import SmallBox from '../small-box/SmallBox'
 import { motion } from "framer-motion";
 import sound_2 from '../../assets/audios/game-sounds/rclick-13693.mp3'
 import { Howl } from 'howler';
+import EnvObj from "../EnvObj"
 
 const Board = (props) => {
   var sound = new Howl({
@@ -35,7 +36,7 @@ const Board = (props) => {
 
   const navigate = useNavigate()
 
-  const [socketUrl, setSocketUrl] = useState(`wss://api.play-real-tictactoe.cloud/api/ws/board/${localStorage.getItem('roomCode')}_board/`);
+  const [socketUrl, setSocketUrl] = useState(EnvObj.boardApiString);
   const [messageHistory, setMessageHistory] = useState([]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl, {

@@ -9,6 +9,8 @@ import Alert from "@mui/material/Alert";
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import EnvObj from "../EnvObj"
+
 const Game = () => {
   let roomCode = localStorage.getItem("roomCode");
   let username = localStorage.getItem("name");
@@ -18,14 +20,8 @@ const Game = () => {
   const [both, setBoth] = useState(false);
   const navigate = useNavigate();
 
-  // function copyText() {
-  //   const content = roomCode
-  //   navigator.clipboard.writeText(content);
-  //   alert("Copied Successfully !!")
-  // }
-
   const [socketUrl, setSocketUrl] = useState(
-    "wss://api.play-real-tictactoe.cloud/api/ws/seconduser/" +
+    EnvObj.userWSApiStartingString +
     roomCode + "/" + username + "/"
   );
   const [messageHistory, setMessageHistory] = useState([]);

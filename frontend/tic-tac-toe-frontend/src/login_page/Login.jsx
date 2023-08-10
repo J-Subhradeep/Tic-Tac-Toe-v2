@@ -8,7 +8,6 @@ import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
 import CallRoundedIcon from '@mui/icons-material/CallRounded';
 import InputLabel from '@mui/material/InputLabel';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-// import FilledInput from '@mui/material/FilledInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import AutoModeIcon from '@mui/icons-material/AutoMode';
@@ -18,14 +17,11 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import styled, { keyframes, css } from 'styled-components';
-// import copy from "copy-to-clipboard";
 import { LoginWrapper } from "./styles/login.styled";
 import { Button } from "@mui/material";
 import { GameWrapper } from "./styles/game.styled";
 import axios from "axios";
-// import './styles/Login.css';
-
-// import img from "images/landing-page/subhradeep.jpeg"
+import EnvObj from "../EnvObj"
 
 const colorAnimation = keyframes`
   0% { color: #08812c; }
@@ -70,7 +66,7 @@ const Login = () => {
 
 
   const generateRoomCode = () => {
-    axios.get("https://api.play-real-tictactoe.cloud/api/unique")
+    axios.get(EnvObj.getRoomCode)
       .then((res) => setRoomCode(res.data.room))
   }
 
@@ -79,7 +75,7 @@ const Login = () => {
     // console.log('clkdeeee')
     e.preventDefault();
     if (name && roomCode) {
-      var res = await axios.post("https://api.play-real-tictactoe.cloud/api/", { group_name: roomCode })
+      var res = await axios.post(EnvObj.verifyRoomCode, { group_name: roomCode })
       // console.log(res.data)
       if (!res.data.both) {
         setError({ status: true, message: "Login Successful", type: 'success' })

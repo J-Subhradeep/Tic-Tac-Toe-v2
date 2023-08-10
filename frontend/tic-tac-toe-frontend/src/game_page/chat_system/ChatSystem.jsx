@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ChatWrapper } from "../styles/chatbox.styled";
 import useWebSocket, { ReadyState } from "react-use-websocket";
-// import Badge from "@mui/material/Badge";
-// import { styled } from "@mui/material/styles";
 import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
 import ChatSend from "./ChatSend";
 import PopIcon from "./PopIcon";
 import Chat_sound from "../../assets/audios/game-sounds/Message-pop.mp3";
+import EnvObj from "../EnvObj"
 
 const ChatSystem = () => {
-  const [socketUrl, setSocketUrl] = useState(
-    "wss://api.play-real-tictactoe.cloud/api/ws/chat/" +
-      localStorage.getItem("roomCode") +
-      "_chat/" +
-      localStorage.getItem("symbol") +
-      "/"
-  );
+  const [socketUrl, setSocketUrl] = useState(EnvObj.chatWSApiString);
 
   const [messageHistory, setMessageHistory] = useState([]);
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);

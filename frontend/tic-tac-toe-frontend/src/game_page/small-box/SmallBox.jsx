@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { SmallBoxWrapper } from '../styles/smallBox.styled'
-// import img1 from 'images/game_page/letter-o7.png'
-// import img2 from 'images/game_page/delete.png'
 
 const SmallBox = (props) => {
 
