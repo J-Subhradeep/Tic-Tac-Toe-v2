@@ -36,8 +36,8 @@ export const PlayerWrapper = styled.div`
     }
     @media screen and (max-height: 550px){
         .user{
-            height: 100px;
-            width: 100px; 
+            height: 80px;
+            width: 80px; 
         }
     }
 `

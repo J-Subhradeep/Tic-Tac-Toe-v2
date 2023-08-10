@@ -244,7 +244,7 @@ export const GameWrapper = styled.div`
   }
 
 
-@media only screen and (max-height: 550px) {
+@media only screen and (max-height: 450px) {
     .upper{
         display: grid;
         height: 100vh;
@@ -259,6 +259,8 @@ export const GameWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 120px;
+        width: 120px;
     }
 
 
