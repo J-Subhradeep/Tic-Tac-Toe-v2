@@ -70,7 +70,6 @@ export const GameWrapper = styled.div`
     font-weight: bold;
     border-radius: 20px;
     z-index: 10;
-   
 }
 
 
@@ -182,6 +181,7 @@ export const GameWrapper = styled.div`
     }
 
     .room-code{
+        position: fixed;
         justify-content: start;
         bottom: 24px;
         left: 25px;
@@ -256,10 +256,11 @@ export const GameWrapper = styled.div`
 }
 
     .player{
-        height: 120px;
-        width: 120px;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
 
     .board{
         height: 90vh;
@@ -271,13 +272,6 @@ export const GameWrapper = styled.div`
     .bottom{
         display: none;
     }
-
-    /* .room-code{
-        top: 20px;
-        right: 20px;
-        bottom: auto;
-        left: auto;
-    } */
 
     .wrapper span:nth-child(1) {
 	left: 60px;

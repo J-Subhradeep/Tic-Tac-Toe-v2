@@ -34,4 +34,10 @@ export const PlayerWrapper = styled.div`
             width: 100px; 
         }
     }
+    @media screen and (max-height: 550px){
+        .user{
+            height: 100px;
+            width: 100px; 
+        }
+    }
 `
