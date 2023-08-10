@@ -5,8 +5,8 @@ import { PlayerWrapper } from '../styles/players.styled';
 
 const Players = (props) => {
   let userName;
-  if (props.name.length > 10) {
-    userName = props.name.substring(0, 10) + '...';
+  if (props.name.length > 15) {
+    userName = props.name.substring(0, 15) + '...';
   }
   else {
     userName = props.name;
