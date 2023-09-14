@@ -47,12 +47,13 @@ const Game = () => {
         setBoth(true)
       }
       if (clientData.second_client === null) {
-        setRightClient("Waiting...");
+        setRightClient("Waiting...😴😴");
         setBoth(false)
       }
       else if (localStorage.getItem("name") === clientData.second_client) {
         setLeftClient(clientData.second_client);
         setRightClient(clientData.first_client);
+        localStorage.setItem('symbol', 'o');
         setBoth(true)
       }
       if (clientData.second_client === false) {
